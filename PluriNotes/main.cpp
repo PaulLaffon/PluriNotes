@@ -15,7 +15,11 @@ int main(int argc, char *argv[])
 
     try
     {
-        const Note& n = instance.find("premier");
+        Note& n = instance.find("premier");
+        Article& a = dynamic_cast<Article&>(n.getLastVersion());
+        qDebug() << a.getTexte() << '\n';
+        //n.ajouterVersion("Titre de la deuxième version", "Texte de la deuxième version");
+        instance.saveAll();
     }
     catch(QException& e)
     {

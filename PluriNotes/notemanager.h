@@ -38,7 +38,7 @@ public:
 
     void nouvelleNote(const QString& id, const QDateTime& crea, const QDateTime& modif, bool archive, bool corbeille);
 
-    const Note& find(const QString& id) const;
+    Note& find(const QString& id) const;
 };
 
 #endif // NOTEMANAGER_H

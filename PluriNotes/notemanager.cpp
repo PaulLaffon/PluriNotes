@@ -120,7 +120,7 @@ void NoteManager::load()
 }
 
 
-const Note& NoteManager::find(const QString &id) const
+Note& NoteManager::find(const QString &id) const
 {
     for(QVector<Note*>::const_iterator it = notes.begin(); it != notes.end(); it++)
     {

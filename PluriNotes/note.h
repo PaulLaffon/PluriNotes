@@ -36,6 +36,7 @@ public:
     VersionNote& getLastVersion() const {return *versions.back();}
 
     void ajouterVersion(const QString& type, QXmlStreamReader &stream); // Ajoute une version a partir d'un fichier XML
+    void ajouterVersion(const QString& titre, const QString& texte); // Ajoute un article
 
     // Iterateur pour parcourir toutes les versions d'une note
     class iterator
