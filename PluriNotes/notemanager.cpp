@@ -91,38 +91,25 @@ void NoteManager::load()
 
             if(stream.name() == "Note") // Si c'est le début d'une note
             {
-                while(stream.readNext() != QXmlStreamReader::StartElement);
-                stream.readNext();
+
                 // On récupère toutes les infos de la note
 
-                QString id = stream.text().toString();
+                QString id = VersionNote::textNextBaliseXml(stream);
 
-                while(stream.readNext() != QXmlStreamReader::StartElement);
-                stream.readNext();
+                QDateTime creation = QDateTime::fromString(VersionNote::textNextBaliseXml(stream));
 
-                QDateTime creation = QDateTime::fromString(stream.text().toString());
+                QDateTime modif = QDateTime::fromString(VersionNote::textNextBaliseXml(stream));
 
-                while(stream.readNext() != QXmlStreamReader::StartElement);
-                stream.readNext();
+                bool archive = VersionNote::textNextBaliseXml(stream).toInt();
 
-                QDateTime modif = QDateTime::fromString(stream.text().toString());
-
-                while(stream.readNext() != QXmlStreamReader::StartElement);
-                stream.readNext();
-
-                bool archive = stream.text().toString().toInt();
-
-                while(stream.readNext() != QXmlStreamReader::StartElement);
-                stream.readNext();
-
-                bool corbeille = stream.text().toString().toInt();
+                bool corbeille = VersionNote::textNextBaliseXml(stream).toInt();
                 nouvelleNote(id, creation, modif, archive, corbeille);
             }
 
             if(stream.name() == "Version")
             {
                 // On recupère le type de la version
-                QString type = stream.readElementText();
+                QString type = VersionNote::textNextBaliseXml(stream);
 
                 // Cette version appartient a la dernière note ajoutée
                 // On laisse la note s'occuper d'ajouter la version
@@ -131,6 +118,7 @@ void NoteManager::load()
         }
     }
 }
+
 
 const Note& NoteManager::find(const QString &id) const
 {

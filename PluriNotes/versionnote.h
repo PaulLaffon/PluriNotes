@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QXmlStreamWriter>
+#include <QXmlStreamReader>
 
 #include <QString>
 #include <QDateTime>
@@ -23,6 +24,7 @@ public:
     virtual void writeInFile(QXmlStreamWriter& stream) const = 0;
     virtual void readFromFile(QXmlStreamReader& stream) = 0;
 
+    static QString textNextBaliseXml(QXmlStreamReader& stream);
 
     const QString& getTitre() const {return titre;}
 };
