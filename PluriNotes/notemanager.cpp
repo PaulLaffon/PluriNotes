@@ -120,12 +120,12 @@ void NoteManager::load()
 }
 
 
-Note& NoteManager::find(const QString &id) const
+Note *NoteManager::find(const QString &id) const
 {
     for(QVector<Note*>::const_iterator it = notes.begin(); it != notes.end(); it++)
     {
         if((*it)->getId() == id)
-            return **it;
+            return *it;
     }
 
     throw NoteException(QString("Note non trouvée"));

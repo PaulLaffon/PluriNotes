@@ -49,7 +49,7 @@ public:
     const QString& getTexte() const {return texte;}
 };
 
-typedef enum {QString("En attente"), QString("En cours"), QString("Terminee")} Status;
+enum Status {enAttente, enCours, terminee};
 
 class Tache : public VersionNote
 {
@@ -57,22 +57,27 @@ class Tache : public VersionNote
 private :
     QString action;
     int priorite;
-    QDateTime echeance;
     Status status;
+    QDateTime echeance;
+
     
 public :
     Tache(QXmlStreamReader &stream);
-    Tache(const QString& _titre,const Qstring& _action,const int _priorite,const QDateTime _echeance,Status _status = QString("En attente"), QDateTime modif = QDateTime::currentDateTime());
+    Tache(const QString& _titre,const QString& _action,const int _priorite,const QDateTime _echeance,Status _status = enAttente, QDateTime modif = QDateTime::currentDateTime());
     ~Tache();
     QString type() const {return QString("Tache"); }
     
     void writeInFile(QXmlStreamWriter& stream) const;
     void readFromFile(QXmlStreamReader& stream);
+
+    static const QString  StatusQString[];
+    static const QString getTextStatus(int status) {return StatusQString[status];}
+    static Status getStatusFromText(const QString& s);
     
     const QString& getAction() {return action; }
-    const int getPriorite() {return priorite; }
-    const QDateTime& getEcheance {return echeance; }
-    const Status& getStatus {return status; }
+    int getPriorite() {return priorite; }
+    const QDateTime& getEcheance() {return echeance; }
+    Status getStatus() {return status; }
 };
 
 #endif // VERSIONNOTE_H

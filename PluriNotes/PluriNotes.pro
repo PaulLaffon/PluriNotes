@@ -12,9 +12,11 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     note.cpp \
     versionnote.cpp \
-    notemanager.cpp
+    notemanager.cpp \
+    affichagenote.cpp
 
 HEADERS  += mainwindow.h \
     note.h \
     versionnote.h \
-    notemanager.h
+    notemanager.h \
+    affichagenote.h

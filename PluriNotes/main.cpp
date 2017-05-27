@@ -2,12 +2,13 @@
 #include <QApplication>
 
 #include "notemanager.h"
+#include "affichagenote.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.show();
+    //w.show();
 
     NoteManager& instance = NoteManager::getInstance();
 
@@ -15,11 +16,11 @@ int main(int argc, char *argv[])
 
     try
     {
-        Note& n = instance.find("premier");
-        Article& a = dynamic_cast<Article&>(n.getLastVersion());
-        qDebug() << a.getTexte() << '\n';
+        AffichageArticle fen("premier", 0);
+        fen.show();
         //n.ajouterVersion("Titre de la deuxième version", "Texte de la deuxième version");
         instance.saveAll();
+        return a.exec();
     }
     catch(QException& e)
     {
@@ -29,5 +30,5 @@ int main(int argc, char *argv[])
 
 
 
-    return a.exec();
+
 }

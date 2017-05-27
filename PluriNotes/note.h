@@ -33,7 +33,8 @@ public:
     bool isArchive() const {return archive;}
     bool isInCorbeille() const {return corbeille;}
 
-    VersionNote& getLastVersion() const {return *versions.back();}
+    VersionNote* getVersion(unsigned int i) const {return versions[i];}
+    VersionNote* getLastVersion() const {return versions.back();}
 
     void ajouterVersion(const QString& type, QXmlStreamReader &stream); // Ajoute une version a partir d'un fichier XML
     void ajouterVersion(const QString& titre, const QString& texte); // Ajoute un article
