@@ -1,5 +1,6 @@
 #include "notemanager.h"
 
+// De base, il n'y a pas d'instance de NoteManager
 NoteManager* NoteManager::instance = nullptr;
 
 NoteManager::NoteManager() : QObject()
@@ -109,7 +110,7 @@ void NoteManager::load()
             if(stream.name() == "Version")
             {
                 // On recupère le type de la version
-                QString type = VersionNote::textNextBaliseXml(stream);
+                TypeNote type = VersionNote::getTypeFromText(VersionNote::textNextBaliseXml(stream));
 
                 // Cette version appartient a la dernière note ajoutée
                 // On laisse la note s'occuper d'ajouter la version
@@ -130,7 +131,6 @@ Note *NoteManager::find(const QString &id) const
 
     throw NoteException(QString("Note non trouvée"));
 }
-
 
 
 

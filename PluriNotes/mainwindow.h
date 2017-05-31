@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "partiecentrale.h"
+#include "partiegauche.h"
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

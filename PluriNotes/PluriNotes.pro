@@ -13,10 +13,14 @@ SOURCES += main.cpp\
     note.cpp \
     versionnote.cpp \
     notemanager.cpp \
-    affichagenote.cpp
+    affichagenote.cpp \
+    partiecentrale.cpp \
+    partiegauche.cpp
 
 HEADERS  += mainwindow.h \
     note.h \
     versionnote.h \
     notemanager.h \
-    affichagenote.h
+    affichagenote.h \
+    partiecentrale.h \
+    partiegauche.h

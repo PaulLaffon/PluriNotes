@@ -6,15 +6,17 @@ Note::Note(const QString& i, QDateTime creation, QDateTime modif, bool _archive,
 
 }
 
-void Note::ajouterVersion(const QString &type, QXmlStreamReader& stream)
+void Note::ajouterVersion(TypeNote type, QXmlStreamReader& stream)
 {
     VersionNote* nouveau;
 
-    if(type == "Article")
+    // Ici on gère le type de la version qu'on veut ajotuer
+    if(type == ARTICLE)
         nouveau = new Article(stream);
     else
         throw NoteException(QString("Type de version non reconnu"));
 
+    // On ajoute la nouvelle version à la fin du tableau de version
     versions.push_back(nouveau);
 }
 

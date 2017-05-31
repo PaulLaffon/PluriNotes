@@ -1,8 +1,9 @@
 #include "affichagenote.h"
 
-AffichageNote::AffichageNote(QWidget *parent) : QWidget(parent), note(nullptr)
+AffichageNote::AffichageNote(QWidget *parent) : QMdiSubWindow(parent), note(nullptr)
 {
-    layoutPrincipal = new QVBoxLayout(this);
+    window = new QWidget(this); // Widget qui prends la zone, il sert à mettre un layout
+    layoutPrincipal = new QVBoxLayout(window);
     layoutId = new QHBoxLayout();
     layoutTitre = new QHBoxLayout();
 
@@ -25,9 +26,18 @@ AffichageNote::AffichageNote(QWidget *parent) : QWidget(parent), note(nullptr)
     layoutPrincipal->addLayout(layoutId);
     layoutPrincipal->addLayout(layoutTitre);
     layoutPrincipal->addWidget(save);
+
+    setWidget(window); // On affiche le widget dans le QMdiSubWindow
 }
 
-AffichageArticle::AffichageArticle(const QString& _id, unsigned int version, QWidget *parent) :AffichageNote(parent)
+// Redéfinition de la fonction quand la sous fenetre est fermée
+void AffichageNote::closeEvent(QCloseEvent *event)
+{
+    emit fermetureNote(id->text());
+    event->accept();
+}
+
+AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(parent)
 {
     layoutTexte = new QHBoxLayout();
     labelTexte= new QLabel("Texte : ", this);
@@ -38,11 +48,11 @@ AffichageArticle::AffichageArticle(const QString& _id, unsigned int version, QWi
 
     layoutPrincipal->insertLayout(2, layoutTexte);
 
-    NoteManager& instance = NoteManager::getInstance();
+    note = n;
+    // A ce moment là, la note est obligatoirement un Article
+    Article* a = dynamic_cast<Article*>(note->getLastVersion());
 
-    note = instance.find(_id);
-    Article* a = dynamic_cast<Article*>(note->getVersion(version));
-
+    // Test au cas où le dynamique cast échoue
     if(a == nullptr) throw NoteException("La note passé ne correspond pas à un article, erreur de dynamique cast");
 
     texte->setText(a->getTexte());

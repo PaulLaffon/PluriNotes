@@ -8,14 +8,17 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QTextEdit>
+#include <QMdiSubWindow>
+#include <QCloseEvent>
 
 #include "notemanager.h"
 
 
-class AffichageNote : public QWidget
+class AffichageNote : public QMdiSubWindow
 {
     Q_OBJECT
 protected:
+    QWidget *window; // Widget qui prend tout l'écran du QMdiSubWindow
     QVBoxLayout *layoutPrincipal;
     QHBoxLayout *layoutId;
     QHBoxLayout *layoutTitre;
@@ -29,12 +32,17 @@ protected:
 
     QPushButton *save;
 
-    Note* note;
+    Note* note; // Pointeur sur la note qui correspond à l'affichage
 
 public:
     AffichageNote(QWidget *parent = 0);
 
+    void closeEvent(QCloseEvent *event); // Rédifini la fonction quand la sous fenetre est fermée
+
+    QString getId() const {return id->text();}
+
 signals:
+    void fermetureNote(const QString& id); // Signal émit lors de la redéfinition de closeEvent()
 
 public slots:
 };
@@ -44,6 +52,7 @@ class AffichageArticle : public AffichageNote
 {
     Q_OBJECT
 private:
+    // un artcle n'as que un champ texte en plus
     QHBoxLayout *layoutTexte;
 
     QLabel *labelTexte;
@@ -51,7 +60,7 @@ private:
     QTextEdit *texte;
 
 public:
-    AffichageArticle(const QString& _id, unsigned int version, QWidget *parent = 0);
+    AffichageArticle(Note* n, QWidget *parent = 0);
 };
 
 #endif // AFFICHAGENOTE_H

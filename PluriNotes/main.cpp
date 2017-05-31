@@ -7,13 +7,16 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    //w.show();
 
     NoteManager& instance = NoteManager::getInstance();
 
     instance.load();
 
+    MainWindow w;
+    w.show();
+
+
+/*
     try
     {
         AffichageArticle fen("premier", 0);
@@ -26,9 +29,9 @@ int main(int argc, char *argv[])
     {
         qDebug() << e.what() << '\n';
     }
+*/
 
 
 
-
-
+    return a.exec();
 }

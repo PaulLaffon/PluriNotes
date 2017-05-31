@@ -19,4 +19,17 @@
             <Texte>Texte de la deuxième version</Texte>
         </Version>
     </Note>
+    <Note>
+        <id>second</id>
+        <Creation>mar. mai 23 14:20:33 2017</Creation>
+        <Modification>mar. mai 23 14:20:33 2017</Modification>
+        <Archive>0</Archive>
+        <Corbeille>0</Corbeille>
+        <Version>
+            <Type>Article</Type>
+            <Date>mer. mai 24 17:03:23 2017</Date>
+            <Titre>Titre de la seconde note</Titre>
+            <Texte>Texte de la seconde note</Texte>
+        </Version>
+    </Note>
 </Sauvegarde>

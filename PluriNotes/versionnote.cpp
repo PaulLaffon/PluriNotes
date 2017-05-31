@@ -43,7 +43,7 @@ void Article::writeInFile(QXmlStreamWriter &stream) const
 {
     stream.writeStartElement("Version");
 
-    stream.writeTextElement("Type", type());
+    stream.writeTextElement("Type", textFromType(type()));
     stream.writeTextElement("Date", dateModif.toString());
     stream.writeTextElement("Titre", titre);
     stream.writeTextElement("Texte", texte);
@@ -58,7 +58,17 @@ void Article::readFromFile(QXmlStreamReader &stream)
     texte = VersionNote::textNextBaliseXml(stream);
 }
 
+const QString VersionNote::typeQString[] = {QString("Article"), QString("Tache")};
+
 const QString Tache::StatusQString[] = {QString("En attente"), QString("En cours"), QString("Terminee")};
+
+TypeNote VersionNote::getTypeFromText(const QString &s)
+{
+    if(s == QString("Article"))
+        return ARTICLE;
+
+    return TACHE;
+}
 
 Status Tache::getStatusFromText(const QString& s)
 {
@@ -90,7 +100,7 @@ void Tache::writeInFile(QXmlStreamWriter& stream) const
 {
     stream.writeStartElement("Version");
 
-    stream.writeTextElement("Type", type());
+    stream.writeTextElement("Type", textFromType(type()));
     stream.writeTextElement("Date", dateModif.toString());
     stream.writeTextElement("Titre", titre);
     stream.writeTextElement("Action", action);

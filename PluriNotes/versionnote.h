@@ -8,6 +8,9 @@
 #include <QString>
 #include <QDateTime>
 
+enum Status {enAttente, enCours, terminee};
+enum TypeNote {ARTICLE, TACHE};
+
 class VersionNote : public QObject
 {
     Q_OBJECT
@@ -20,11 +23,15 @@ public:
     VersionNote(const QString& _titre, QDateTime modif = QDateTime::currentDateTime());
 
     virtual ~VersionNote();
-    virtual QString type() const = 0;
-    virtual void writeInFile(QXmlStreamWriter& stream) const = 0;
-    virtual void readFromFile(QXmlStreamReader& stream) = 0;
+    virtual TypeNote type() const = 0;   // Renvoie le type de la version
+    virtual void writeInFile(QXmlStreamWriter& stream) const = 0; // Ecrit le contenu dans le stream
+    virtual void readFromFile(QXmlStreamReader& stream) = 0; // Se charge depuis le stream
 
-    static QString textNextBaliseXml(QXmlStreamReader& stream);
+    static QString textNextBaliseXml(QXmlStreamReader& stream); // Récupère le texte de la balise XML suivante
+
+    static const QString typeQString[];
+    static const QString& textFromType(TypeNote type) {return typeQString[type];}
+    static TypeNote getTypeFromText(const QString& s); // Obtenir le type en QString
 
     const QString& getTitre() const {return titre;}
 };
@@ -40,7 +47,7 @@ public:
     Article(QXmlStreamReader& stream);
     Article(const QString& _titre, const QString& _texte, QDateTime modif = QDateTime::currentDateTime());
     ~Article();
-    QString type() const {return QString("Article");}
+    TypeNote type() const {return ARTICLE;}
 
     void writeInFile(QXmlStreamWriter& stream) const;
     void readFromFile(QXmlStreamReader& stream);
@@ -49,7 +56,7 @@ public:
     const QString& getTexte() const {return texte;}
 };
 
-enum Status {enAttente, enCours, terminee};
+
 
 class Tache : public VersionNote
 {
@@ -65,7 +72,7 @@ public :
     Tache(QXmlStreamReader &stream);
     Tache(const QString& _titre,const QString& _action,const int _priorite,const QDateTime _echeance,Status _status = enAttente, QDateTime modif = QDateTime::currentDateTime());
     ~Tache();
-    QString type() const {return QString("Tache"); }
+    TypeNote type() const {return TACHE;}
     
     void writeInFile(QXmlStreamWriter& stream) const;
     void readFromFile(QXmlStreamReader& stream);

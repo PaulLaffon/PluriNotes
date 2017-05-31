@@ -33,11 +33,13 @@ public:
     bool isArchive() const {return archive;}
     bool isInCorbeille() const {return corbeille;}
 
-    VersionNote* getVersion(unsigned int i) const {return versions[i];}
-    VersionNote* getLastVersion() const {return versions.back();}
+    VersionNote* getVersion(unsigned int i) const {return versions[i];} // Récupère la i-ème version
+    VersionNote* getLastVersion() const {return versions.back();} // Récupère dernière version
 
-    void ajouterVersion(const QString& type, QXmlStreamReader &stream); // Ajoute une version a partir d'un fichier XML
+    void ajouterVersion(TypeNote type, QXmlStreamReader &stream); // Ajoute une version a partir d'un fichier XML
     void ajouterVersion(const QString& titre, const QString& texte); // Ajoute un article
+
+    TypeNote type() const {return versions.back()->type();}
 
     // Iterateur pour parcourir toutes les versions d'une note
     class iterator
@@ -58,7 +60,7 @@ public:
     iterator end() {return iterator(versions.end());}
 };
 
-
+// Class NoteException, hérite de la classe QException, on rédéfini les fonctions what() et clone()
 class NoteException : public QException
 {
 private:
