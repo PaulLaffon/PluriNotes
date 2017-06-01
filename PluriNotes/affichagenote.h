@@ -10,6 +10,7 @@
 #include <QTextEdit>
 #include <QMdiSubWindow>
 #include <QCloseEvent>
+#include <QComboBox>
 
 #include "notemanager.h"
 
@@ -29,22 +30,30 @@ protected:
     QLineEdit *id;
     QLineEdit *titre;
 
+    QComboBox *listeVersion; // Liste déroulante des différentes versions
 
     QPushButton *save;
 
     Note* note; // Pointeur sur la note qui correspond à l'affichage
 
+    void chargerListeVersion();
+
 public:
-    AffichageNote(QWidget *parent = 0);
+    AffichageNote(Note *n, QWidget *parent = 0);
+    virtual ~AffichageNote() {}
 
     void closeEvent(QCloseEvent *event); // Rédifini la fonction quand la sous fenetre est fermée
 
     QString getId() const {return id->text();}
 
+    // Charge la version de la note pour l'éditer
+    virtual void chargerVersion(unsigned int i) = 0;
+
 signals:
     void fermetureNote(const QString& id); // Signal émit lors de la redéfinition de closeEvent()
 
 public slots:
+    void selectionVersion(int i);
 };
 
 
@@ -61,6 +70,11 @@ private:
 
 public:
     AffichageArticle(Note* n, QWidget *parent = 0);
+
+    void chargerVersion(unsigned int i);
+
+public slots:
+    void nouvelleVersion();
 };
 
 #endif // AFFICHAGENOTE_H

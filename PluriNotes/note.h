@@ -29,6 +29,7 @@ public:
     const QString& getId() const {return id;}
     const QDateTime& getCreation() const {return dateCreation;}
     const QDateTime& getModif() const {return dateModif;}
+    unsigned int getNumberVersion() {return versions.size();}
 
     bool isArchive() const {return archive;}
     bool isInCorbeille() const {return corbeille;}

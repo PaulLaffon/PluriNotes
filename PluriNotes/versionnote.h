@@ -34,6 +34,7 @@ public:
     static TypeNote getTypeFromText(const QString& s); // Obtenir le type en QString
 
     const QString& getTitre() const {return titre;}
+    const QDateTime& getModif() const {return dateModif;}
 };
 
 
