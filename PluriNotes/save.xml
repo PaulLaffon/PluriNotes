@@ -18,6 +18,12 @@
             <Titre>Titre de la deuxième version</Titre>
             <Texte>Texte de la deuxième version</Texte>
         </Version>
+        <Version>
+            <Type>Article</Type>
+            <Date>jeu. juin 8 23:55:53 2017</Date>
+            <Titre>Titre de la troisième version</Titre>
+            <Texte>Texte de la troisième version</Texte>
+        </Version>
     </Note>
     <Note>
         <id>second</id>
@@ -32,4 +38,13 @@
             <Texte>Texte de la seconde note</Texte>
         </Version>
     </Note>
+    <Relation>
+        <Titre>MaRelation</Titre>
+        <Description>Ceci est une relation qui a une vocation de test</Description>
+        <Couple>
+            <Label>Couple tout mignon</Label>
+            <IdPere>premier</IdPere>
+            <IdFils>second</IdFils>
+        </Couple>
+    </Relation>
 </Sauvegarde>

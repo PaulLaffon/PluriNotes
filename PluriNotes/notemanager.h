@@ -11,6 +11,7 @@
 #include <QDebug>
 
 #include "note.h"
+#include "relationmanager.h"
 
 class NoteManager : public QObject
 {

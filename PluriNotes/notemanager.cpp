@@ -66,6 +66,11 @@ void NoteManager::saveAll() const
         }
         stream.writeEndElement();
     }
+
+    // On sauvegarde toutes les relations à la fin du fichier
+    RelationManager& instance = RelationManager::getInstance();
+    instance.saveAll(stream);
+
     stream.writeEndElement();
     stream.writeEndDocument();
     file.close();
@@ -79,6 +84,8 @@ void NoteManager::load()
         throw NoteException(QString("Erreur lecture du fichier de sauvegarde"));
 
     QXmlStreamReader stream(&file);
+
+    RelationManager& relations = RelationManager::getInstance();
 
     while(!stream.atEnd() && !stream.hasError())
     {
@@ -107,7 +114,7 @@ void NoteManager::load()
                 nouvelleNote(id, creation, modif, archive, corbeille);
             }
 
-            if(stream.name() == "Version")
+            else if(stream.name() == "Version")
             {
                 // On recupère le type de la version
                 TypeNote type = VersionNote::getTypeFromText(VersionNote::textNextBaliseXml(stream));
@@ -115,6 +122,23 @@ void NoteManager::load()
                 // Cette version appartient a la dernière note ajoutée
                 // On laisse la note s'occuper d'ajouter la version
                 notes.back()->ajouterVersion(type, stream);
+            }
+
+            else if(stream.name() == "Relation")
+            {
+                QString titre = VersionNote::textNextBaliseXml(stream);
+                QString description = VersionNote::textNextBaliseXml(stream);
+
+                relations.ajouterRelation(titre, description);
+            }
+
+            else if(stream.name() == "Couple")
+            {
+                QString label = VersionNote::textNextBaliseXml(stream);
+                QString pere = VersionNote::textNextBaliseXml(stream);
+                QString fils = VersionNote::textNextBaliseXml(stream);
+
+                relations.back()->ajouterCouple(label, find(pere), find(fils));
             }
         }
     }

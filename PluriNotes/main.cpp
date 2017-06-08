@@ -9,12 +9,20 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     NoteManager& instance = NoteManager::getInstance();
+    //RelationManager& relations = RelationManager::getInstance();
 
+
+
+
+    // Charger les notes charge aussi les relations
     instance.load();
 
     MainWindow w;
     w.show();
 
+    int code = a.exec();
+
+    instance.saveAll();
 
 /*
     try
@@ -33,5 +41,5 @@ int main(int argc, char *argv[])
 
 
 
-    return a.exec();
+    return code;
 }

@@ -15,7 +15,10 @@ SOURCES += main.cpp\
     notemanager.cpp \
     affichagenote.cpp \
     partiecentrale.cpp \
-    partiegauche.cpp
+    partiegauche.cpp \
+    relation.cpp \
+    couple.cpp \
+    relationmanager.cpp
 
 HEADERS  += mainwindow.h \
     note.h \
@@ -23,4 +26,7 @@ HEADERS  += mainwindow.h \
     notemanager.h \
     affichagenote.h \
     partiecentrale.h \
-    partiegauche.h
+    partiegauche.h \
+    relation.h \
+    couple.h \
+    relationmanager.h

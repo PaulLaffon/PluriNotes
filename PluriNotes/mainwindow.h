@@ -6,6 +6,8 @@
 #include "partiecentrale.h"
 #include "partiegauche.h"
 
+#include "relationmanager.h"
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
