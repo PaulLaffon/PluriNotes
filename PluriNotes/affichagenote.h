@@ -2,6 +2,7 @@
 #define AFFICHAGENOTE_H
 
 
+
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QLabel>
