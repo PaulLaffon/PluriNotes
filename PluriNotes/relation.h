@@ -7,6 +7,10 @@
 
 #include "couple.h"
 
+/*! \class Relation
+ *  \brief Contient toutes les informations d'une relation, est composé de Couple
+ * */
+
 class Relation : public QObject
 {
     Q_OBJECT
@@ -14,22 +18,24 @@ private:
     QString titre;
     QString description;
 
-    QVector<Couple*> couples; // Tous les couples de la relation
+    QVector<Couple*> couples; /*!< Contient tous les couples de la Relation */
 
 
 public:
     Relation(const QString& _titre, const QString& _description);
 
-    void ajouterCouple(const QString& label, Note* pere, Note* fils);
+    void ajouterCouple(const QString& label, Note* pere, Note* fils); /*!< \brief Ajoute un couple à la Relation */
 
 
     const QString& getTitre() const {return titre;}
     const QString& getDescription() const {return description;}
 
 
-    virtual bool isReference() const {return false;}
+    virtual bool isReference() const {return false;} /*!< \brief Indique si la relation est une Reference */
 
-    // Iterateur pour parcourir tous les couples d'une relation
+    /*! \class iterator
+     *  \brief Iterateur pour parcourir tous les couples d'une relation
+     * */
     class iterator
     {
     private:

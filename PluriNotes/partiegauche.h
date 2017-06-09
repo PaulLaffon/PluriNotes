@@ -7,16 +7,21 @@
 
 #include "notemanager.h"
 
+/*! \class PartieGauche
+ *  \brief Affichage du menu à gauche l'application, hérite de QDockWidget
+ *
+ *  Gère les listes de Notes, de Taches, les notes Archivés ...
+ */
+
 class PartieGauche : public QDockWidget
 {
 private:
-    // On met un widget qui prend toute le surface, car un QDockWidget ne peut pas contenir de layout
-    QWidget *widgetTotal;
+    QWidget *widgetTotal; /*!< \brief Widget qui prends toute la surface afin de pouvoir contenir un layout */
 
     QVBoxLayout *layout;
 
-    QListWidget *noteActive; // Liste de notes actives
-    QListWidget *tache;
+    QListWidget *noteActive; /*!< \brief Liste des notes actives */
+    QListWidget *tache;  /*!< \brief Liste des taches */
 
 public:
     PartieGauche(QWidget *parent = 0);
@@ -24,8 +29,7 @@ public:
 
     QListWidget* getNoteActive() const {return noteActive;} // Pour connect avec partieCentrale dans mainWindow
 
-    // Charge toute la liste des notes actives
-    void chargerListeNote();
+    void chargerListeNote(); /*!< \brief Charge toutes les notes actives dans la liste */
 };
 
 #endif // PARTIEGAUCHE_H

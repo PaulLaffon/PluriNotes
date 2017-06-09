@@ -8,9 +8,19 @@
 #include <QString>
 #include <QDateTime>
 
+/*! \enum Status
+ *  \brief Enumération des différents status d'une Tache
+ */
 enum Status {enAttente, enCours, terminee};
+
+/*! \enum TypeNote
+ *  \brief Enumération des différents type de Note
+ */
 enum TypeNote {ARTICLE, TACHE};
 
+/*! \class VersionNote
+ *  \brief Classe abstraite qui regroupe les partie communes d'une version d'une Note
+*/
 class VersionNote : public QObject
 {
     Q_OBJECT
@@ -23,15 +33,15 @@ public:
     VersionNote(const QString& _titre, QDateTime modif = QDateTime::currentDateTime());
 
     virtual ~VersionNote();
-    virtual TypeNote type() const = 0;   // Renvoie le type de la version
-    virtual void writeInFile(QXmlStreamWriter& stream) const = 0; // Ecrit le contenu dans le stream
-    virtual void readFromFile(QXmlStreamReader& stream) = 0; // Se charge depuis le stream
+    virtual TypeNote type() const = 0;   /*!< \brief Renvoie le type de la version */
+    virtual void writeInFile(QXmlStreamWriter& stream) const = 0; /*!< \brief Ecrit le contenu de la version dans un fichier XML */
+    virtual void readFromFile(QXmlStreamReader& stream) = 0; /*!< \brief Se charge depuis une fichier XML */
 
-    static QString textNextBaliseXml(QXmlStreamReader& stream); // Récupère le texte de la balise XML suivante
+    static QString textNextBaliseXml(QXmlStreamReader& stream); /*!< \brief Récupère le texte de la balise XML suivante */
 
     static const QString typeQString[];
-    static const QString& textFromType(TypeNote type) {return typeQString[type];}
-    static TypeNote getTypeFromText(const QString& s); // Obtenir le type en QString
+    static const QString& textFromType(TypeNote type) {return typeQString[type];} /*!< \brief Retourne le type de la note en QString */
+    static TypeNote getTypeFromText(const QString& s); /*!< \brief Obtenir le type de la note à partir d'un QString */
 
     const QString& getTitre() const {return titre;}
     const QDateTime& getModif() const {return dateModif;}
@@ -48,10 +58,10 @@ public:
     Article(QXmlStreamReader& stream);
     Article(const QString& _titre, const QString& _texte, QDateTime modif = QDateTime::currentDateTime());
     ~Article();
-    TypeNote type() const {return ARTICLE;}
+    TypeNote type() const {return ARTICLE;}  /*!< \brief Renvoie le type de la version */
 
-    void writeInFile(QXmlStreamWriter& stream) const;
-    void readFromFile(QXmlStreamReader& stream);
+    void writeInFile(QXmlStreamWriter& stream) const; /*!< \brief Redéfinition, ecrit le contenu de la version dans un fichier XML */
+    void readFromFile(QXmlStreamReader& stream);  /*!< \brief Redéfinition, se charge depuis une fichier XML */
 
 
     const QString& getTexte() const {return texte;}
@@ -75,12 +85,12 @@ public :
     ~Tache();
     TypeNote type() const {return TACHE;}
     
-    void writeInFile(QXmlStreamWriter& stream) const;
-    void readFromFile(QXmlStreamReader& stream);
+    void writeInFile(QXmlStreamWriter& stream) const; /*!< \brief Redéfinition, ecrit le contenu de la version dans un fichier XML */
+    void readFromFile(QXmlStreamReader& stream);  /*!< \brief Rédéfinition, se charge depuis une fichier XML */
 
     static const QString  StatusQString[];
-    static const QString getTextStatus(int status) {return StatusQString[status];}
-    static Status getStatusFromText(const QString& s);
+    static const QString getTextStatus(Status status) {return StatusQString[status];} /*!< \brief Renvoie le Status en QString */
+    static Status getStatusFromText(const QString& s); /*!< \brief Renvoie le Status à partir d'un QString */
     
     const QString& getAction() {return action; }
     int getPriorite() {return priorite; }

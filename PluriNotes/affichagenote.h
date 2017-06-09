@@ -15,12 +15,16 @@
 
 #include "notemanager.h"
 
-
+/*! \class AffichageNote
+ *  \brief Classe abstraite pour l'affichage d'une Note
+ *
+ *  Hérite de QMdiSubWindow, gère l'affichage commun à toutes les notes (Articles, Taches ...)
+ * */
 class AffichageNote : public QMdiSubWindow
 {
     Q_OBJECT
 protected:
-    QWidget *window; // Widget qui prend tout l'écran du QMdiSubWindow
+    QWidget *window; /*!< \brief Widget qui prend toute la surface du QMdiSubWindow */
     QVBoxLayout *layoutPrincipal;
     QHBoxLayout *layoutId;
     QHBoxLayout *layoutTitre;
@@ -31,33 +35,36 @@ protected:
     QLineEdit *id;
     QLineEdit *titre;
 
-    QComboBox *listeVersion; // Liste déroulante des différentes versions
+    QComboBox *listeVersion; /*!< \brief Liste déroulante des différentes versions */
 
     QPushButton *save;
 
-    Note* note; // Pointeur sur la note qui correspond à l'affichage
+    Note* note; /*!< \brief Pointeur sur la note qui correspond à l'affichage */
 
-    void chargerListeVersion();
+    void chargerListeVersion(); /*!< \brief Charge la liste de toutes les versions de la Note dans listeVersion */
 
 public:
     AffichageNote(Note *n, QWidget *parent = 0);
     virtual ~AffichageNote() {}
 
-    void closeEvent(QCloseEvent *event); // Rédifini la fonction quand la sous fenetre est fermée
+    void closeEvent(QCloseEvent *event); /*!< \brief Redéfinition de la fonction lorsque la fenetre est fermée */
 
     QString getId() const {return id->text();}
 
-    // Charge la version de la note pour l'éditer
-    virtual void chargerVersion(unsigned int i) = 0;
+    virtual void chargerVersion(unsigned int i) = 0; /*!< \brief Charge la version de la note afin de pouvoir l'éditer */
 
 signals:
-    void fermetureNote(const QString& id); // Signal émit lors de la redéfinition de closeEvent()
+    void fermetureNote(const QString& id); /*!< \brief Signal émit lors de la redéfinition de closeEvent() */
 
 public slots:
-    void selectionVersion(int i);
+    void selectionVersion(int i); /*!< \brief Permet de mettre l'affichage de la i-ème version de la note */
 };
 
-
+/*! \class AffichageArticle
+ *  \brief Gère l'affichage des articles
+ *
+ *  Classe fille de AffichageNote qui permet la modification des articles
+ * */
 class AffichageArticle : public AffichageNote
 {
     Q_OBJECT
@@ -72,10 +79,10 @@ private:
 public:
     AffichageArticle(Note* n, QWidget *parent = 0);
 
-    void chargerVersion(unsigned int i);
+    void chargerVersion(unsigned int i); /*!< Redéfinition de la fonction virtuelle pure pour la gestion des articles */
 
 public slots:
-    void nouvelleVersion();
+    void nouvelleVersion(); /*!< \brief Permet de créer une nouvelle version de la note */
 };
 
 #endif // AFFICHAGENOTE_H
