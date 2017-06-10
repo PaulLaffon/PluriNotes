@@ -28,6 +28,8 @@ void PartieGauche::chargerListeNote()
 {
     NoteManager& instance = NoteManager::getInstance();
 
+    noteActive->clear(); // On s'assure que la liste est vide
+
     // Iterateur sur tout les articles
     for(NoteManager::TypeIterator it = instance.begin(ARTICLE); it != instance.end(); ++it)
     {

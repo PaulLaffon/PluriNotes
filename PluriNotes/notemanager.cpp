@@ -36,6 +36,20 @@ void NoteManager::nouvelleNote(const QString& id, const QDateTime& crea, const Q
     notes.push_back(nouvelle);
 }
 
+void NoteManager::nouvelleArticle(const QString &id)
+{
+    if(find(id))
+        emit noteDejaExistante(QString("Une note avec cet id existe déjà"));
+    else
+    {
+        Note* nouvelle = new Note(id);
+        nouvelle->ajouterVersion(QString(""), QString(""));
+        notes.push_back(nouvelle);
+
+        emit creationNote();
+    }
+}
+
 void NoteManager::saveAll() const
 {
     QFile file(filename);
@@ -153,7 +167,7 @@ Note *NoteManager::find(const QString &id) const
             return *it;
     }
 
-    throw NoteException(QString("Note non trouvée"));
+    return nullptr; // ici on a pas trouvé la note correspondant
 }
 
 

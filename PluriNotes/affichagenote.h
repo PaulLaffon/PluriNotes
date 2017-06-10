@@ -57,6 +57,7 @@ signals:
     void fermetureNote(const QString& id); /*!< \brief Signal émit lors de la redéfinition de closeEvent() */
 
 public slots:
+    virtual void nouvelleVersion() = 0;
     void selectionVersion(int i); /*!< \brief Permet de mettre l'affichage de la i-ème version de la note */
 };
 

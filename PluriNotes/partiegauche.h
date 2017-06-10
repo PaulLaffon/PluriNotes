@@ -15,6 +15,8 @@
 
 class PartieGauche : public QDockWidget
 {
+    Q_OBJECT
+
 private:
     QWidget *widgetTotal; /*!< \brief Widget qui prends toute la surface afin de pouvoir contenir un layout */
 
@@ -29,6 +31,7 @@ public:
 
     QListWidget* getNoteActive() const {return noteActive;} // Pour connect avec partieCentrale dans mainWindow
 
+public slots:
     void chargerListeNote(); /*!< \brief Charge toutes les notes actives dans la liste */
 };
 

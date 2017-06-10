@@ -47,9 +47,8 @@ public:
      *  Appel la fonction saveAll() de RelationManager pour sauvegarder en même temps les différentes Relations */
     void saveAll() const;
 
-    // Cree une nouvelle note sans version, elle n'as pas de type
-    // Idéalement, il faudrait crée une note avec un type et une version de base
-    /*! \brief Cree une nouvelle note sans Version
+
+    /*! \brief Cree une nouvelle note sans Version, utilisé lors de la fonction load()
      *  */
     void nouvelleNote(const QString& id, const QDateTime& crea, const QDateTime& modif, bool archive, bool corbeille);
 
@@ -96,6 +95,14 @@ public:
     TypeIterator begin(TypeNote type) {return TypeIterator(notes.begin(), type, notes.size());} /*!< \brief Retourne un itérateur sur le premier élément du type souhaité */
 
     TypeIterator end() {return TypeIterator(notes.end(), ARTICLE, 0);} // Ici le type d'itérateur n'as pas d'importance
+
+public slots:
+    void nouvelleArticle(const QString& id); /*!< \brief Cree un nouvel article avec une première version vide */
+
+signals:
+    void noteDejaExistante(QString); /*!< Signal emit lorsqu'on essaye de créer une note dont l'id existe déjà */
+    void creationNote(); /*!< \brief Signal qui indique qu'une nouvelle note a été créé, recharger la liste des notes */
+
 };
 
 #endif // NOTEMANAGER_H

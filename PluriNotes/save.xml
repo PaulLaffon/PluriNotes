@@ -38,6 +38,38 @@
             <Texte>Texte de la seconde note</Texte>
         </Version>
     </Note>
+    <Note>
+        <id>trois</id>
+        <Creation>sam. juin 10 13:47:43 2017</Creation>
+        <Modification>sam. juin 10 13:47:43 2017</Modification>
+        <Archive>0</Archive>
+        <Corbeille>0</Corbeille>
+        <Version>
+            <Type>Article</Type>
+            <Date>sam. juin 10 13:48:13 2017</Date>
+            <Titre>Titre de la troisème note</Titre>
+            <Texte>Ceci est du texte</Texte>
+        </Version>
+        <Version>
+            <Type>Article</Type>
+            <Date>sam. juin 10 13:48:17 2017</Date>
+            <Titre>Titre de la troisème note</Titre>
+            <Texte>Ceci est du texte</Texte>
+        </Version>
+    </Note>
+    <Note>
+        <id>quatre</id>
+        <Creation>sam. juin 10 14:03:12 2017</Creation>
+        <Modification>sam. juin 10 14:03:12 2017</Modification>
+        <Archive>0</Archive>
+        <Corbeille>0</Corbeille>
+        <Version>
+            <Type>Article</Type>
+            <Date>sam. juin 10 14:03:12 2017</Date>
+            <Titre></Titre>
+            <Texte></Texte>
+        </Version>
+    </Note>
     <Relation>
         <Titre>MaRelation</Titre>
         <Description>Ceci est une relation qui a une vocation de test</Description>

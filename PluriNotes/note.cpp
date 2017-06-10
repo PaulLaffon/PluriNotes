@@ -26,3 +26,13 @@ void Note::ajouterVersion(const QString &titre, const QString &texte)
     Article* nouveau = new Article(titre, texte);
     versions.push_back(nouveau);
 }
+
+// Supprime la dernière version, est utilisé pour supprimer les versions vide qui sont créer à la création de la note
+void Note::supprimerVersionVide()
+{
+    if(!versions.empty() && versions.back()->getTitre() == QString(""))
+    {
+        delete versions.back();
+        versions.pop_back();
+    }
+}

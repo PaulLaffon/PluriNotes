@@ -99,6 +99,7 @@ void AffichageNote::selectionVersion(int i)
 
 void AffichageArticle::nouvelleVersion()
 {
+    note->supprimerVersionVide();
     note->ajouterVersion(titre->text(), texte->toPlainText());
     chargerListeVersion();
 }

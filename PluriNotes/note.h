@@ -50,6 +50,7 @@ public:
 
     TypeNote type() const {return versions.back()->type();} /*!< \brief Retourne le type de la dernière version de la note */
 
+    void supprimerVersionVide(); /*!< \brief Supprime la dernière version de la note, dans le cas d'une version vide */
 
     /*! \class iterator
      *  \brief Permet d'itérer sur toutes les versions d'une note
