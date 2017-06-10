@@ -45,7 +45,7 @@ public:
     /*! \brief Sauvegarde toutes les notes dans un fichier XML
      *  Appeler à la fermeture de l'application
      *  Appel la fonction saveAll() de RelationManager pour sauvegarder en même temps les différentes Relations */
-    void saveAll() const;
+    void saveAll();
 
 
     /*! \brief Cree une nouvelle note sans Version, utilisé lors de la fonction load()
@@ -100,7 +100,7 @@ public slots:
     void nouvelleArticle(const QString& id); /*!< \brief Cree un nouvel article avec une première version vide */
 
 signals:
-    void noteDejaExistante(QString); /*!< Signal emit lorsqu'on essaye de créer une note dont l'id existe déjà */
+    void erreur(QString); /*!< \brief Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà */
     void creationNote(); /*!< \brief Signal qui indique qu'une nouvelle note a été créé, recharger la liste des notes */
 
 };

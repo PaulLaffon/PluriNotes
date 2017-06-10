@@ -5,7 +5,7 @@ NoteManager* NoteManager::instance = nullptr;
 
 NoteManager::NoteManager() : QObject()
 {
-    filename = "C:\\Users\\Paul\\Documents\\GI02\\LO21\\Projet\\PluriNotes\\save.xml";
+    filename = "save.xml";
 }
 
 NoteManager::~NoteManager()
@@ -39,7 +39,7 @@ void NoteManager::nouvelleNote(const QString& id, const QDateTime& crea, const Q
 void NoteManager::nouvelleArticle(const QString &id)
 {
     if(find(id))
-        emit noteDejaExistante(QString("Une note avec cet id existe déjà"));
+        emit erreur(QString("Une note avec cet id existe déjà"));
     else
     {
         Note* nouvelle = new Note(id);
@@ -50,12 +50,15 @@ void NoteManager::nouvelleArticle(const QString &id)
     }
 }
 
-void NoteManager::saveAll() const
+void NoteManager::saveAll()
 {
     QFile file(filename);
 
     if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-        throw NoteException(QString("Erreur création du fichier de sauvegarde"));
+    {
+        emit erreur(QString("Fichier de sauvegarde non trouvé, impossible de sauvegarder"));
+        return;
+    }
 
     QXmlStreamWriter stream(&file);
     stream.setAutoFormatting(true);
@@ -95,7 +98,10 @@ void NoteManager::load()
     QFile file(filename);
 
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        throw NoteException(QString("Erreur lecture du fichier de sauvegarde"));
+    {
+        emit erreur(QString("Fichier de sauvegarde non trouvé, création d'un fichier de sauvegarde"));
+        return;
+    }
 
     QXmlStreamReader stream(&file);
 

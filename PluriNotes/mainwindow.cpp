@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerListeNote()));
 
 
-    connect(&instance, SIGNAL(noteDejaExistante(QString)), this, SLOT(erreur(QString)));
+    connect(&instance, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
 }
 
 MainWindow::~MainWindow()
