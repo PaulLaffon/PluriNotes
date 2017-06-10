@@ -96,6 +96,13 @@ public :
     int getPriorite() {return priorite; }
     const QDateTime& getEcheance() {return echeance; }
     Status getStatus() {return status; }
+    void setStatus(const Status s) {status = s;}
+
+public slots :
+
+    void setStatusEnAttente(bool checked);
+    void setStatusEnCours(bool checked);
+    void setStatusTerminee(bool checked);
 };
 
 #endif // VERSIONNOTE_H

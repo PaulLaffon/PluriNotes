@@ -23,6 +23,8 @@ void PartieCentrale::ouvrirNote(QListWidgetItem *item)
     // Ici on gère les différents type de note à ouvrir
     if(n->type() == ARTICLE)
         affichage = new AffichageArticle(n, this);
+    else if (n->type() == TACHE)
+        affichage = new AffichageTache(n,this);
     else
         throw NoteException("Type de note non pris en charge lors de l'ouverture de l'affichage de la note");
 

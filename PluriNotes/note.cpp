@@ -13,6 +13,8 @@ void Note::ajouterVersion(TypeNote type, QXmlStreamReader& stream)
     // Ici on gère le type de la version qu'on veut ajotuer
     if(type == ARTICLE)
         nouveau = new Article(stream);
+    else if (type == TACHE)
+        nouveau = new Tache(stream);
     else
         throw NoteException(QString("Type de version non reconnu"));
 
@@ -24,6 +26,12 @@ void Note::ajouterVersion(TypeNote type, QXmlStreamReader& stream)
 void Note::ajouterVersion(const QString &titre, const QString &texte)
 {
     Article* nouveau = new Article(titre, texte);
+    versions.push_back(nouveau);
+}
+
+void Note::ajouterVersion(const QString& titre,const QString& action,const int priorite,const QDateTime echeance,Status status)
+{
+    Tache* nouveau = new Tache(titre,action,priorite,echeance,status);
     versions.push_back(nouveau);
 }
 

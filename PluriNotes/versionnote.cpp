@@ -120,3 +120,21 @@ void Tache::readFromFile(QXmlStreamReader& stream)
     echeance = QDateTime::fromString(VersionNote::textNextBaliseXml(stream));
     status = getStatusFromText(VersionNote::textNextBaliseXml(stream));
 }
+
+void Tache::setStatusEnAttente(bool checked)
+{
+    if (checked)
+        status=enAttente;
+}
+
+void Tache::setStatusEnCours(bool checked)
+{
+    if (checked)
+        status=enCours;
+}
+
+void Tache::setStatusTerminee(bool checked)
+{
+    if (checked)
+        status=terminee;
+}
