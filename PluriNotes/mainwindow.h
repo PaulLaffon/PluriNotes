@@ -10,6 +10,7 @@
 #include "partiegauche.h"
 
 #include "relationmanager.h"
+#include "creationrelation.h"
 
 class MainWindow : public QMainWindow
 {

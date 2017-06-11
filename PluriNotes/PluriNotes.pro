@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     partiegauche.cpp \
     relation.cpp \
     couple.cpp \
-    relationmanager.cpp
+    relationmanager.cpp \
+    creationrelation.cpp
 
 HEADERS  += mainwindow.h \
     note.h \
@@ -29,4 +30,5 @@ HEADERS  += mainwindow.h \
     partiegauche.h \
     relation.h \
     couple.h \
-    relationmanager.h
+    relationmanager.h \
+    creationrelation.h

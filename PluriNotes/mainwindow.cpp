@@ -5,6 +5,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     NoteManager& instance = NoteManager::getInstance();
 
+
     centre = new PartieCentrale(this);
     setCentralWidget(centre);
 
@@ -17,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     fichier = new QMenu("Fichier", this);
     fichier->addAction("Nouvel Article");
     fichier->addAction("Nouvelle Tache");
+    fichier->addAction("Nouveau Type de Relation");
 
     menu->addMenu(fichier);
 
@@ -44,25 +46,33 @@ void MainWindow::clicFichier(QAction *a)
 {
     QInputDialog *d = new QInputDialog(this);
     d->setInputMode(QInputDialog::TextInput);
+    CreationRelation *rel = new CreationRelation(this);
 
     NoteManager& instance = NoteManager::getInstance();
+    RelationManager& relations = RelationManager::getInstance();
 
     if(a->text() == QString("Nouvel Article"))
     {
         d->setLabelText(QString("Id du nouvel article"));
         connect(d, SIGNAL(textValueSelected(QString)), &instance, SLOT(nouvelleArticle(QString)));
+        d->exec();
     }
     else if(a->text() == QString("Nouvelle Tache"))
     {
         d->setLabelText(QString("Id de la nouvelle tache"));
         connect(d,SIGNAL(textValueSelected(QString)),&instance,SLOT(nouvelleTache(QString)));
+        d->exec();
+    }
+    else if(a->text() == QString("Nouveau Type de Relation"))
+    {
+        connect(rel,SIGNAL(RelationAccepter(QString,QString)),&relations,SLOT(ajouterRelation(Qstring,Qstring)));
+
     }
     else
         throw NoteException("Type à créer non reconnu, slot clicFichier");
 
 
 
-    d->exec();
 }
 
 

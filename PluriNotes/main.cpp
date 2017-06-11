@@ -3,13 +3,13 @@
 
 #include "notemanager.h"
 #include "affichagenote.h"
+#include "relationmanager.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     NoteManager& instance = NoteManager::getInstance();
-    //RelationManager& relations = RelationManager::getInstance();
 
 
 

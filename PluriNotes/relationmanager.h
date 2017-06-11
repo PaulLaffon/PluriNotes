@@ -31,11 +31,16 @@ public:
     void saveAll(QXmlStreamWriter& stream); /*!< \brief Sauvegarde toutes les relations dans un fichier XML, est appelé par saveAll() de NoteManager */
     void load(QXmlStreamReader& stream); /*!< \brief Charge les relations à partir d'une fichier XML, est appelé par load() de NoteManager */
 
-    void ajouterRelation(const QString& titre, const QString& descrition); /*!< \brief Permet d'ajouter une relation sans aucun Couple */
 
     Relation* find(const QString& titre); /*!< \brief Renvoie un pointeur sur la relation correspondant au titre, ou nullptr si elle n'existe pas */
 
     Relation* back() const {return relations.back();} /*!< \brief Renvoie la dernière Relation créé, utilisé dans la fonction load() */
+
+public slots:
+    void ajouterRelation(const QString& titre, const QString& descrition); /*!< \brief Permet d'ajouter une relation sans aucun Couple */
+
+signals:
+    void creationRelation();
 };
 
 #endif // RELATIONMANAGER_H

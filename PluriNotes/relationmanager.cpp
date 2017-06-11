@@ -81,5 +81,3 @@ void RelationManager::saveAll(QXmlStreamWriter &stream)
 
 
 
-
-
