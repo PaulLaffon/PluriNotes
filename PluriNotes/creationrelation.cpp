@@ -2,9 +2,7 @@
 
 CreationRelation::CreationRelation(QWidget *parent): QDialog(parent)
 {
-    QFormLayout form(this);
-    layoutId = new QHBoxLayout();
-    layoutDescription = new QHBoxLayout();
+    layout = new QVBoxLayout();
 
     labelId = new QLabel("Id : ", this);
     labelDescription = new QLabel("Description : ", this);
@@ -12,23 +10,19 @@ CreationRelation::CreationRelation(QWidget *parent): QDialog(parent)
     id = new QLineEdit(this);
     description = new QTextEdit(this);
 
-    QDialogButtonBox buttonbox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel,Qt::Horizontal);
-    connect(&buttonbox, SIGNAL(accepted()), this, SLOT(valider()));
-    connect(&buttonbox, SIGNAL(rejected()), this, SLOT(reject()));
+    buttonbox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel,Qt::Horizontal);
+    connect(buttonbox, SIGNAL(accepted()), this, SLOT(valider()));
+    connect(buttonbox, SIGNAL(rejected()), this, SLOT(reject()));
 
-    layoutId->addWidget(labelId);
-    layoutId->addWidget(id);
+    layout->addWidget(labelId);
+    layout->addWidget(id);
 
-    layoutDescription->addWidget(labelDescription);
-    layoutDescription->addWidget(description);
+    layout->addWidget(labelDescription);
+    layout->addWidget(description);
 
-    form.addRow(layoutId);
+    layout->addWidget(buttonbox);
 
-    form.addRow(layoutDescription);
-
-    form.addRow(&buttonbox);
-
-
+    this->setLayout(layout);
 }
 
 void CreationRelation::valider()

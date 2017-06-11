@@ -69,7 +69,7 @@ void MainWindow::clicFichier(QAction *a)
     else if(a->text() == QString("Nouveau Type de Relation"))
     {
         connect(rel,SIGNAL(RelationAccepter(QString,QString)),&relations,SLOT(ajouterRelation(QString,QString)));
-
+        rel->exec();
     }
     else
         throw NoteException("Type à créer non reconnu, slot clicFichier");

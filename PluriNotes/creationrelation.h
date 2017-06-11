@@ -11,15 +11,14 @@
 #include <QString>
 #include <QDialogButtonBox>
 #include <QFormLayout>
+#include <QInputDialog>
 
-#include "relationmanager.h"
 
 class CreationRelation : public QDialog
 {
     Q_OBJECT
-protected:
-    QHBoxLayout *layoutId;
-    QHBoxLayout *layoutDescription;
+private:
+    QVBoxLayout *layout;
 
     QLabel *labelId;
     QLabel *labelDescription;
@@ -27,9 +26,9 @@ protected:
     QLineEdit *id;
     QTextEdit *description;
 
-    QDialogButtonBox buttonbox;
+    QDialogButtonBox *buttonbox;
 public:
-    CreationRelation(QWidget *parent);
+    CreationRelation(QWidget *parent = 0);
 
 signals:
     void RelationAccepter(QString id, QString Description);
