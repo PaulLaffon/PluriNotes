@@ -14,7 +14,7 @@ PartieGauche::PartieGauche(QWidget *parent) : QDockWidget(parent)
     layout->addWidget(tache);
 
     chargerListeNote();
-    new QListWidgetItem(tr("Ici seront les tache"), tache);
+    chargerListeTaches();
 
     this->setWidget(widgetTotal);
 }
@@ -35,5 +35,15 @@ void PartieGauche::chargerListeNote()
     {
         // Ajoute chaque article à la liste
         new QListWidgetItem((*it)->getId(), noteActive);
+    }
+}
+
+void PartieGauche::chargerListeTaches()
+{
+    NoteManager& instance = NoteManager::getInstance();
+
+    for(NoteManager::TypeIterator it = instance.begin(TACHE); it != instance.end();++it)
+    {
+        new QListWidgetItem((*it)->getId(),tache);
     }
 }

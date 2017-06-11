@@ -103,3 +103,109 @@ void AffichageArticle::nouvelleVersion()
     note->ajouterVersion(titre->text(), texte->toPlainText());
     chargerListeVersion();
 }
+
+AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent)
+{
+    layoutAction = new QHBoxLayout();
+    layoutPriorite = new QHBoxLayout();
+    layoutEcheance = new QHBoxLayout();
+    layoutStatus = new QHBoxLayout();
+    layoutButtons = new QVBoxLayout();
+
+    labelAction = new QLabel("Action : ",this);
+    labelPriorite = new QLabel("Priorite : ",this);
+    labelEcheance = new QLabel("Echeance : ",this);
+    groupStatus = new QGroupBox("Status",this);
+
+    action = new QTextEdit(this);
+    priorite = new QLineEdit(this);
+    echeance = new QLineEdit(this);
+    statusEnAttente = new QRadioButton("En attente");
+    statusEnCours = new QRadioButton("En cours");
+    statusTerminee = new QRadioButton("Terminee");
+    //statusEnAttente->setChecked(true);
+    statusAffichage = enAttente;
+
+    layoutButtons->addWidget(statusEnAttente);
+    layoutButtons->addWidget(statusEnCours);
+    layoutButtons->addWidget(statusTerminee);
+
+    layoutAction->addWidget(labelAction);
+    layoutAction->addWidget(action);
+
+    layoutPriorite->addWidget(labelPriorite);
+    layoutPriorite->addWidget(priorite);
+
+    layoutEcheance->addWidget(labelEcheance);
+    layoutEcheance->addWidget(echeance);
+
+    groupStatus->setLayout(layoutButtons);
+    layoutStatus->addWidget(groupStatus);
+
+    layoutPrincipal->insertLayout(3,layoutEcheance);
+    layoutPrincipal->insertLayout(4,layoutPriorite);
+    layoutPrincipal->insertLayout(5,layoutStatus);
+    layoutPrincipal->insertLayout(6,layoutAction);
+
+    chargerVersion(note->getNumberVersion() - 1);
+
+    connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
+
+
+}
+
+void AffichageTache::setStatus()
+{
+    if (statusAffichage==enCours)
+    {
+        statusEnCours->setChecked(true);
+        statusEnAttente->setChecked(false);
+    }
+    else if (statusAffichage==terminee)
+    {
+        statusTerminee->setChecked(true);
+        statusEnAttente->setChecked(false);
+    }
+    else if (statusAffichage==enAttente)
+    {
+        statusEnAttente->setChecked(true);
+    }
+}
+
+
+
+void AffichageTache::chargerVersion(unsigned int i)
+{
+    // A ce moment là, la note est obligatoirement une Tache
+    Tache *t = dynamic_cast<Tache*>(note->getVersion(i));
+
+    // Test au cas où le dynamique cast échoue
+    if(t == nullptr) throw NoteException("La note passé ne correspond pas à une tache, erreur de dynamique cast");
+
+    action->setText(t->getAction());
+    titre->setText(t->getTitre());
+    id->setText(note->getId());
+    echeance->setText(t->getEcheance().toString());
+    priorite->setText(QString::number(t->getPriorite()));
+    statusAffichage == t->getStatus();
+    setStatus();
+
+    modifStatus(t);
+
+}
+
+void AffichageTache::nouvelleVersion()
+{
+    note->ajouterVersion(titre->text(), action->toPlainText(),priorite->text().toInt(),QDateTime::fromString(echeance->text()),statusAffichage);
+    chargerListeVersion();
+}
+
+void AffichageTache::modifStatus(Tache *t)
+{
+    connect(statusEnAttente,SIGNAL(toggled(bool)),t,SLOT(setStatusEnAttente(bool)));
+    connect(statusEnCours,SIGNAL(toggled(bool)),t,SLOT(setStatusEnCours(bool)));
+    connect(statusTerminee,SIGNAL(toggled(bool)),t,SLOT(setStatusTerminee(bool)));
+    statusAffichage = t->getStatus();
+}
+
+

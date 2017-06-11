@@ -98,10 +98,12 @@ public:
 
 public slots:
     void nouvelleArticle(const QString& id); /*!< \brief Cree un nouvel article avec une première version vide */
+    void nouvelleTache(const QString& id); /*!< \brief Cree une nouvelle tache avec une première version vide */
 
 signals:
     void erreur(QString); /*!< \brief Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà */
-    void creationNote(); /*!< \brief Signal qui indique qu'une nouvelle note a été créé, recharger la liste des notes */
+    void creationNote(); /*!< \brief Signal qui indique qu'une nouvelle note a été créée, recharger la liste des notes */
+    void creationTache(); /*!< \brief Signal qui indique qu'une nouvelle tache a été créée, recharger la liste des notes */
 
 };
 

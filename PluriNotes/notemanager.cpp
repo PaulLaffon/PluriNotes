@@ -50,6 +50,20 @@ void NoteManager::nouvelleArticle(const QString &id)
     }
 }
 
+void NoteManager::nouvelleTache(const QString& id)
+{
+    if(find(id))
+        emit erreur(QString("Une note avec cet id existe déjà"));
+    else
+    {
+        Note* nouvelle = new Note(id);
+        nouvelle->ajouterVersion(QString(""),QString(""),0,QDateTime::currentDateTime(),enAttente);
+        notes.push_back(nouvelle);
+
+        emit creationTache();
+    }
+}
+
 void NoteManager::saveAll()
 {
     QFile file(filename);

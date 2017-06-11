@@ -25,12 +25,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Lorsqu'on double clic sur une note dans la partie gauche ==> Affiche la note dans la partie centrale
     connect(gauche->getNoteActive(), SIGNAL(itemDoubleClicked(QListWidgetItem*)), centre, SLOT(ouvrirNote(QListWidgetItem*)));
+    connect(gauche->getTache(),SIGNAL(itemDoubleClicked(QListWidgetItem*)),centre,SLOT(ouvrirNote(QListWidgetItem*)));
 
     // Lorsqu'on clic dans le menu fichier
     connect(fichier, SIGNAL(triggered(QAction*)), this, SLOT(clicFichier(QAction*)));
 
     // Lorsqu'une note est créé, on actualise la partie gauche
     connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerListeNote()));
+    connect(&instance,SIGNAL(creationTache()),gauche,SLOT(chargerListeTaches()));
 
 
     connect(&instance, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
@@ -56,6 +58,7 @@ void MainWindow::clicFichier(QAction *a)
     else if(a->text() == QString("Nouvelle Tache"))
     {
         d->setLabelText(QString("Id de la nouvelle tache"));
+        connect(d,SIGNAL(textValueSelected(QString)),&instance,SLOT(nouvelleTache(QString)));
     }
     else
         throw NoteException("Type à créer non reconnu, slot clicFichier");

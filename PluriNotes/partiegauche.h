@@ -30,9 +30,11 @@ public:
     ~PartieGauche();
 
     QListWidget* getNoteActive() const {return noteActive;} // Pour connect avec partieCentrale dans mainWindow
+    QListWidget* getTache() const {return tache;}
 
 public slots:
     void chargerListeNote(); /*!< \brief Charge toutes les notes actives dans la liste */
+    void chargerListeTaches(); /*!< \brief Charge toutes les taches */
 };
 
 #endif // PARTIEGAUCHE_H

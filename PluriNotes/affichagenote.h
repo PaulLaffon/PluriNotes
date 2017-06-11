@@ -12,6 +12,8 @@
 #include <QMdiSubWindow>
 #include <QCloseEvent>
 #include <QComboBox>
+#include <QGroupBox>
+#include <QRadioButton>
 
 #include "notemanager.h"
 
@@ -85,5 +87,46 @@ public:
 public slots:
     void nouvelleVersion(); /*!< \brief Permet de créer une nouvelle version de la note */
 };
+
+class AffichageTache : public AffichageNote
+{
+    Q_OBJECT
+private :
+
+    Status statusAffichage;
+
+    QHBoxLayout *layoutAction;
+    QHBoxLayout *layoutPriorite;
+    QHBoxLayout *layoutEcheance;
+    QHBoxLayout *layoutStatus;
+    QVBoxLayout *layoutButtons;
+
+    QLabel *labelAction;
+    QLabel *labelPriorite;
+    QLabel *labelEcheance;
+    QGroupBox *groupStatus;
+
+    QTextEdit *action;
+    QLineEdit *echeance;
+    QRadioButton *statusEnAttente;
+    QRadioButton *statusEnCours;
+    QRadioButton *statusTerminee;
+    QLineEdit *priorite;
+
+public :
+    AffichageTache(Note* n,QWidget *parent = 0);
+
+    void chargerVersion(unsigned int i);
+
+    void setStatus();
+
+    void modifStatus(Tache *t);
+
+public slots :
+    void nouvelleVersion();
+
+
+};
+
 
 #endif // AFFICHAGENOTE_H
