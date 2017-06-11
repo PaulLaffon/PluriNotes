@@ -50,9 +50,68 @@ public:
         Couple& operator*() {return **it;}
     };
 
+    /*! \class iteratorSuccPred
+     *  \brief Iterateur pour parcourir tous les successeurs ou predecesseurs d'une note dans une relation
+     * */
+    class iteratorSuccPred
+    {
+    private:
+        friend class Relation;
+        QVector<Couple*>::iterator it;
+        Note *note;
+        bool successeur; /*!< \brief Si il est vrai, on parcourt les successeur, sinon les prédécesseur */
+        int restant;
+
+    public:
+        iteratorSuccPred() : note(nullptr), restant(0) {}
+        iteratorSuccPred(QVector<Couple*>::iterator i, Note *n, bool succ, int r) :it(i), note(n), successeur(succ), restant(r)
+        {
+            if(successeur) {
+                while (restant > 0 && (*it)->getPere() != note) {
+                    it++;
+                    restant--;
+                }
+            }
+            else {
+                while (restant > 0 && (*it)->getFils() != note) {
+                    it++;
+                    restant--;
+                }
+            }
+        }
+
+        bool operator !=(const iteratorSuccPred& i) const {return it != i.it;}
+
+        iteratorSuccPred& operator++() {
+            ++it; restant--;
+            if(successeur) {
+                while (restant > 0 && (*it)->getPere() != note) {
+                    it++;
+                    restant--;
+                }
+            }
+            else {
+                while (restant > 0 && (*it)->getFils() != note) {
+                    it++;
+                    restant--;
+                }
+            }
+            return *this;
+        }
+
+        Note* operator*() {
+            if(successeur)
+                return (*it)->getFils();
+
+            return (*it)->getPere();
+        }
+    };
+
     iterator begin() {return iterator(couples.begin());}
     iterator end() {return iterator(couples.end());}
 
+    iteratorSuccPred begin(Note* n, bool successeur) {return iteratorSuccPred(couples.begin(), n, successeur, couples.size());}
+    iteratorSuccPred endSuccPred() {return iteratorSuccPred(couples.end(), nullptr, true, 0);}
 };
 
 #endif // RELATION_H

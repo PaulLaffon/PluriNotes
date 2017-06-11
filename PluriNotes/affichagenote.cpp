@@ -187,7 +187,7 @@ void AffichageTache::chargerVersion(unsigned int i)
     id->setText(note->getId());
     echeance->setText(t->getEcheance().toString());
     priorite->setText(QString::number(t->getPriorite()));
-    statusAffichage == t->getStatus();
+    statusAffichage = t->getStatus();
     setStatus();
 
     modifStatus(t);
