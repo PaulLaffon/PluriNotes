@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     NoteManager& instance = NoteManager::getInstance();
+    //RelationManager& relations = RelationManager::getInstance();
+
 
     // Charger les notes charge aussi les relations
     instance.load();
