@@ -68,7 +68,7 @@ void MainWindow::clicFichier(QAction *a)
     }
     else if(a->text() == QString("Nouveau Type de Relation"))
     {
-        connect(rel,SIGNAL(RelationAccepter(QString,QString)),&relations,SLOT(ajouterRelation(Qstring,Qstring)));
+        connect(rel,SIGNAL(RelationAccepter(QString,QString)),&relations,SLOT(ajouterRelation(QString,QString)));
 
     }
     else
