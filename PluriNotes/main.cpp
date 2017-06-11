@@ -11,9 +11,6 @@ int main(int argc, char *argv[])
     NoteManager& instance = NoteManager::getInstance();
     //RelationManager& relations = RelationManager::getInstance();
 
-
-
-
     // Charger les notes charge aussi les relations
     instance.load();
 

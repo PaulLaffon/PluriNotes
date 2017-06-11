@@ -11,6 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
     gauche = new PartieGauche(this);
     addDockWidget(Qt::DockWidgetArea::LeftDockWidgetArea, gauche);
 
+    droite = new PartieDroite(this);
+    addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, droite);
+
     menu = new QMenuBar(this);
     setMenuBar(menu);
 
