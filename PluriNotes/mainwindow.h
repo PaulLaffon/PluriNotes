@@ -8,6 +8,7 @@
 
 #include "partiecentrale.h"
 #include "partiegauche.h"
+#include "partiedroite.h"
 
 #include "relationmanager.h"
 #include "creationrelation.h"
@@ -18,6 +19,7 @@ class MainWindow : public QMainWindow
 private:
     PartieCentrale *centre;
     PartieGauche *gauche;
+    PartieDroite *droite;
     QMenuBar *menu;
     QMenu *fichier;
 
