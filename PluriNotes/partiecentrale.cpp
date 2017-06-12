@@ -33,6 +33,9 @@ void PartieCentrale::ouvrirNote(QListWidgetItem *item)
 
     // Lors de la fermeture de cette note, on veut l'enlever du tableau
     connect(notes.back(), SIGNAL(fermetureNote(const QString&)), this, SLOT(fermerNote(const QString&)));
+    connect(notes.back(), SIGNAL(passagePremierPlan(Note*)), this, SLOT(emitRechargerArbre(Note*)));
+
+    emit rechargerArbre(n);
 }
 
 // SLOT, on enlève la note du tableau
@@ -58,3 +61,9 @@ AffichageNote* PartieCentrale::dejaOuvert(const QString& id) const
 
     return nullptr;
 }
+
+void PartieCentrale::emitRechargerArbre(Note *n)
+{
+    emit rechargerArbre(n);
+}
+

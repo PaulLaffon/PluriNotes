@@ -24,10 +24,13 @@ public:
     PartieCentrale(QWidget *parent = 0);
 
 signals:
+    void rechargerArbre(Note *n); /*!< \brief Signal émit pour indiquer qu'on a besoin de recharger l'arbre des relations */
 
 public slots:
     void ouvrirNote(QListWidgetItem* item); /*!< \brief Ouvre la note quand on double clic dessus dans le menu de gauche */
     void fermerNote(const QString& id); /*!< \brief Retire la note du tableau quand l'affichage est fermé */
+
+    void emitRechargerArbre(Note *n);
 };
 
 #endif // PARTIECENTRALE_H

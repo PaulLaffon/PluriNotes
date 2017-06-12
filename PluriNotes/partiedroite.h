@@ -7,6 +7,8 @@
 #include <QPushButton>
 #include <QTreeWidget>
 
+#include "notemanager.h"
+
 class PartieDroite : public QDockWidget
 {
     Q_OBJECT
@@ -19,9 +21,15 @@ private:
 
     QTreeWidget *arbre; /*!< \brief Arborescence des notes par rapport aux relation */
 
+    void chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note*> &noteDejaAjoutes);
+
 public:
     PartieDroite(QWidget *parent = 0);
     ~PartieDroite();
+
+
+public slots:
+    void chargerArbre(Note *n);
 
 };
 

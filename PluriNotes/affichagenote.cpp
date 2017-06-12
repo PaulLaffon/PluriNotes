@@ -57,6 +57,13 @@ void AffichageNote::closeEvent(QCloseEvent *event)
     event->accept();
 }
 
+// Redéfinition de la fonction quand la sous fenetre passe au premier plan
+void AffichageNote::focusInEvent(QFocusEvent *event)
+{
+    emit passagePremierPlan(note);
+    event->accept();
+}
+
 AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(n, parent)
 {
     layoutTexte = new QHBoxLayout();

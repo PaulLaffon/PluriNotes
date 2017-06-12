@@ -39,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     connect(&instance, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
+
+    connect(centre, SIGNAL(rechargerArbre(Note*)), droite, SLOT(chargerArbre(Note*)));
 }
 
 MainWindow::~MainWindow()
