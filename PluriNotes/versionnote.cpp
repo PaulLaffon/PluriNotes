@@ -62,6 +62,8 @@ const QString VersionNote::typeQString[] = {QString("Article"), QString("Tache")
 
 const QString Tache::StatusQString[] = {QString("En attente"), QString("En cours"), QString("Terminee")};
 
+const QString Multimedia::TypeMultimediaQString[] = {QString("image"), QString("audio"), QString("video")};
+
 TypeNote VersionNote::getTypeFromText(const QString &s)
 {
     if(s == QString("Article"))
@@ -78,6 +80,16 @@ Status Tache::getStatusFromText(const QString& s)
         return enCours;
 
     return terminee;
+}
+
+TypeMultimedia Multimedia::getTypeMultimediaFromText(const QString& t)
+{
+    if(t == QString("image"))
+        return image;
+    else if(t == QString("audio"))
+        return audio;
+
+    return video;
 }
 
 Tache::Tache(QXmlStreamReader& stream) : VersionNote()
@@ -138,3 +150,44 @@ void Tache::setStatusTerminee(bool checked)
     if (checked)
         status=terminee;
 }
+
+Multimedia::Multimedia(const QString &_titre, const QString &_descr, const QString _file, QDateTime modif) :
+    VersionNote(_titre,modif),description(_descr),file(_file)
+{
+
+}
+
+Multimedia::Multimedia(QXmlStreamReader &stream) : VersionNote()
+{
+    readFromFile(stream);
+}
+
+Multimedia::~Multimedia()
+{
+
+}
+
+void Multimedia::writeInFile(QXmlStreamWriter& stream) const
+{
+    stream.writeStartElement("Version");
+
+    stream.writeTextElement("Type", textFromType(type()));
+    stream.writeTextElement("Date", dateModif.toString());
+    stream.writeTextElement("Titre", titre);
+    stream.writeTextElement("Description", description);
+    stream.writeTextElement("Fichier", file);
+    stream.writeTextElement("TypeMedia",getTextTypeMultimedia(typeMedia));
+
+
+    stream.writeEndElement();
+}
+
+void Multimedia::readFromFile(QXmlStreamReader& stream)
+{
+    dateModif = QDateTime::fromString(VersionNote::textNextBaliseXml(stream));
+    titre = VersionNote::textNextBaliseXml(stream);
+    description = VersionNote::textNextBaliseXml(stream);
+    file = VersionNote::textNextBaliseXml(stream);
+    typeMedia = getTypeMultimediaFromText(VersionNote::textNextBaliseXml(stream));
+}
+
