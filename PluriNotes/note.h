@@ -66,7 +66,6 @@ public:
 
     public:
         iterator(QVector<VersionNote*>::iterator i) :it(i) {}
-
         bool operator !=(const iterator& i) const {return it != i.it;}
         iterator& operator++() {it++; return *this;}
         VersionNote& operator*() {return **it;}

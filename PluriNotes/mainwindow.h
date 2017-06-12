@@ -12,6 +12,7 @@
 
 #include "relationmanager.h"
 #include "creationrelation.h"
+#include "creationcouple.h"
 
 class MainWindow : public QMainWindow
 {

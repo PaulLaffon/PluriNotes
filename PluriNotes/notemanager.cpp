@@ -172,7 +172,7 @@ void NoteManager::load()
                 QString pere = VersionNote::textNextBaliseXml(stream);
                 QString fils = VersionNote::textNextBaliseXml(stream);
 
-                relations.back()->ajouterCouple(label, find(pere), find(fils));
+                relations.back()->ajoutCouple(label, find(pere), find(fils));
             }
         }
     }

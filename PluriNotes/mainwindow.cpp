@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     fichier->addAction("Nouvel Article");
     fichier->addAction("Nouvelle Tache");
     fichier->addAction("Nouveau Type de Relation");
+    fichier->addAction("Ajouter un couple");
 
     menu->addMenu(fichier);
 
@@ -50,6 +51,7 @@ void MainWindow::clicFichier(QAction *a)
     QInputDialog *d = new QInputDialog(this);
     d->setInputMode(QInputDialog::TextInput);
     CreationRelation *rel = new CreationRelation(this);
+    CreationCouple *cou = new CreationCouple(this);
 
     NoteManager& instance = NoteManager::getInstance();
     RelationManager& relations = RelationManager::getInstance();
@@ -71,6 +73,15 @@ void MainWindow::clicFichier(QAction *a)
         connect(rel,SIGNAL(RelationAccepter(QString,QString)),&relations,SLOT(ajouterRelation(QString,QString)));
         rel->exec();
     }
+    else if(a->text() == QString("Ajouter un couple"))
+    {
+        cou->chargerListeRelation();
+        cou->chargerListeNote1();
+        cou->chargerListeNote2();
+        connect(cou,SIGNAL(CoupleAccepter(QString,QString,Note*,Note*)),&relations,SLOT(ajouterCouple(QString,QString,Note*,Note*)));
+        cou->exec();
+    }
+
     else
         throw NoteException("Type à créer non reconnu, slot clicFichier");
 

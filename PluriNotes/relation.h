@@ -24,7 +24,7 @@ private:
 public:
     Relation(const QString& _titre, const QString& _description);
 
-    void ajouterCouple(const QString& label, Note* pere, Note* fils); /*!< \brief Ajoute un couple à la Relation */
+    void ajoutCouple(const QString& label, Note* pere, Note* fils); /*!< \brief Ajoute un couple à la Relation */
 
 
     const QString& getTitre() const {return titre;}

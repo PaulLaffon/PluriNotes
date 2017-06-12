@@ -49,6 +49,12 @@ void RelationManager::ajouterRelation(const QString &titre, const QString &descr
     relations.push_back(new Relation(titre, descrition));
 }
 
+void RelationManager::ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2)
+{
+    Relation* relation = find(id);
+    relation->ajoutCouple(titre,note1,note2);
+}
+
 // Sauvegarde les relations en utilisant le QXmlStreamWriter de NoteManager
 // Les relations sont sauvegardés à la fin du fichier XML
 void RelationManager::saveAll(QXmlStreamWriter &stream)

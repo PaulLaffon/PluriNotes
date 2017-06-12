@@ -16,7 +16,7 @@ enum Status {enAttente, enCours, terminee};
 /*! \enum TypeNote
  *  \brief Enumération des différents type de Note
  */
-enum TypeNote {ARTICLE, TACHE};
+enum TypeNote {ARTICLE, TACHE,FIN};
 
 /*! \class VersionNote
  *  \brief Classe abstraite qui regroupe les partie communes d'une version d'une Note

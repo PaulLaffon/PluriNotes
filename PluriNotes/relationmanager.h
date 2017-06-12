@@ -104,7 +104,7 @@ public:
     iteratorPredSucc endSuccPred() {return iteratorPredSucc();}
     public slots:
         void ajouterRelation(const QString& titre, const QString& descrition); /*!< \brief Permet d'ajouter une relation sans aucun Couple */
-
+        void ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2); /*!< \brief Permet d'ajouter un couple à une relation */
     signals:
         void creationRelation();
 
