@@ -38,16 +38,17 @@ void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, Q
 {
     RelationManager& relations = RelationManager::getInstance();
 
+    if(noteDejaAjoutes.contains(noteActu))
+        return;
+
+    noteDejaAjoutes.insert(noteActu);
+
     for(RelationManager::iteratorPredSucc it = relations.begin(noteActu, true); it != relations.endSuccPred(); ++it)
     {
         QTreeWidgetItem *fils = new QTreeWidgetItem(pere, QTreeWidgetItem::Type);
         fils->setText(0, (*it)->getId());
 
-        if(!noteDejaAjoutes.contains(noteActu))
-        {
-            noteDejaAjoutes.insert(noteActu);
-            chargerArbreRecursif(fils, *it, noteDejaAjoutes);
-        }
+        chargerArbreRecursif(fils, *it, noteDejaAjoutes);
     }
     arbre->expandItem(pere);
 }

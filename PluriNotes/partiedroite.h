@@ -27,6 +27,7 @@ public:
     PartieDroite(QWidget *parent = 0);
     ~PartieDroite();
 
+    QTreeWidget* getArbre() const {return arbre;}
 
 public slots:
     void chargerArbre(Note *n);
