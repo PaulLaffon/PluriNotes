@@ -31,6 +31,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(gauche->getNoteActive(), SIGNAL(itemDoubleClicked(QListWidgetItem*)), centre, SLOT(ouvrirNote(QListWidgetItem*)));
     connect(gauche->getTache(),SIGNAL(itemDoubleClicked(QListWidgetItem*)),centre,SLOT(ouvrirNote(QListWidgetItem*)));
 
+    // Lorsqu'on double clic sur une note dans l'arborescense, ça affiche la note dans la partie centrale
+    connect(droite->getArbre(), SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), centre, SLOT(ouvrirNote(QTreeWidgetItem*,int)));
+
     // Lorsqu'on clic dans le menu fichier
     connect(fichier, SIGNAL(triggered(QAction*)), this, SLOT(clicFichier(QAction*)));
 
@@ -38,6 +41,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerListeNote()));
     connect(&instance,SIGNAL(creationTache()),gauche,SLOT(chargerListeTaches()));
 
+    // Lorsqu'on change la note au premier plan, on change l'arborescense correspondante
+    connect(centre, SIGNAL(rechargerArbre(Note*)), droite, SLOT(chargerArbre(Note*)));
 
     connect(&instance, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
     connect(&relations, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));

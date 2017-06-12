@@ -51,12 +51,15 @@ public:
 
     void closeEvent(QCloseEvent *event); /*!< \brief Redéfinition de la fonction lorsque la fenetre est fermée */
 
+    void focusInEvent(QFocusEvent* event); /*!< \brief Redéfinition de la fonciton lors que la fenetre passe au premier plan */
+
     QString getId() const {return id->text();}
 
     virtual void chargerVersion(unsigned int i) = 0; /*!< \brief Charge la version de la note afin de pouvoir l'éditer */
 
 signals:
     void fermetureNote(const QString& id); /*!< \brief Signal émit lors de la redéfinition de closeEvent() */
+    void passagePremierPlan(Note *n); /*!< \brief Signal émit lorsque la note passe au premier plan */
 
 public slots:
     virtual void nouvelleVersion() = 0;

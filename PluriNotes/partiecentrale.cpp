@@ -5,19 +5,31 @@ PartieCentrale::PartieCentrale(QWidget *parent) : QMdiArea(parent)
 
 }
 
-// SLOT
+// SLOT, appelé lorsque qu'on double clic sur une note dans le menu à gauche
 void PartieCentrale::ouvrirNote(QListWidgetItem *item)
 {
+    ouvrirNote(item->text());
+}
+
+// SLOT, appelé lorsque qu'on double clic sur une note dans le menu à droite (arborescense)
+void PartieCentrale::ouvrirNote(QTreeWidgetItem *item, int column)
+{
+    ouvrirNote(item->text(column));
+}
+
+// Fonction appelée par les slots du même nom pour ouvrir une note
+void PartieCentrale::ouvrirNote(const QString &id)
+{
     // Si la note est déjà affiché, on la mets au premier plan et on arrete la fonction
-    if(dejaOuvert(item->text()))
+    if(dejaOuvert(id))
     {
-        dejaOuvert(item->text())->setFocus();
+        dejaOuvert(id)->setFocus();
         return;
     }
 
     // on récupère la note correspondant à l'id
     NoteManager& instance = NoteManager::getInstance();
-    Note* n = instance.find(item->text());
+    Note* n = instance.find(id);
 
     AffichageNote *affichage = nullptr;
     // Ici on gère les différents type de note à ouvrir
@@ -33,6 +45,9 @@ void PartieCentrale::ouvrirNote(QListWidgetItem *item)
 
     // Lors de la fermeture de cette note, on veut l'enlever du tableau
     connect(notes.back(), SIGNAL(fermetureNote(const QString&)), this, SLOT(fermerNote(const QString&)));
+    connect(notes.back(), SIGNAL(passagePremierPlan(Note*)), this, SLOT(emitRechargerArbre(Note*)));
+
+    emit rechargerArbre(n);
 }
 
 // SLOT, on enlève la note du tableau
@@ -58,3 +73,9 @@ AffichageNote* PartieCentrale::dejaOuvert(const QString& id) const
 
     return nullptr;
 }
+
+void PartieCentrale::emitRechargerArbre(Note *n)
+{
+    emit rechargerArbre(n);
+}
+
