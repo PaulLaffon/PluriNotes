@@ -4,6 +4,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     NoteManager& instance = NoteManager::getInstance();
+    RelationManager& relations = RelationManager::getInstance();
 
 
     centre = new PartieCentrale(this);
@@ -39,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     connect(&instance, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
+    connect(&relations, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
 }
 
 MainWindow::~MainWindow()

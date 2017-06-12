@@ -107,6 +107,7 @@ public:
         void ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2); /*!< \brief Permet d'ajouter un couple à une relation */
     signals:
         void creationRelation();
+        void erreur(QString);
 
 };
 

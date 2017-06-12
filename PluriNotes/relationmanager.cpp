@@ -52,6 +52,8 @@ void RelationManager::ajouterRelation(const QString &titre, const QString &descr
 void RelationManager::ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2)
 {
     Relation* relation = find(id);
+    if(note1->getId()==note2->getId())
+        emit erreur("Les deux notes sont identiques");
     relation->ajoutCouple(titre,note1,note2);
 }
 
