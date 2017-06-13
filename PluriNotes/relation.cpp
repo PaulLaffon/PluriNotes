@@ -52,4 +52,5 @@ Couple* Relation:: findCouple(const QString& label, Note* pere, Note* fils)
         else throw NoteException("Couple non existant !");
 
     }
+    return nullptr;
 }
