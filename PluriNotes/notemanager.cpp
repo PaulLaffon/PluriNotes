@@ -111,15 +111,16 @@ void NoteManager::load()
 {
     QFile file(filename);
 
+    RelationManager& relations = RelationManager::getInstance();
+
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         emit erreur(QString("Fichier de sauvegarde non trouvé, création d'un fichier de sauvegarde"));
+        relations.ajouterReference();
         return;
     }
 
     QXmlStreamReader stream(&file);
-
-    RelationManager& relations = RelationManager::getInstance();
 
     while(!stream.atEnd() && !stream.hasError())
     {
@@ -165,6 +166,13 @@ void NoteManager::load()
 
                 relations.ajouterRelation(titre, description);
             }
+            else if(stream.name() == "Reference")
+            {
+                VersionNote::textNextBaliseXml(stream); // On lit le titre mais on ne s'en sert pas
+                VersionNote::textNextBaliseXml(stream); // On lit la description mais on ne s'en sert pas
+
+                relations.ajouterReference();
+            }
 
             else if(stream.name() == "Couple")
             {
@@ -190,7 +198,40 @@ Note *NoteManager::find(const QString &id) const
     return nullptr; // ici on a pas trouvé la note correspondant
 }
 
+void NoteManager::actualiserReference()
+{
+    RelationManager& relations = RelationManager::getInstance();
 
+    Relation *reference = relations.find("Référence");
+    reference->retireAllCouple();
+
+    // On parcourt chacune des notes
+    for(QVector<Note*>::iterator it = notes.begin(); it != notes.end(); ++it)
+    {
+        QString text = (*it)->getLastVersion()->getDescription(); // On récupère le texte où les références peuvent apparaitre
+
+        QStringList listes = text.split("\\ref{"); // On sépare chaque élément du texte
+
+        QStringList::iterator itString = listes.begin();
+        itString++; // On ne s'intéresse pas au premier, car il ne contient pas de références
+
+        for(; itString != listes.end(); itString++) // Pour chaque séparation du texte
+        {
+            QString s = *itString;
+
+            int indice = 0;
+            while(indice < s.size() && s[indice] != '}') indice++; // On prends l'indice de la fin de l'id
+
+            QString id = s.left(indice); // On extrait l'id
+
+            Note* pere = *it;
+            Note* fils = find(id);
+
+            if(fils)
+                relations.ajouterCoupleReference(pere, fils);
+        }
+    }
+}
 
 
 

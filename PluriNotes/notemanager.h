@@ -38,7 +38,6 @@ public:
 
     /*! \brief Charge les notes du fichier de sauvegarde filename
      *  Appeler au lancement de l'application
-     *  Appel de la fonction load() de RelationManager en même temps pour charger toutes les informations sur les Note et Relation
      * */
     void load();
 
@@ -99,6 +98,8 @@ public:
 public slots:
     void nouvelleArticle(const QString& id); /*!< \brief Cree un nouvel article avec une première version vide */
     void nouvelleTache(const QString& id); /*!< \brief Cree une nouvelle tache avec une première version vide */
+
+    void actualiserReference(); /*!< \brief Actualise les références par rapport a toutes les notes */
 
 signals:
     void erreur(QString); /*!< \brief Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà */

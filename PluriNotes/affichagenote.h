@@ -41,6 +41,8 @@ protected:
 
     QPushButton *save;
 
+    QPushButton *supprimer;
+
     Note* note; /*!< \brief Pointeur sur la note qui correspond à l'affichage */
 
     void chargerListeVersion(); /*!< \brief Charge la liste de toutes les versions de la Note dans listeVersion */
@@ -58,6 +60,7 @@ public:
     virtual void chargerVersion(unsigned int i) = 0; /*!< \brief Charge la version de la note afin de pouvoir l'éditer */
 
 signals:
+    void actualisation(Note *n);
     void fermetureNote(const QString& id); /*!< \brief Signal émit lors de la redéfinition de closeEvent() */
     void passagePremierPlan(Note *n); /*!< \brief Signal émit lorsque la note passe au premier plan */
 

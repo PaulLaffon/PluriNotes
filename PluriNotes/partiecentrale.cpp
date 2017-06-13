@@ -46,6 +46,8 @@ void PartieCentrale::ouvrirNote(const QString &id)
     // Lors de la fermeture de cette note, on veut l'enlever du tableau
     connect(notes.back(), SIGNAL(fermetureNote(const QString&)), this, SLOT(fermerNote(const QString&)));
     connect(notes.back(), SIGNAL(passagePremierPlan(Note*)), this, SLOT(emitRechargerArbre(Note*)));
+    connect(notes.back(), SIGNAL(actualisation(Note*)), &instance, SLOT(actualiserReference()));
+    connect(notes.back(), SIGNAL(actualisation(Note*)), this, SLOT(emitRechargerArbre(Note*)));
 
     emit rechargerArbre(n);
 }

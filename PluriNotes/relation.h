@@ -30,6 +30,9 @@ public:
     const QString& getTitre() const {return titre;}
     const QString& getDescription() const {return description;}
 
+    Couple* find(Note* pere, Note* fils); /*!< \brief Recherche ce couple dans la liste des couples, renvoie le couple ou nullptr si il n'existe pas */
+
+    void retireAllCouple(); /*!< \brief Retire tous les couples de la relation */
 
     virtual bool isReference() const {return false;} /*!< \brief Indique si la relation est une Reference */
 

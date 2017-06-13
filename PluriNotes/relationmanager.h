@@ -5,6 +5,7 @@
 #include <QVector>
 
 #include "relation.h"
+#include "reference.h"
 
 /*! \class RelationManager
  *  \brief Singleton factory pour les Relation
@@ -29,12 +30,13 @@ public:
     static void deleteInstance(); /*!< Supprime l'instance de la classe */
 
     void saveAll(QXmlStreamWriter& stream); /*!< \brief Sauvegarde toutes les relations dans un fichier XML, est appelé par saveAll() de NoteManager */
-    void load(QXmlStreamReader& stream); /*!< \brief Charge les relations à partir d'une fichier XML, est appelé par load() de NoteManager */
-
 
     Relation* find(const QString& titre); /*!< \brief Renvoie un pointeur sur la relation correspondant au titre, ou nullptr si elle n'existe pas */
 
     Relation* back() const {return relations.back();} /*!< \brief Renvoie la dernière Relation créé, utilisé dans la fonction load() */
+
+    void ajouterReference(); /*!< \brief Permet d'ajouter une référence sans aucun couple */
+
     /*! \class iterator
      *  \brief Iterateur pour parcourir toutes les relations
      * */
@@ -108,6 +110,9 @@ public:
     public slots:
         void ajouterRelation(const QString& titre, const QString& descrition); /*!< \brief Permet d'ajouter une relation sans aucun Couple */
         void ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2); /*!< \brief Permet d'ajouter un couple à une relation */
+
+        void ajouterCoupleReference(Note* pere, Note* fils);
+
     signals:
         void creationRelation();
         void erreur(QString);
