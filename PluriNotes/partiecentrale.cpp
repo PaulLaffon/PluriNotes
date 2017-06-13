@@ -37,6 +37,8 @@ void PartieCentrale::ouvrirNote(const QString &id)
         affichage = new AffichageArticle(n, this);
     else if (n->type() == TACHE)
         affichage = new AffichageTache(n,this);
+    else if (n->type() == MEDIA_IMG)
+        affichage = new AffichageImage(n,this);
     else
         throw NoteException("Type de note non pris en charge lors de l'ouverture de l'affichage de la note");
 

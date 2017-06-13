@@ -14,6 +14,7 @@
 #include <QComboBox>
 #include <QGroupBox>
 #include <QRadioButton>
+#include <QPixmap>
 
 #include "notemanager.h"
 
@@ -133,6 +134,32 @@ public :
 public slots :
     void nouvelleVersion();
 
+
+};
+
+class AffichageImage : public AffichageNote
+{
+    Q_OBJECT
+private:
+    QHBoxLayout *layoutDescription;
+    QHBoxLayout *layoutPath;
+    QHBoxLayout *layoutImage;
+
+    QLabel *labelDescription;
+    QLabel *labelPath;
+    QLabel *labelImage;
+
+    QTextEdit *description;
+    QLineEdit *path;
+    QPixmap image;
+public :
+    AffichageImage(Note* n,QWidget *parent = 0);
+
+    void showImage(Multimedia *img);
+    void chargerVersion(unsigned int i);
+
+public slots:
+    void nouvelleVersion();
 
 };
 

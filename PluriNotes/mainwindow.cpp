@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     fichier = new QMenu("Fichier", this);
     fichier->addAction("Nouvel Article");
     fichier->addAction("Nouvelle Tache");
+    fichier->addAction("Nouveau Media");
     fichier->addAction("Nouveau Type de Relation");
     fichier->addAction("Ajouter un couple");
 
@@ -78,6 +79,12 @@ void MainWindow::clicFichier(QAction *a)
     {
         d->setLabelText(QString("Id de la nouvelle tache"));
         connect(d,SIGNAL(textValueSelected(QString)),&instance,SLOT(nouvelleTache(QString)));
+        d->exec();
+    }
+    else if(a->text() == QString("Nouveau Media"))
+    {
+        d->setLabelText(QString("Id de la nouvelle note media"));
+        connect(d,SIGNAL(textValueSelected(QString)),&instance,SLOT(nouveauMedia(QString)));
         d->exec();
     }
     else if(a->text() == QString("Nouveau Type de Relation"))

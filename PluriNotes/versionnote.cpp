@@ -152,7 +152,7 @@ void Tache::setStatusTerminee(bool checked)
 }
 
 Multimedia::Multimedia(const QString &_titre, const QString &_descr, const QString _file, QDateTime modif) :
-    VersionNote(_titre,modif),description(_descr),file(_file)
+    VersionNote(_titre,modif),description(_descr),file_url(_file)
 {
 
 }
@@ -167,6 +167,16 @@ Multimedia::~Multimedia()
 
 }
 
+TypeNote Multimedia::type() const
+{
+    if (typeMedia == image)
+        return MEDIA_IMG;
+    else if(typeMedia == audio)
+        return MEDIA_AUDIO;
+    else
+        return MEDIA_VID;
+}
+
 void Multimedia::writeInFile(QXmlStreamWriter& stream) const
 {
     stream.writeStartElement("Version");
@@ -175,7 +185,7 @@ void Multimedia::writeInFile(QXmlStreamWriter& stream) const
     stream.writeTextElement("Date", dateModif.toString());
     stream.writeTextElement("Titre", titre);
     stream.writeTextElement("Description", description);
-    stream.writeTextElement("Fichier", file);
+    stream.writeTextElement("Fichier", file_url);
     stream.writeTextElement("TypeMedia",getTextTypeMultimedia(typeMedia));
 
 
@@ -187,7 +197,6 @@ void Multimedia::readFromFile(QXmlStreamReader& stream)
     dateModif = QDateTime::fromString(VersionNote::textNextBaliseXml(stream));
     titre = VersionNote::textNextBaliseXml(stream);
     description = VersionNote::textNextBaliseXml(stream);
-    file = VersionNote::textNextBaliseXml(stream);
+    file_url = VersionNote::textNextBaliseXml(stream);
     typeMedia = getTypeMultimediaFromText(VersionNote::textNextBaliseXml(stream));
 }
-

@@ -35,6 +35,12 @@ void Note::ajouterVersion(const QString& titre,const QString& action,const int p
     versions.push_back(nouveau);
 }
 
+void Note::ajouterVersion(const QString &titre, const QString &descr,const QString& path)
+{
+    Multimedia* nouveau = new Multimedia(titre,descr,path);
+    versions.push_back(nouveau);
+}
+
 // Supprime la dernière version, est utilisé pour supprimer les versions vide qui sont créer à la création de la note
 void Note::supprimerVersionVide()
 {

@@ -49,6 +49,11 @@ void PartieGauche::chargerListeNote()
         // Ajoute chaque article à la liste
         new QListWidgetItem((*it)->getId(), noteActive);
     }
+    for(NoteManager::TypeIterator it2 = instance.begin(MEDIA_IMG); it2 != instance.end(); ++it2)
+    {
+        // Ajoute chaque article à la liste
+        new QListWidgetItem((*it2)->getId(), noteActive);
+    }
 }
 
 void PartieGauche::chargerListeTaches()

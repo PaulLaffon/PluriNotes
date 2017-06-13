@@ -102,6 +102,7 @@ public:
 public slots:
     void nouvelleArticle(const QString& id); /*!< \brief Cree un nouvel article avec une première version vide */
     void nouvelleTache(const QString& id); /*!< \brief Cree une nouvelle tache avec une première version vide */
+    void nouveauMedia(const QString& id); /*!< \brief Cree une nouvelle note media avec une première version vide */
 
     void actualiserReference(); /*!< \brief Actualise les références par rapport a toutes les notes */
     void clicSupprimerNote(Note *n); /*!< \brief Fonction appelé lorsque que l'on clique pour supprimer une note */
@@ -110,6 +111,7 @@ public slots:
 signals:
     void erreur(QString); /*!< \brief Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà */
     void creationNote(); /*!< \brief Signal qui indique qu'une nouvelle note a été créée, recharger la liste des notes */
+
 };
 
 #endif // NOTEMANAGER_H

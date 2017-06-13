@@ -16,7 +16,7 @@ enum Status {enAttente, enCours, terminee};
 /*! \enum TypeNote
  *  \brief Enumération des différents type de Note
  */
-enum TypeNote {ARTICLE,MULTIMEDIA,TACHE,FIN};
+enum TypeNote {ARTICLE,MEDIA_IMG,MEDIA_AUDIO,MEDIA_VID,TACHE,FIN};
 
 /*! \enum TypeMultimedia
  *  \brief Enumération des différents types de multimédia
@@ -119,14 +119,14 @@ class Multimedia : public VersionNote
     Q_OBJECT
 private:
     QString description;
-    QString file;
+    QString file_url;
     TypeMultimedia typeMedia;
 
 public :
     Multimedia(const QString& _titre,const QString& _descr,const QString _file,QDateTime modif = QDateTime::currentDateTime());
     Multimedia(QXmlStreamReader &stream);
     ~Multimedia();
-    TypeNote type() const {return MULTIMEDIA;}
+    TypeNote type() const;
 
     static const QString  TypeMultimediaQString[];
     static const QString getTextTypeMultimedia(TypeMultimedia type) {return TypeMultimediaQString[type];} /*!< \brief Renvoie le TypeMultimedia en QString */
@@ -135,13 +135,12 @@ public :
     void writeInFile(QXmlStreamWriter &stream) const;
     void readFromFile(QXmlStreamReader &stream);
 
-    const QString& getDescription() {return description;}
-    const QString& getFile() {return file;}
+    const QString& getDescription() const {return description;}
+    const QString& getFileUrl() const {return file_url;}
     TypeMultimedia getTypeMedia() {return typeMedia;}
-
+    QString getFileUrlNotConst() {return file_url;}
 
 
 };
-
 
 #endif // VERSIONNOTE_H
