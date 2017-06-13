@@ -27,7 +27,7 @@ GestionRelation::GestionRelation(QWidget *parent) : QDialog(parent)
 
     supprimer = new QPushButton("Supprimer", this);
     sauvegarder = new QPushButton("Sauvergarder",this);
-    connect(supprimer, SIGNAL(clicked(bool)), this, SLOT(sauvegarderModif()));
+    connect(sauvegarder, SIGNAL(clicked(bool)), this, SLOT(sauvegarderModif()));
     connect(supprimer, SIGNAL(clicked(bool)), this, SLOT(supprimerCouple()));
 
     layoutRelations->addWidget(labelRelations);
@@ -97,6 +97,7 @@ void GestionRelation::sauvegarderModif()
     relation->setDescription(modifDescription->toPlainText());
     Couple* couple = selectionnerCouple();
     couple->setLabel(modifCouple->text());
+    chargerListeCouples(relation->getTitre());
 
 }
 
@@ -140,7 +141,7 @@ void GestionRelation::chargerRelation()
 
 void GestionRelation::chargerCouple(QString titre)
 {
-    QString titrecouple = titre.section(' ', 0,0);
+    QString titrecouple = titre.section('-', 0,0);
     modifCouple->setText(titrecouple);
 }
 
