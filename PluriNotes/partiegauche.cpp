@@ -9,12 +9,16 @@ PartieGauche::PartieGauche(QWidget *parent) : QDockWidget(parent)
 
     noteActive = new QListWidget(widgetTotal);
     tache = new QListWidget(widgetTotal);
+    archive = new QListWidget(widgetTotal);
+    //corbeille = new QListWidget(widgetTotal);
 
     layout->addWidget(noteActive);
     layout->addWidget(tache);
+    layout->addWidget(archive);
 
     chargerListeNote();
     chargerListeTaches();
+    chargerListeArchive();
 
     this->setWidget(widgetTotal);
 }
@@ -45,5 +49,20 @@ void PartieGauche::chargerListeTaches()
     for(NoteManager::TypeIterator it = instance.begin(TACHE); it != instance.end();++it)
     {
         new QListWidgetItem((*it)->getId(),tache);
+    }
+}
+
+void PartieGauche::chargerListeArchive()
+{
+    NoteManager& instance = NoteManager::getInstance();
+
+    for(int typeInt = ARTICLE; typeInt != FIN; typeInt++)
+    {
+        TypeNote type = static_cast<TypeNote>(typeInt);
+
+        for(NoteManager::TypeIterator it = instance.begin(type, true); it != instance.end(); ++it)
+        {
+            new QListWidgetItem((*it)->getId(), archive);
+        }
     }
 }

@@ -35,6 +35,7 @@ public:
     void setDescription(const QString& d) {description=d;};
 
     Couple* find(Note* pere, Note* fils); /*!< \brief Recherche ce couple dans la liste des couples, renvoie le couple ou nullptr si il n'existe pas */
+    bool isReferenced(Note *n) const; /*!< \brief Indique si la note est référencée */
 
     void retireAllCouple(); /*!< \brief Retire tous les couples de la relation */
 

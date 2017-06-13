@@ -12,11 +12,8 @@ class Reference : public Relation
 public:
     Reference(const QString& _titre, const QString& _description);
 
-    bool isReference() {return true;} /*!< \brief Indique si la relation est une Reference */
+    virtual bool isReference() const {return true;} /*!< \brief Indique si la relation est une Reference */
 
-signals:
-
-public slots:
 };
 
 #endif // REFERENCE_H

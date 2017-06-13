@@ -24,6 +24,7 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
 
     // Récupérer lorsque l'on change de version dans la liste déroulante
     connect(listeVersion, SIGNAL(currentIndexChanged(int)), this, SLOT(selectionVersion(int)));
+    connect(supprimer, SIGNAL(clicked(bool)), this, SLOT(supprimerNote()));
 
 
     layoutId->addWidget(labelId);
@@ -65,6 +66,14 @@ void AffichageNote::focusInEvent(QFocusEvent *event)
 {
     emit passagePremierPlan(note);
     event->accept();
+}
+
+void AffichageNote::supprimerNote()
+{
+    NoteManager& instance = NoteManager::getInstance();
+
+    instance.clicSupprimerNote(note);
+    close();
 }
 
 AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(n, parent)

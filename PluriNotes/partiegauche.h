@@ -24,6 +24,8 @@ private:
 
     QListWidget *noteActive; /*!< \brief Liste des notes actives */
     QListWidget *tache;  /*!< \brief Liste des taches */
+    QListWidget *archive;
+    QListWidget *corbeille;
 
 public:
     PartieGauche(QWidget *parent = 0);
@@ -35,6 +37,8 @@ public:
 public slots:
     void chargerListeNote(); /*!< \brief Charge toutes les notes actives dans la liste */
     void chargerListeTaches(); /*!< \brief Charge toutes les taches */
+
+    void chargerListeArchive();
 };
 
 #endif // PARTIEGAUCHE_H

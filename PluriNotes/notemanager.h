@@ -65,11 +65,14 @@ public:
         QVector<Note*>::iterator it;
         TypeNote type;
         int restant;
+        bool archive;
+        bool corbeille;
 
     public:
-        TypeIterator(QVector<Note*>::iterator i, TypeNote t, int r) :it(i), type(t), restant(r)
+        TypeIterator(QVector<Note*>::iterator i, TypeNote t, int r, bool _archive = false, bool _corbeille = false)
+            :it(i), type(t), restant(r), archive(_archive), corbeille(_corbeille)
         {
-            while(restant > 0 && (*it)->type() != type) {
+            while(restant > 0 && ((*it)->type() != type || (*it)->isArchive() != archive || (*it)->isInCorbeille() != corbeille)) {
                 it++;
                 restant--;
             }
@@ -79,7 +82,7 @@ public:
         TypeIterator& operator++()
         {
             it++; restant--;
-            while(restant > 0 && (*it)->type() != type) {
+            while(restant > 0 && ((*it)->type() != type || (*it)->isArchive() != archive || (*it)->isInCorbeille() != corbeille)) {
                 it++;
                 restant--;
             }
@@ -91,7 +94,8 @@ public:
     };
 
 
-    TypeIterator begin(TypeNote type) {return TypeIterator(notes.begin(), type, notes.size());} /*!< \brief Retourne un itérateur sur le premier élément du type souhaité */
+    TypeIterator begin(TypeNote type, bool archive = false, bool corbeille = false)
+    {return TypeIterator(notes.begin(), type, notes.size(), archive, corbeille);} /*!< \brief Retourne un itérateur sur le premier élément du type souhaité */
 
     TypeIterator end() {return TypeIterator(notes.end(), ARTICLE, 0);} // Ici le type d'itérateur n'as pas d'importance
 
@@ -100,6 +104,7 @@ public slots:
     void nouvelleTache(const QString& id); /*!< \brief Cree une nouvelle tache avec une première version vide */
 
     void actualiserReference(); /*!< \brief Actualise les références par rapport a toutes les notes */
+    void clicSupprimerNote(Note *n); /*!< \brief Fonction appelé lorsque que l'on clique pour supprimer une note */
 
 signals:
     void erreur(QString); /*!< \brief Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà */

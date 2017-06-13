@@ -48,6 +48,9 @@ void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, Q
         QTreeWidgetItem *fils = new QTreeWidgetItem(pere, QTreeWidgetItem::Type);
         fils->setText(0, (*it)->getId());
 
+        if(it.getRelation()->getTitre() == QString("Référence"))
+            fils->setForeground(0, QBrush(Qt::red));
+
         chargerArbreRecursif(fils, *it, noteDejaAjoutes);
     }
     arbre->expandItem(pere);
