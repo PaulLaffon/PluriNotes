@@ -93,11 +93,14 @@ void GestionRelation::chargerListeCouples(QString titre)
 void GestionRelation::sauvegarderModif()
 {
     Relation* relation = selectionnerRelation();
+
     relation->setTitre(modifTitre->text());
     relation->setDescription(modifDescription->toPlainText());
     Couple* couple = selectionnerCouple();
     couple->setLabel(modifCouple->text());
     chargerListeCouples(relation->getTitre());
+    relation->setTitre(modifTitre->text());
+    chargerListeRelations();
 
 }
 
@@ -119,7 +122,7 @@ Couple* GestionRelation::selectionnerCouple()
     Note* note1 = instance.find(titrenote1);
     Note* note2 = instance.find(titrenote2);
 
-    Couple* couple = relation->findCouple(titrecouple,note1,note2);
+    Couple* couple = relation->find(note1,note2);
 
     return couple;
 }

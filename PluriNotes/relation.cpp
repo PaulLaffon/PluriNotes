@@ -41,6 +41,7 @@ void Relation::retireAllCouple()
     couples.clear();
 }
 
+
 bool Relation::isReferenced(Note *n) const
 {
     for(QVector<Couple*>::const_iterator it = couples.begin(); it != couples.end(); it++)
