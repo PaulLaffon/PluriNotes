@@ -18,3 +18,17 @@ void Relation::ajoutCouple(const QString& label, Note* pere, Note* fils)
 
     couples.push_back(new Couple(label, pere, fils));
 }
+
+Couple* Relation:: findCouple(const QString& label, Note* pere, Note* fils)
+{
+    for(QVector<Couple*>::iterator it = couples.begin(); it != couples.end(); it++)
+    {
+        const Couple& coupleActu = **it;
+
+        if(coupleActu.getLabel()== label && coupleActu.getPere() == pere && coupleActu.getFils() == fils)
+            return *it;
+        else throw NoteException("Couple non existant !");
+
+    }
+}
+

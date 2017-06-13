@@ -26,9 +26,13 @@ public:
 
     void ajoutCouple(const QString& label, Note* pere, Note* fils); /*!< \brief Ajoute un couple à la Relation */
 
+    Couple* findCouple(const QString& label, Note* pere, Note* fils);/*!< \brief Recherche un couple dans la Relation */
+
 
     const QString& getTitre() const {return titre;}
     const QString& getDescription() const {return description;}
+    void setTitre(const QString& t) {titre=t;};
+    void setDescription(const QString& d) {description=d;};
 
 
     virtual bool isReference() const {return false;} /*!< \brief Indique si la relation est une Reference */

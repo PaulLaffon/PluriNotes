@@ -26,6 +26,7 @@ private:
 public:
     PartieDroite(QWidget *parent = 0);
     ~PartieDroite();
+    QPushButton* getButton();
 
     QTreeWidget* getArbre() const {return arbre;}
 
