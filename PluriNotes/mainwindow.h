@@ -13,6 +13,7 @@
 #include "relationmanager.h"
 #include "creationrelation.h"
 #include "creationcouple.h"
+#include "gestionrelation.h"
 
 class MainWindow : public QMainWindow
 {
@@ -31,6 +32,7 @@ public:
 public slots:
     void clicFichier(QAction* a);
     void erreur(QString s);
+    void ouvertureGestionRelation();
 };
 
 #endif // MAINWINDOW_H

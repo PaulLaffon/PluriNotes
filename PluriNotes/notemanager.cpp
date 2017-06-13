@@ -234,7 +234,15 @@ void NoteManager::actualiserReference()
 }
 
 
+void NoteManager::clicSupprimerNote(Note *n)
+{
+    RelationManager& relations = RelationManager::getInstance();
 
+    if(relations.isReferenced(n))
+        n->putInArchive();
+    else
+        n->putInCorbeille();
+}
 
 
 

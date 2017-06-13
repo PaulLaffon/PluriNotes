@@ -26,6 +26,7 @@ public:
     Couple(const QString& _label, Note* _pere, Note* _fils);
 
     const QString& getLabel() const {return label;}
+    void setLabel(const QString& l){label=l;};
 
     Note* getPere() const {return pere;}
     Note* getFils() const {return fils;}

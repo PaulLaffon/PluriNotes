@@ -71,10 +71,10 @@ void CreationCouple::chargerListeNote1()
     {
        TypeNote type = static_cast<TypeNote>(typeInt);
 
-    for(NoteManager::TypeIterator it = instance.begin(type); it != instance.end(); ++it)
-    {
-        listeNote1->insertItem(0, (*it)->getId());
-    }
+        for(NoteManager::TypeIterator it = instance.begin(type); it != instance.end(); ++it)
+        {
+            listeNote1->insertItem(0, (*it)->getId());
+        }
     }
 
     listeNote2->setCurrentIndex(0);

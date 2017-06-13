@@ -46,6 +46,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(&instance, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
     connect(&relations, SIGNAL(erreur(QString)), this, SLOT(erreur(QString)));
+
+    connect(droite->getButton(), SIGNAL(clicked(bool)), this, SLOT(ouvertureGestionRelation()));
+
 }
 
 MainWindow::~MainWindow()
@@ -101,4 +104,11 @@ void MainWindow::erreur(QString s)
 {
     QMessageBox message;
     message.critical(this, "Erreur", s);
+}
+
+void MainWindow::ouvertureGestionRelation()
+{
+    GestionRelation* gest = new GestionRelation(this);
+    gest->chargerListeRelations();
+    gest->exec();
 }

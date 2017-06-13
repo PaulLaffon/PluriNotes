@@ -55,3 +55,8 @@ void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, Q
     }
     arbre->expandItem(pere);
 }
+
+QPushButton* PartieDroite::getButton()
+{
+ return gestionRelation;
+}
