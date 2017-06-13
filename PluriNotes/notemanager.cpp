@@ -71,7 +71,7 @@ void NoteManager::nouvelleImage(const QString& id)
     else
     {
         Note* nouvelle = new Note(id);
-        nouvelle->ajouterVersion(QString(""),QString(""),QString(""),Image);
+        nouvelle->ajouterVersion(QString(""),QString(""),QString(""));
         notes.push_back(nouvelle);
 
         emit creationNote();

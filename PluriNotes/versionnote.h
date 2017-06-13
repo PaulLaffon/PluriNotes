@@ -18,11 +18,6 @@ enum Status {enAttente, enCours, terminee};
  */
 enum TypeNote {ARTICLE,MEDIA_IMG,MEDIA_AUDIO,MEDIA_VID,TACHE,FIN};
 
-/*! \enum TypeMultimedia
- *  \brief Enumération des différents types de multimédia
- */
-enum TypeMultimedia {Image, Audio, Video};
-
 /*! \class VersionNote
  *  \brief Classe abstraite qui regroupe les partie communes d'une version d'une Note
 */
@@ -58,7 +53,7 @@ public:
 class Article : public VersionNote
 {
     Q_OBJECT
-private:
+protected:
     QString texte;
 
 public:
@@ -107,40 +102,11 @@ public :
 
     const QString& getDescription() const {return action;}
 
-public slots :
+public slots:
 
     void setStatusEnAttente(bool checked);
     void setStatusEnCours(bool checked);
     void setStatusTerminee(bool checked);
-};
-
-class Multimedia : public VersionNote
-{
-    Q_OBJECT
-private:
-    QString description;
-    QString file_url;
-    TypeMultimedia typeMedia;
-
-public :
-    Multimedia(const QString& _titre,const QString& _descr,const QString _file,TypeMultimedia media, QDateTime modif = QDateTime::currentDateTime());
-    Multimedia(QXmlStreamReader &stream);
-    ~Multimedia();
-    TypeNote type() const;
-
-    static const QString  TypeMultimediaQString[];
-    static const QString getTextTypeMultimedia(TypeMultimedia type) {return TypeMultimediaQString[type];} /*!< \brief Renvoie le TypeMultimedia en QString */
-    static TypeMultimedia getTypeMultimediaFromText(const QString& t); /*!< \brief Renvoie le TypeMultimedia à partir d'un QString */
-
-    void writeInFile(QXmlStreamWriter &stream) const;
-    void readFromFile(QXmlStreamReader &stream);
-
-    const QString& getDescription() const {return description;}
-    const QString& getFileUrl() const {return file_url;}
-    TypeMultimedia getTypeMedia() {return typeMedia;}
-    QString getFileUrlNotConst() {return file_url;}
-
-
 };
 
 #endif // VERSIONNOTE_H

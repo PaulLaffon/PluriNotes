@@ -58,16 +58,20 @@ void Article::readFromFile(QXmlStreamReader &stream)
     texte = VersionNote::textNextBaliseXml(stream);
 }
 
-const QString VersionNote::typeQString[] = {QString("Article"), QString("Tache")};
+const QString VersionNote::typeQString[] = {QString("Article"), QString("Image"), QString("Audio"), QString("Video"), QString("Tache")};
 
 const QString Tache::StatusQString[] = {QString("En attente"), QString("En cours"), QString("Terminee")};
-
-const QString Multimedia::TypeMultimediaQString[] = {QString("Image"), QString("Audio"), QString("Video")};
 
 TypeNote VersionNote::getTypeFromText(const QString &s)
 {
     if(s == QString("Article"))
         return ARTICLE;
+    else if(s == QString("Image"))
+        return MEDIA_IMG;
+    else if(s == QString("Audio"))
+        return MEDIA_AUDIO;
+    else if(s == QString("Video"))
+        return MEDIA_VID;
 
     return TACHE;
 }
@@ -82,15 +86,6 @@ Status Tache::getStatusFromText(const QString& s)
     return terminee;
 }
 
-TypeMultimedia Multimedia::getTypeMultimediaFromText(const QString& t)
-{
-    if(t == QString("Image"))
-        return Image;
-    else if(t == QString("Audio"))
-        return Audio;
-
-    return Video;
-}
 
 Tache::Tache(QXmlStreamReader& stream) : VersionNote()
 {
@@ -151,52 +146,3 @@ void Tache::setStatusTerminee(bool checked)
         status=terminee;
 }
 
-Multimedia::Multimedia(const QString &_titre, const QString &_descr, const QString _file, TypeMultimedia media, QDateTime modif) :
-    VersionNote(_titre,modif),description(_descr),file_url(_file),typeMedia(media)
-{
-
-}
-
-Multimedia::Multimedia(QXmlStreamReader &stream) : VersionNote()
-{
-    readFromFile(stream);
-}
-
-Multimedia::~Multimedia()
-{
-
-}
-
-TypeNote Multimedia::type() const
-{
-    if (typeMedia == Image)
-        return MEDIA_IMG;
-    else if(typeMedia == Audio)
-        return MEDIA_AUDIO;
-    else
-        return MEDIA_VID;
-}
-
-void Multimedia::writeInFile(QXmlStreamWriter& stream) const
-{
-    stream.writeStartElement("Version");
-
-    stream.writeTextElement("Type", textFromType(type()));
-    stream.writeTextElement("Date", dateModif.toString());
-    stream.writeTextElement("Titre", titre);
-    stream.writeTextElement("Description", description);
-    stream.writeTextElement("Fichier", file_url);
-    stream.writeTextElement("TypeMedia",getTextTypeMultimedia(typeMedia));
-
-
-    stream.writeEndElement();
-}
-
-void Multimedia::readFromFile(QXmlStreamReader& stream)
-{
-    dateModif = QDateTime::fromString(VersionNote::textNextBaliseXml(stream));
-    titre = VersionNote::textNextBaliseXml(stream);
-    description = VersionNote::textNextBaliseXml(stream);
-    file_url = VersionNote::textNextBaliseXml(stream);
-    typeMedia = getTypeMultimediaFromText(VersionNote::textNextBaliseXml(stream));
-}

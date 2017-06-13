@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     partiedroite.cpp \
     creationcouple.cpp \
     reference.cpp \
-    gestionrelation.cpp
+    gestionrelation.cpp \
+    versionmultimedia.cpp \
+    affichagemultimedia.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -40,5 +42,7 @@ HEADERS  += mainwindow.h \
     partiedroite.h \
     creationcouple.h \
     reference.h \
-    gestionrelation.h
+    gestionrelation.h \
+    versionmultimedia.h \
+    affichagemultimedia.h
 

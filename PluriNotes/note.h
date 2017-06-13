@@ -9,6 +9,7 @@
 #include <QException>
 
 #include "versionnote.h"
+#include "versionmultimedia.h"
 
 /*! \class Note
  *  \brief Classe gérant une note, composée de toutes ses versions
@@ -53,7 +54,7 @@ public:
     void ajouterVersion(TypeNote type, QXmlStreamReader &stream); /*!< \brief Ajoute une version à partir d'un fichier XML */
     void ajouterVersion(const QString& titre, const QString& texte); /*!< \brief Ajoute une version de type Article */
     void ajouterVersion(const QString& titre,const QString& action,const int priorite,const QDateTime echeance,Status status);
-    void ajouterVersion(const QString& titre,const QString& descr,const QString& path,TypeMultimedia media);
+    void ajouterVersion(const QString& titre,const QString& descr,const QString& path);
 
     TypeNote type() const {return versions.back()->type();} /*!< \brief Retourne le type de la dernière version de la note */
 

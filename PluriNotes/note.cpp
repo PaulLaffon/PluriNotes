@@ -15,6 +15,8 @@ void Note::ajouterVersion(TypeNote type, QXmlStreamReader& stream)
         nouveau = new Article(stream);
     else if (type == TACHE)
         nouveau = new Tache(stream);
+    else if(type == MEDIA_IMG)
+        nouveau = new Image(stream);
     else
         throw NoteException(QString("Type de version non reconnu"));
 
@@ -35,9 +37,9 @@ void Note::ajouterVersion(const QString& titre,const QString& action,const int p
     versions.push_back(nouveau);
 }
 
-void Note::ajouterVersion(const QString &titre, const QString &descr, const QString& path, TypeMultimedia media)
+void Note::ajouterVersion(const QString &titre, const QString &descr, const QString& path)
 {
-    Multimedia* nouveau = new Multimedia(titre,descr,path,media);
+    Image* nouveau = new Image(titre, descr, path);
     versions.push_back(nouveau);
 }
 

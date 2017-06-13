@@ -80,7 +80,7 @@ public slots:
 class AffichageArticle : public AffichageNote
 {
     Q_OBJECT
-private:
+protected:
     // un artcle n'as que un champ texte en plus
     QHBoxLayout *layoutTexte;
 
@@ -136,32 +136,5 @@ public slots :
 
 
 };
-
-class AffichageImage : public AffichageNote
-{
-    Q_OBJECT
-private:
-    QHBoxLayout *layoutDescription;
-    QHBoxLayout *layoutPath;
-    QHBoxLayout *layoutImage;
-
-    QLabel *labelDescription;
-    QLabel *labelPath;
-    QLabel *labelImage;
-
-    QTextEdit *description;
-    QLineEdit *path;
-    QPixmap image;
-public :
-    AffichageImage(Note* n,QWidget *parent = 0);
-
-    void showImage(Multimedia *img);
-    void chargerVersion(unsigned int i);
-
-public slots:
-    void nouvelleVersion();
-
-};
-
 
 #endif // AFFICHAGENOTE_H

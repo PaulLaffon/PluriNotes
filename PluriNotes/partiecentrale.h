@@ -8,6 +8,7 @@
 #include <QTreeWidgetItem>
 
 #include "affichagenote.h"
+#include "affichagemultimedia.h"
 
 /*! \class PartieCentrale
  *  \brief Classe qui gère la partie centrale de l'application, hérite de QMdiArea
