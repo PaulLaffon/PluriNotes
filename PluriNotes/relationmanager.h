@@ -67,8 +67,11 @@ public:
 
     public:
         iteratorPredSucc() : note(nullptr), restant(0) {}
-        iteratorPredSucc(QVector<Relation*>::iterator i, Note* n,bool succ, int r) : it(i), itR((*it)->begin(n, succ)), note(n), successeur(succ), restant(r)
+        iteratorPredSucc(QVector<Relation*>::iterator i, Note* n,bool succ, int r) : it(i), note(n), successeur(succ), restant(r)
         {
+            if(restant > 0)
+                itR = (*it)->begin(n, succ);
+
             while(restant > 0 && !(itR != (*it)->endSuccPred())) {
                 ++it;
                 restant--;
