@@ -317,7 +317,7 @@ void AffichageImage::chargerVersion(unsigned int i)
 
 void AffichageImage::nouvelleVersion()
 {
-    note->ajouterVersion(titre->text(), description->toPlainText(),path->text());
+    note->ajouterVersion(titre->text(), description->toPlainText(),path->text(),Image);
     chargerListeVersion();
 
     emit actualisation(note);

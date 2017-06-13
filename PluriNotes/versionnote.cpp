@@ -62,7 +62,7 @@ const QString VersionNote::typeQString[] = {QString("Article"), QString("Tache")
 
 const QString Tache::StatusQString[] = {QString("En attente"), QString("En cours"), QString("Terminee")};
 
-const QString Multimedia::TypeMultimediaQString[] = {QString("image"), QString("audio"), QString("video")};
+const QString Multimedia::TypeMultimediaQString[] = {QString("Image"), QString("Audio"), QString("Video")};
 
 TypeNote VersionNote::getTypeFromText(const QString &s)
 {
@@ -84,12 +84,12 @@ Status Tache::getStatusFromText(const QString& s)
 
 TypeMultimedia Multimedia::getTypeMultimediaFromText(const QString& t)
 {
-    if(t == QString("image"))
-        return image;
-    else if(t == QString("audio"))
-        return audio;
+    if(t == QString("Image"))
+        return Image;
+    else if(t == QString("Audio"))
+        return Audio;
 
-    return video;
+    return Video;
 }
 
 Tache::Tache(QXmlStreamReader& stream) : VersionNote()
@@ -151,8 +151,8 @@ void Tache::setStatusTerminee(bool checked)
         status=terminee;
 }
 
-Multimedia::Multimedia(const QString &_titre, const QString &_descr, const QString _file, QDateTime modif) :
-    VersionNote(_titre,modif),description(_descr),file_url(_file)
+Multimedia::Multimedia(const QString &_titre, const QString &_descr, const QString _file, TypeMultimedia media, QDateTime modif) :
+    VersionNote(_titre,modif),description(_descr),file_url(_file),typeMedia(media)
 {
 
 }
@@ -169,9 +169,9 @@ Multimedia::~Multimedia()
 
 TypeNote Multimedia::type() const
 {
-    if (typeMedia == image)
+    if (typeMedia == Image)
         return MEDIA_IMG;
-    else if(typeMedia == audio)
+    else if(typeMedia == Audio)
         return MEDIA_AUDIO;
     else
         return MEDIA_VID;

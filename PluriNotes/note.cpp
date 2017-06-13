@@ -35,9 +35,9 @@ void Note::ajouterVersion(const QString& titre,const QString& action,const int p
     versions.push_back(nouveau);
 }
 
-void Note::ajouterVersion(const QString &titre, const QString &descr,const QString& path)
+void Note::ajouterVersion(const QString &titre, const QString &descr, const QString& path, TypeMultimedia media)
 {
-    Multimedia* nouveau = new Multimedia(titre,descr,path);
+    Multimedia* nouveau = new Multimedia(titre,descr,path,media);
     versions.push_back(nouveau);
 }
 

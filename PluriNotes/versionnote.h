@@ -21,7 +21,7 @@ enum TypeNote {ARTICLE,MEDIA_IMG,MEDIA_AUDIO,MEDIA_VID,TACHE,FIN};
 /*! \enum TypeMultimedia
  *  \brief Enumération des différents types de multimédia
  */
-enum TypeMultimedia {image, audio, video};
+enum TypeMultimedia {Image, Audio, Video};
 
 /*! \class VersionNote
  *  \brief Classe abstraite qui regroupe les partie communes d'une version d'une Note
@@ -123,7 +123,7 @@ private:
     TypeMultimedia typeMedia;
 
 public :
-    Multimedia(const QString& _titre,const QString& _descr,const QString _file,QDateTime modif = QDateTime::currentDateTime());
+    Multimedia(const QString& _titre,const QString& _descr,const QString _file,TypeMultimedia media, QDateTime modif = QDateTime::currentDateTime());
     Multimedia(QXmlStreamReader &stream);
     ~Multimedia();
     TypeNote type() const;

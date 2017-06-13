@@ -64,14 +64,14 @@ void NoteManager::nouvelleTache(const QString& id)
     }
 }
 
-void NoteManager::nouveauMedia(const QString& id)
+void NoteManager::nouvelleImage(const QString& id)
 {
     if(find(id))
         emit erreur(QString("Une note avec cet id existe déjà"));
     else
     {
         Note* nouvelle = new Note(id);
-        nouvelle->ajouterVersion(QString(""),QString(""),QString(""));
+        nouvelle->ajouterVersion(QString(""),QString(""),QString(""),Image);
         notes.push_back(nouvelle);
 
         emit creationNote();
