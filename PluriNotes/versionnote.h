@@ -50,6 +50,8 @@ public:
 
     const QString& getTitre() const {return titre;}
     const QDateTime& getModif() const {return dateModif;}
+
+    virtual const QString& getDescription() const = 0;
 };
 
 
@@ -68,8 +70,7 @@ public:
     void writeInFile(QXmlStreamWriter& stream) const; /*!< \brief Redéfinition, ecrit le contenu de la version dans un fichier XML */
     void readFromFile(QXmlStreamReader& stream);  /*!< \brief Redéfinition, se charge depuis une fichier XML */
 
-
-    const QString& getTexte() const {return texte;}
+    const QString& getDescription() const {return texte;}
 };
 
 
@@ -97,11 +98,14 @@ public :
     static const QString getTextStatus(Status status) {return StatusQString[status];} /*!< \brief Renvoie le Status en QString */
     static Status getStatusFromText(const QString& s); /*!< \brief Renvoie le Status à partir d'un QString */
     
+
     const QString& getAction() {return action; }
     int getPriorite() {return priorite; }
     const QDateTime& getEcheance() {return echeance; }
     Status getStatus() {return status; }
     void setStatus(const Status s) {status = s;}
+
+    const QString& getDescription() const {return action;}
 
 public slots :
 
@@ -122,7 +126,7 @@ public :
     Multimedia(const QString& _titre,const QString& _descr,const QString _file,QDateTime modif = QDateTime::currentDateTime());
     Multimedia(QXmlStreamReader &stream);
     ~Multimedia();
-    TypeNote type() const {return MULTIMEDIA;};
+    TypeNote type() const {return MULTIMEDIA;}
 
     static const QString  TypeMultimediaQString[];
     static const QString getTextTypeMultimedia(TypeMultimedia type) {return TypeMultimediaQString[type];} /*!< \brief Renvoie le TypeMultimedia en QString */

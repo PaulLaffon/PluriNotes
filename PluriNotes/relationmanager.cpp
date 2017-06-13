@@ -49,6 +49,17 @@ void RelationManager::ajouterRelation(const QString &titre, const QString &descr
     relations.push_back(new Relation(titre, descrition));
 }
 
+void RelationManager::ajouterReference()
+{
+    if(find(QString("Reference")))
+        emit erreur(QString("Une relation de type Référence existe déjà"));
+    else
+    {
+        Reference* ref = new Reference(QString("Référence"), QString("Les notes référencés ne peuvent pas être supprimés, elle sont archivés"));
+        relations.push_back(ref);
+    }
+}
+
 void RelationManager::ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2)
 {
     Relation* relation = find(id);
@@ -81,7 +92,15 @@ void RelationManager::saveAll(QXmlStreamWriter &stream)
     }
 }
 
+void RelationManager::ajouterCoupleReference(Note *pere, Note *fils)
+{
+    Relation* reference = find(QString("Référence"));
 
+    if(!reference->find(pere, fils))
+    {
+        reference->ajoutCouple(QString(""), pere, fils);
+    }
+}
 
 
 

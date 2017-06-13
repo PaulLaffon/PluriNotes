@@ -16,6 +16,8 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
 
     save = new QPushButton("Sauvegarder", this);
 
+    supprimer = new QPushButton("Supprimer la note", this);
+
     listeVersion = new QComboBox(this);
 
     chargerListeVersion();
@@ -34,6 +36,7 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
     layoutPrincipal->addWidget(listeVersion);
     layoutPrincipal->addLayout(layoutTitre);
     layoutPrincipal->addWidget(save);
+    layoutPrincipal->addWidget(supprimer);
 
     setWidget(window); // On affiche le widget dans le QMdiSubWindow
 }
@@ -90,7 +93,7 @@ void AffichageArticle::chargerVersion(unsigned int i)
     // Test au cas où le dynamique cast échoue
     if(a == nullptr) throw NoteException("La note passé ne correspond pas à un article, erreur de dynamique cast");
 
-    texte->setText(a->getTexte());
+    texte->setText(a->getDescription());
     titre->setText(a->getTitre());
     id->setText(note->getId());
 }
@@ -109,6 +112,8 @@ void AffichageArticle::nouvelleVersion()
     note->supprimerVersionVide();
     note->ajouterVersion(titre->text(), texte->toPlainText());
     chargerListeVersion();
+
+    emit actualisation(note);
 }
 
 AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent)
@@ -205,6 +210,8 @@ void AffichageTache::nouvelleVersion()
 {
     note->ajouterVersion(titre->text(), action->toPlainText(),priorite->text().toInt(),QDateTime::fromString(echeance->text()),statusAffichage);
     chargerListeVersion();
+
+    emit actualisation(note);
 }
 
 void AffichageTache::modifStatus(Tache *t)
