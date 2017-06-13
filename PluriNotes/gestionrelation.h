@@ -46,7 +46,6 @@ public:
     GestionRelation(QWidget *parent = 0);
     void chargerListeRelations();
     void chargerRelation();
-    void chargerCouple(QString);
     Couple* selectionnerCouple();
     Relation* selectionnerRelation();
     void chargerListeCouples(QString);
@@ -56,5 +55,6 @@ public slots:
     void sauvegarderModif();
     void supprimerCouple();
     void chargerChangementRelation(QString);
+    void chargerCouple(QString);
 };
 #endif // GESTIONRELATION_H
