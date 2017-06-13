@@ -37,6 +37,8 @@ public:
 
     void ajouterReference(); /*!< \brief Permet d'ajouter une référence sans aucun couple */
 
+    bool isReferenced(Note *n); /*!< \brief Indique si la relation est référencée par la relation Référence */
+
     /*! \class iterator
      *  \brief Iterateur pour parcourir toutes les relations
      * */
@@ -100,6 +102,8 @@ public:
         Note* operator*() {
             return *itR;
         }
+
+        Relation* getRelation() const {return *it;}
     };
 
     iterator begin() {return iterator(relations.begin());}

@@ -51,7 +51,7 @@ void RelationManager::ajouterRelation(const QString &titre, const QString &descr
 
 void RelationManager::ajouterReference()
 {
-    if(find(QString("Reference")))
+    if(find(QString("Référence")))
         emit erreur(QString("Une relation de type Référence existe déjà"));
     else
     {
@@ -102,7 +102,12 @@ void RelationManager::ajouterCoupleReference(Note *pere, Note *fils)
     }
 }
 
+bool RelationManager::isReferenced(Note *n)
+{
+    Relation* reference = find(QString("Référence"));
 
+    return reference->isReferenced(n);
+}
 
 
 
