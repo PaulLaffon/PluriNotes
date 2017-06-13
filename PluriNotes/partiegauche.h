@@ -4,6 +4,7 @@
 #include <QDockWidget>
 #include <QVBoxLayout>
 #include <QListWidget>
+#include <QLabel>
 
 #include "notemanager.h"
 
@@ -33,12 +34,17 @@ public:
 
     QListWidget* getNoteActive() const {return noteActive;} // Pour connect avec partieCentrale dans mainWindow
     QListWidget* getTache() const {return tache;}
+    QListWidget* getArchive() const {return archive;}
+    QListWidget* getCorbeille() const {return corbeille;}
 
-public slots:
     void chargerListeNote(); /*!< \brief Charge toutes les notes actives dans la liste */
     void chargerListeTaches(); /*!< \brief Charge toutes les taches */
 
     void chargerListeArchive();
+    void chargerListeCorbeille();
+
+public slots:
+    void chargerAll();
 };
 
 #endif // PARTIEGAUCHE_H

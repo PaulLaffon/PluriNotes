@@ -66,6 +66,7 @@ signals:
 
 public slots:
     virtual void nouvelleVersion() = 0;
+    void restaurerNote();
     void supprimerNote();
     void selectionVersion(int i); /*!< \brief Permet de mettre l'affichage de la i-ème version de la note */
 };

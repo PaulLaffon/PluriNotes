@@ -24,7 +24,7 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
 
     // Récupérer lorsque l'on change de version dans la liste déroulante
     connect(listeVersion, SIGNAL(currentIndexChanged(int)), this, SLOT(selectionVersion(int)));
-    connect(supprimer, SIGNAL(clicked(bool)), this, SLOT(supprimerNote()));
+
 
 
     layoutId->addWidget(labelId);
@@ -38,6 +38,16 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
     layoutPrincipal->addLayout(layoutTitre);
     layoutPrincipal->addWidget(save);
     layoutPrincipal->addWidget(supprimer);
+
+    if(note->isArchive() || note->isInCorbeille()) // Si la note est à la corbeille ou archivée
+    {
+        titre->setReadOnly(true);
+        save->setDisabled(true);
+        supprimer->setText(QString("Restaurer la note"));
+        connect(supprimer, SIGNAL(clicked(bool)),this, SLOT(restaurerNote()));
+    }
+    else
+        connect(supprimer, SIGNAL(clicked(bool)), this, SLOT(supprimerNote()));
 
     setWidget(window); // On affiche le widget dans le QMdiSubWindow
 }
@@ -76,6 +86,14 @@ void AffichageNote::supprimerNote()
     close();
 }
 
+void AffichageNote::restaurerNote()
+{
+    NoteManager& instance = NoteManager::getInstance();
+
+    instance.restaurerNote(note);
+    close();
+}
+
 AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(n, parent)
 {
     layoutTexte = new QHBoxLayout();
@@ -90,7 +108,12 @@ AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(n, p
     // On charge la dernière version
     chargerVersion(note->getNumberVersion() - 1);
 
-    connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
+    if(note->isArchive() || note->isInCorbeille()) // Si la note est à la corbeille ou archivée
+    {
+        texte->setReadOnly(true);
+    }
+    else
+        connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
 }
 
 // Charge la i-ème version de l'article
@@ -170,9 +193,15 @@ AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent
 
     chargerVersion(note->getNumberVersion() - 1);
 
-    connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
-
-
+    if(note->isArchive() || note->isInCorbeille()) // Si la note est à la corbeille ou archivée
+    {
+        action->setReadOnly(true);
+        echeance->setReadOnly(true);
+        groupStatus->setDisabled(true);
+        priorite->setDisabled(true);
+    }
+    else
+        connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
 }
 
 void AffichageTache::setStatus()

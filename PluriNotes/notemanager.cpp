@@ -60,7 +60,7 @@ void NoteManager::nouvelleTache(const QString& id)
         nouvelle->ajouterVersion(QString(""),QString(""),0,QDateTime::currentDateTime(),enAttente);
         notes.push_back(nouvelle);
 
-        emit creationTache();
+        emit creationNote();
     }
 }
 
@@ -242,7 +242,14 @@ void NoteManager::clicSupprimerNote(Note *n)
         n->putInArchive();
     else
         n->putInCorbeille();
+
+    emit creationNote();
 }
 
 
+void NoteManager::restaurerNote(Note *n)
+{
+    n->restore();
 
+    emit creationNote();
+}

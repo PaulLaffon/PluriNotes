@@ -45,6 +45,8 @@ public:
     void putInCorbeille() {corbeille = true;}
     void putInArchive() {archive = true;}
 
+    void restore() {corbeille = false; archive = false;}
+
     VersionNote* getVersion(unsigned int i) const {return versions[i];} /*!< \brief Retourne la i-ème version de la note */
     VersionNote* getLastVersion() const {return versions.back();} /*!< \brief Retourne la version la plus récente de la note */
 

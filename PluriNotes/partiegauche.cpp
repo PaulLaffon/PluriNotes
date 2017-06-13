@@ -7,18 +7,27 @@ PartieGauche::PartieGauche(QWidget *parent) : QDockWidget(parent)
 
     layout = new QVBoxLayout(widgetTotal);
 
+    QLabel *labelActives = new QLabel(QString("Notes Actives :"));
+    QLabel *labelTache = new QLabel(QString("Taches :"));
+    QLabel *labelArchive = new QLabel(QString("Notes archivées :"));
+    QLabel *labelCorbeille = new QLabel(QString("Corbeille :"));
+
+
     noteActive = new QListWidget(widgetTotal);
     tache = new QListWidget(widgetTotal);
     archive = new QListWidget(widgetTotal);
-    //corbeille = new QListWidget(widgetTotal);
+    corbeille = new QListWidget(widgetTotal);
 
+    layout->addWidget(labelActives);
     layout->addWidget(noteActive);
+    layout->addWidget(labelTache);
     layout->addWidget(tache);
+    layout->addWidget(labelArchive);
     layout->addWidget(archive);
+    layout->addWidget(labelCorbeille);
+    layout->addWidget(corbeille);
 
-    chargerListeNote();
-    chargerListeTaches();
-    chargerListeArchive();
+    chargerAll();
 
     this->setWidget(widgetTotal);
 }
@@ -46,6 +55,8 @@ void PartieGauche::chargerListeTaches()
 {
     NoteManager& instance = NoteManager::getInstance();
 
+    tache->clear();
+
     for(NoteManager::TypeIterator it = instance.begin(TACHE); it != instance.end();++it)
     {
         new QListWidgetItem((*it)->getId(),tache);
@@ -56,6 +67,8 @@ void PartieGauche::chargerListeArchive()
 {
     NoteManager& instance = NoteManager::getInstance();
 
+    archive->clear();
+
     for(int typeInt = ARTICLE; typeInt != FIN; typeInt++)
     {
         TypeNote type = static_cast<TypeNote>(typeInt);
@@ -65,4 +78,29 @@ void PartieGauche::chargerListeArchive()
             new QListWidgetItem((*it)->getId(), archive);
         }
     }
+}
+
+void PartieGauche::chargerListeCorbeille()
+{
+    NoteManager& instance = NoteManager::getInstance();
+
+    corbeille->clear();
+
+    for(int typeInt = ARTICLE; typeInt != FIN; typeInt++)
+    {
+        TypeNote type = static_cast<TypeNote>(typeInt);
+
+        for(NoteManager::TypeIterator it = instance.begin(type, false, true); it != instance.end(); ++it)
+        {
+            new QListWidgetItem((*it)->getId(), corbeille);
+        }
+    }
+}
+
+void PartieGauche::chargerAll()
+{
+    chargerListeArchive();
+    chargerListeNote();
+    chargerListeTaches();
+    chargerListeCorbeille();
 }

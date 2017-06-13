@@ -105,12 +105,11 @@ public slots:
 
     void actualiserReference(); /*!< \brief Actualise les références par rapport a toutes les notes */
     void clicSupprimerNote(Note *n); /*!< \brief Fonction appelé lorsque que l'on clique pour supprimer une note */
+    void restaurerNote(Note *n); /*!< \brief Fonction appelé lorsqu'on restaure une note archivé ou de la corbeille */
 
 signals:
     void erreur(QString); /*!< \brief Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà */
     void creationNote(); /*!< \brief Signal qui indique qu'une nouvelle note a été créée, recharger la liste des notes */
-    void creationTache(); /*!< \brief Signal qui indique qu'une nouvelle tache a été créée, recharger la liste des notes */
-
 };
 
 #endif // NOTEMANAGER_H

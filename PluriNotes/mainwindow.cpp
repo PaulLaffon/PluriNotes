@@ -30,6 +30,9 @@ MainWindow::MainWindow(QWidget *parent)
     // Lorsqu'on double clic sur une note dans la partie gauche ==> Affiche la note dans la partie centrale
     connect(gauche->getNoteActive(), SIGNAL(itemDoubleClicked(QListWidgetItem*)), centre, SLOT(ouvrirNote(QListWidgetItem*)));
     connect(gauche->getTache(),SIGNAL(itemDoubleClicked(QListWidgetItem*)),centre,SLOT(ouvrirNote(QListWidgetItem*)));
+    connect(gauche->getArchive(), SIGNAL(itemDoubleClicked(QListWidgetItem*)), centre, SLOT(ouvrirNote(QListWidgetItem*)));
+    connect(gauche->getCorbeille(),SIGNAL(itemDoubleClicked(QListWidgetItem*)),centre,SLOT(ouvrirNote(QListWidgetItem*)));
+
 
     // Lorsqu'on double clic sur une note dans l'arborescense, ça affiche la note dans la partie centrale
     connect(droite->getArbre(), SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), centre, SLOT(ouvrirNote(QTreeWidgetItem*,int)));
@@ -38,8 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(fichier, SIGNAL(triggered(QAction*)), this, SLOT(clicFichier(QAction*)));
 
     // Lorsqu'une note est créé, on actualise la partie gauche
-    connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerListeNote()));
-    connect(&instance,SIGNAL(creationTache()),gauche,SLOT(chargerListeTaches()));
+    connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerAll()));
 
     // Lorsqu'on change la note au premier plan, on change l'arborescense correspondante
     connect(centre, SIGNAL(rechargerArbre(Note*)), droite, SLOT(chargerArbre(Note*)));
