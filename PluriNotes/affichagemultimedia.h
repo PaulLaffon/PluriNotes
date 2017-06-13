@@ -3,6 +3,10 @@
 
 #include <QFileDialog>
 #include <QImage>
+#include <QVideoWidget>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QSpacerItem>
 
 #include "affichagenote.h"
 
@@ -38,6 +42,28 @@ public:
     AffichageImage(Note* n, QWidget *parent = 0);
 
     void chargerMultimedia();
+
+public slots:
+    void changerPath();
+};
+
+class AffichageVideo : public AffichageMultimedia
+{
+    Q_OBJECT
+private:
+    QVideoWidget *video;
+    QMediaPlayer *player;
+
+    QSpacerItem *space;
+
+public:
+    AffichageVideo(Note* n, QWidget *parent = 0);
+    ~AffichageVideo();
+
+    void nouvelleVersion();
+    void chargerMultimedia();
+
+    void resizeEvent(QResizeEvent* event);
 
 public slots:
     void changerPath();

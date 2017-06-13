@@ -55,6 +55,7 @@ public:
     void ajouterVersion(const QString& titre, const QString& texte); /*!< \brief Ajoute une version de type Article */
     void ajouterVersion(const QString& titre,const QString& action,const int priorite,const QDateTime echeance,Status status);
     void ajouterVersion(const QString& titre,const QString& descr,const QString& path);
+    void ajouterVersionVideo(const QString &titre, const QString &descr, const QString &path);
 
     TypeNote type() const {return versions.back()->type();} /*!< \brief Retourne le type de la dernière version de la note */
 

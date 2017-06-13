@@ -67,3 +67,65 @@ void AffichageImage::changerPath()
     path->setText(filename);
     chargerMultimedia();
 }
+
+
+AffichageVideo::AffichageVideo(Note *n, QWidget *parent) :AffichageMultimedia(n, parent)
+{
+    this->resize(300, 400);
+
+    space = new QSpacerItem(100, 100, QSizePolicy::Expanding, QSizePolicy::Expanding);
+    video = new QVideoWidget(this);
+
+    chargerMultimedia();
+
+
+    layoutPrincipal->insertSpacerItem(4, space);
+
+    QRect r = space->geometry();
+    r.setLeft(r.left() + 15);
+    r.setTop(r.top() + 40);
+    r.setHeight(r.height() + 20);
+    video->setGeometry(r);
+}
+
+void AffichageVideo::resizeEvent(QResizeEvent *event)
+{
+    QMdiSubWindow::resizeEvent(event);
+    QRect r = space->geometry();
+    r.setLeft(r.left() + 10);
+    r.setTop(r.top() + 40);
+    r.setHeight(r.height() + 20);
+    video->setGeometry(r);
+}
+
+AffichageVideo::~AffichageVideo()
+{
+    player->stop();
+}
+
+void AffichageVideo::chargerMultimedia()
+{
+    player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile(path->text()));
+    player->setVolume(10);
+    player->play();
+
+    player->setVideoOutput(video);
+}
+
+
+void AffichageVideo::changerPath()
+{
+    QString filename = QFileDialog::getOpenFileName(this, QString("Ouvrir fichier"), QDir::currentPath(), QString("Videos (*.wmv)"));
+    path->setText(filename);
+    chargerMultimedia();
+}
+
+void AffichageVideo::nouvelleVersion()
+{
+    note->supprimerVersionVide();
+    note->ajouterVersionVideo(titre->text(), texte->toPlainText(), path->text());
+    chargerListeVersion();
+
+    emit actualisation(note);
+}

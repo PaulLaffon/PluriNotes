@@ -31,10 +31,25 @@ public:
     Image(QXmlStreamReader &stream);
     ~Image();
 
-    void writeInFile(QXmlStreamWriter& stream) const;
+    virtual void writeInFile(QXmlStreamWriter& stream) const;
 
     TypeNote type() const {return MEDIA_IMG;}
 };
 
+class Video : public MultiMedia
+{
+    Q_OBJECT
+private:
+
+
+public:
+    Video(const QString& _titre,const QString& _descr,const QString _file, QDateTime modif = QDateTime::currentDateTime());
+    Video(QXmlStreamReader &stream);
+    ~Video();
+
+    virtual void writeInFile(QXmlStreamWriter& stream) const;
+
+    TypeNote type() const {return MEDIA_VID;}
+};
 
 #endif // VERSIONMULTIMEDIA_H

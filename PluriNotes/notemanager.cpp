@@ -78,6 +78,20 @@ void NoteManager::nouvelleImage(const QString& id)
     }
 }
 
+void NoteManager::nouvelleVideo(const QString &id)
+{
+    if(find(id))
+        emit erreur(QString("Une note avec cet id existe déjà"));
+    else
+    {
+        Note* nouvelle = new Note(id);
+        nouvelle->ajouterVersionVideo(QString(""),QString(""),QString(""));
+        notes.push_back(nouvelle);
+
+        emit creationNote();
+    }
+}
+
 void NoteManager::saveAll()
 {
     QFile file(filename);
