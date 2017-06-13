@@ -25,9 +25,18 @@ private:
 
     void chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note*> &noteDejaAjoutes, bool successeur);
 
-public:
-    PartieDroite(QWidget *parent = 0);
+    PartieDroite();  /*!< \brief Singleton, on ne peut ni créer ni détruire un objet de cette classe */
     ~PartieDroite();
+    PartieDroite(const PartieDroite& p);
+    PartieDroite& operator=(const PartieDroite& p);
+
+    static PartieDroite* instance;
+
+
+public:
+    static PartieDroite *getInstance(); /*!< Récupère l'instance de PartieDroite */
+    static void deleteInstance(); /*!< Supprime l'instance de la classe */
+
     QPushButton* getButton();
 
     QTreeWidget* getArbreFils() const {return arbreFils;}

@@ -1,6 +1,8 @@
 #include "partiedroite.h"
 
-PartieDroite::PartieDroite(QWidget *parent) : QDockWidget(parent)
+PartieDroite* PartieDroite::instance = nullptr;
+
+PartieDroite::PartieDroite() : QDockWidget()
 {
     window = new QWidget(this);
 
@@ -32,6 +34,21 @@ PartieDroite::~PartieDroite()
 
 }
 
+PartieDroite* PartieDroite::getInstance()
+{
+    if(PartieDroite::instance == nullptr)
+        PartieDroite::instance = new PartieDroite();
+
+    return PartieDroite::instance;
+}
+
+void PartieDroite::deleteInstance()
+{
+    if(PartieDroite::instance != nullptr)
+        delete PartieDroite::instance;
+
+    PartieDroite::instance = nullptr;
+}
 
 void PartieDroite::chargerArbre(Note *n)
 {

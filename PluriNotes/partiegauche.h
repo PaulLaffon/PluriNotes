@@ -28,9 +28,16 @@ private:
     QListWidget *archive;
     QListWidget *corbeille;
 
-public:
-    PartieGauche(QWidget *parent = 0);
+    PartieGauche();  /*!< \brief Singleton, on ne peut ni créer ni détruire un objet de cette classe */
     ~PartieGauche();
+    PartieGauche(const PartieGauche& p);
+    PartieGauche& operator=(const PartieGauche& p);
+
+    static PartieGauche* instance;
+
+public:
+    static PartieGauche *getInstance(); /*!< Récupère l'instance de PartieGauche */
+    static void deleteInstance(); /*!< Supprime l'instance de la classe */
 
     QListWidget* getNoteActive() const {return noteActive;} // Pour connect avec partieCentrale dans mainWindow
     QListWidget* getTache() const {return tache;}

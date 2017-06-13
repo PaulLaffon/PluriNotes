@@ -24,6 +24,7 @@ private:
     PartieDroite *droite;
     QMenuBar *menu;
     QMenu *fichier;
+    QMenu *vue;
 
 public:
     MainWindow(QWidget *parent = 0);
@@ -33,6 +34,7 @@ public:
 
 public slots:
     void clicFichier(QAction* a);
+    void clicVue(QAction *a);
     void erreur(QString s);
     void ouvertureGestionRelation();
 };

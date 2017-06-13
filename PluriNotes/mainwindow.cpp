@@ -10,10 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
     centre = new PartieCentrale(this);
     setCentralWidget(centre);
 
-    gauche = new PartieGauche(this);
+    gauche = PartieGauche::getInstance();
     addDockWidget(Qt::DockWidgetArea::LeftDockWidgetArea, gauche);
 
-    droite = new PartieDroite(this);
+    droite = PartieDroite::getInstance();
     addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, droite);
 
     menu = new QMenuBar(this);
@@ -26,7 +26,12 @@ MainWindow::MainWindow(QWidget *parent)
     fichier->addAction("Nouveau Type de Relation");
     fichier->addAction("Ajouter un couple");
 
+    vue = new QMenu("Vue", this);
+    vue->addAction("Menu de gauche");
+    vue->addAction("Menu de droite");
+
     menu->addMenu(fichier);
+    menu->addMenu(vue);
 
     // Lorsqu'on double clic sur une note dans la partie gauche ==> Affiche la note dans la partie centrale
     connect(gauche->getNoteActive(), SIGNAL(itemDoubleClicked(QListWidgetItem*)), centre, SLOT(ouvrirNote(QListWidgetItem*)));
@@ -42,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Lorsqu'on clic dans le menu fichier
     connect(fichier, SIGNAL(triggered(QAction*)), this, SLOT(clicFichier(QAction*)));
+    connect(vue, SIGNAL(triggered(QAction*)), this, SLOT(clicVue(QAction*)));
 
     // Lorsqu'une note est créé, on actualise la partie gauche
     connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerAll()));
@@ -58,7 +64,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-
+    PartieGauche::deleteInstance();
+    PartieDroite::deleteInstance();
 }
 
 void MainWindow::clicFichier(QAction *a)
@@ -105,11 +112,17 @@ void MainWindow::clicFichier(QAction *a)
 
     else
         throw NoteException("Type à créer non reconnu, slot clicFichier");
-
-
-
 }
 
+void MainWindow::clicVue(QAction *a)
+{
+    if(a->text() == QString("Menu de gauche"))
+    {
+        gauche->show();
+    }
+    else
+       droite->show();
+}
 
 void MainWindow::erreur(QString s)
 {

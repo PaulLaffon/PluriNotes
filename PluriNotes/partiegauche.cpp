@@ -1,6 +1,8 @@
 #include "partiegauche.h"
 
-PartieGauche::PartieGauche(QWidget *parent) : QDockWidget(parent)
+PartieGauche* PartieGauche::instance = nullptr;
+
+PartieGauche::PartieGauche() : QDockWidget()
 {
     // On met un widget qui prend toute le surface, car un QDockWidget ne peut pas contenir de layout
     widgetTotal = new QWidget;
@@ -35,6 +37,22 @@ PartieGauche::PartieGauche(QWidget *parent) : QDockWidget(parent)
 PartieGauche::~PartieGauche()
 {
 
+}
+
+PartieGauche* PartieGauche::getInstance()
+{
+    if(PartieGauche::instance == nullptr)
+        PartieGauche::instance = new PartieGauche();
+
+    return PartieGauche::instance;
+}
+
+void PartieGauche::deleteInstance()
+{
+    if(PartieGauche::instance != nullptr)
+        delete PartieGauche::instance;
+
+    PartieGauche::instance = nullptr;
 }
 
 void PartieGauche::chargerListeNote()
