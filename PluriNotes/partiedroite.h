@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QTreeWidget>
+#include <QLabel>
 
 #include "notemanager.h"
 
@@ -19,16 +20,18 @@ private:
 
     QPushButton *gestionRelation;
 
-    QTreeWidget *arbre; /*!< \brief Arborescence des notes par rapport aux relation */
+    QTreeWidget *arbreFils; /*!< \brief Arborescence des notes filles par rapport aux relation */
+    QTreeWidget *arbrePere; /*!< \brief Arborescence des notes mères par rapport aux relation */
 
-    void chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note*> &noteDejaAjoutes);
+    void chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note*> &noteDejaAjoutes, bool successeur);
 
 public:
     PartieDroite(QWidget *parent = 0);
     ~PartieDroite();
     QPushButton* getButton();
 
-    QTreeWidget* getArbre() const {return arbre;}
+    QTreeWidget* getArbreFils() const {return arbreFils;}
+    QTreeWidget* getArbrePere() const {return arbrePere;}
 
 public slots:
     void chargerArbre(Note *n);

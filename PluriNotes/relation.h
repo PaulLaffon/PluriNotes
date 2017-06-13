@@ -28,11 +28,12 @@ public:
 
     Couple* findCouple(const QString& label, Note* pere, Note* fils);/*!< \brief Recherche un couple dans la Relation */
 
+    void retireCouple(Note* n); /*!< \brief Retire tous les couples où la note est référencée */
 
     const QString& getTitre() const {return titre;}
     const QString& getDescription() const {return description;}
-    void setTitre(const QString& t) {titre=t;};
-    void setDescription(const QString& d) {description=d;};
+    void setTitre(const QString& t) {titre=t;}
+    void setDescription(const QString& d) {description=d;}
 
     Couple* find(Note* pere, Note* fils); /*!< \brief Recherche ce couple dans la liste des couples, renvoie le couple ou nullptr si il n'existe pas */
     bool isReferenced(Note *n) const; /*!< \brief Indique si la note est référencée */

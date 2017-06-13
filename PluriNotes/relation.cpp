@@ -31,6 +31,18 @@ Couple* Relation::find(Note *pere, Note *fils)
     return nullptr;
 }
 
+void Relation::retireCouple(Note *n)
+{
+    for(QVector<Couple*>::iterator it = couples.begin(); it != couples.end(); it++)
+    {
+        if((*it)->getPere() == n || (*it)->getFils() == n)
+        {
+            delete *it;
+            couples.erase(it);
+            it--;
+        }
+    }
+}
 
 void Relation::retireAllCouple()
 {

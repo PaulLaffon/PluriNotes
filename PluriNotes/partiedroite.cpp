@@ -8,9 +8,20 @@ PartieDroite::PartieDroite(QWidget *parent) : QDockWidget(parent)
 
     gestionRelation = new QPushButton("Detail Relation", window);
 
-    arbre = new QTreeWidget(window);
+    arbreFils = new QTreeWidget(window);
+    arbrePere = new QTreeWidget(window);
 
-    layout->addWidget(arbre);
+    if(arbreFils->headerItem())
+    {
+         arbreFils->headerItem()->setText(0, "Arbre des fils");
+    }
+    if(arbrePere->headerItem())
+    {
+         arbrePere->headerItem()->setText(0, "Arbre des pères");
+    }
+
+    layout->addWidget(arbreFils);
+    layout->addWidget(arbrePere);
     layout->addWidget(gestionRelation);
 
     this->setWidget(window);
@@ -24,17 +35,25 @@ PartieDroite::~PartieDroite()
 
 void PartieDroite::chargerArbre(Note *n)
 {
-    arbre->clear();
+    arbreFils->clear();
+    arbrePere->clear();
 
-    QTreeWidgetItem* racine = new QTreeWidgetItem(arbre, QTreeWidgetItem::Type);
+    QTreeWidgetItem* racineFils = new QTreeWidgetItem(arbreFils, QTreeWidgetItem::Type);
+    QTreeWidgetItem* racinePere = new QTreeWidgetItem(arbrePere, QTreeWidgetItem::Type);
 
-    racine->setText(0, n->getId());
+    racineFils->setText(0, n->getId());
+    racinePere->setText(0, n->getId());
 
     QSet<Note*> noteDejaAjoutes;
-    chargerArbreRecursif(racine, n, noteDejaAjoutes);
+    chargerArbreRecursif(racineFils, n, noteDejaAjoutes, true);
+    noteDejaAjoutes.clear();
+    chargerArbreRecursif(racinePere, n, noteDejaAjoutes, false);
+
+    arbreFils->expandAll();
+    arbrePere->expandAll();
 }
 
-void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note *> &noteDejaAjoutes)
+void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note *> &noteDejaAjoutes, bool successeur)
 {
     RelationManager& relations = RelationManager::getInstance();
 
@@ -43,7 +62,7 @@ void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, Q
 
     noteDejaAjoutes.insert(noteActu);
 
-    for(RelationManager::iteratorPredSucc it = relations.begin(noteActu, true); it != relations.endSuccPred(); ++it)
+    for(RelationManager::iteratorPredSucc it = relations.begin(noteActu, successeur); it != relations.endSuccPred(); ++it)
     {
         QTreeWidgetItem *fils = new QTreeWidgetItem(pere, QTreeWidgetItem::Type);
         fils->setText(0, (*it)->getId());
@@ -51,9 +70,8 @@ void PartieDroite::chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, Q
         if(it.getRelation()->getTitre() == QString("Référence"))
             fils->setForeground(0, QBrush(Qt::red));
 
-        chargerArbreRecursif(fils, *it, noteDejaAjoutes);
+        chargerArbreRecursif(fils, *it, noteDejaAjoutes, successeur);
     }
-    arbre->expandItem(pere);
 }
 
 QPushButton* PartieDroite::getButton()

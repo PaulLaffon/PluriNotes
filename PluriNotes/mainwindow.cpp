@@ -36,7 +36,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     // Lorsqu'on double clic sur une note dans l'arborescense, ça affiche la note dans la partie centrale
-    connect(droite->getArbre(), SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), centre, SLOT(ouvrirNote(QTreeWidgetItem*,int)));
+    connect(droite->getArbreFils(), SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), centre, SLOT(ouvrirNote(QTreeWidgetItem*,int)));
+    connect(droite->getArbrePere(), SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), centre, SLOT(ouvrirNote(QTreeWidgetItem*,int)));
+
 
     // Lorsqu'on clic dans le menu fichier
     connect(fichier, SIGNAL(triggered(QAction*)), this, SLOT(clicFichier(QAction*)));
@@ -120,4 +122,26 @@ void MainWindow::ouvertureGestionRelation()
     GestionRelation* gest = new GestionRelation(this);
     gest->chargerListeRelations();
     gest->exec();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    NoteManager& instance = NoteManager::getInstance();
+
+    if(instance.corbeilleVide())
+    {
+        event->accept();
+        return;
+    }
+
+    QMessageBox::StandardButton viderCorbeille;
+    viderCorbeille = QMessageBox::question( this, "PluriNotes", "Voulez-vous supprimer la corbeille ?",
+                           QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes, QMessageBox::Yes);
+
+    if(viderCorbeille == QMessageBox::Yes)
+        instance.supprimerCorbeille();
+    if(viderCorbeille == QMessageBox::Cancel)
+        event->ignore();
+    else
+        event->accept();
 }

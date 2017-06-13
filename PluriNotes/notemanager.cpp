@@ -267,3 +267,48 @@ void NoteManager::restaurerNote(Note *n)
 
     emit creationNote();
 }
+
+void NoteManager::supprimerNote(const QString &id)
+{
+    // On considère que la note n'est pas référencée par une Référence
+    RelationManager& relations = RelationManager::getInstance();
+    Note* n = find(id);
+
+    for(RelationManager::iterator it = relations.begin(); it != relations.end(); ++it)
+    {
+        (*it).retireCouple(n);
+    }
+
+    for(QVector<Note*>::iterator it = notes.begin(); it != notes.end(); it++)
+    {
+        if(*it == n)
+        {
+            delete n;
+            notes.erase(it);
+            it--;
+        }
+    }
+}
+
+void NoteManager::supprimerCorbeille()
+{
+    for(QVector<Note*>::iterator it = notes.begin(); it != notes.end(); it++)
+    {
+        if((*it)->isInCorbeille())
+        {
+            supprimerNote((*it)->getId());
+            it--;
+        }
+    }
+}
+
+bool NoteManager::corbeilleVide()
+{
+    for(QVector<Note*>::iterator it = notes.begin(); it != notes.end(); it++)
+    {
+        if((*it)->isInCorbeille())
+            return false;
+    }
+
+    return true;
+}
