@@ -108,6 +108,7 @@ public slots:
     void nouvelleTache(const QString& id); /*!< \brief Cree une nouvelle tache avec une première version vide */
     void nouvelleImage(const QString& id); /*!< \brief Cree une nouvelle note image avec une première version vide */
     void nouvelleVideo(const QString& id); /*!< \brief Cree une nouvelle note video avec une première version vide */
+    void nouvelleAudio(const QString& id); /*!< \brief Cree une nouvelle note audio avec une première version vide */
 
     void actualiserReference(); /*!< \brief Actualise les références par rapport a toutes les notes */
     void clicSupprimerNote(Note *n); /*!< \brief Fonction appelé lorsque que l'on clique pour supprimer une note */

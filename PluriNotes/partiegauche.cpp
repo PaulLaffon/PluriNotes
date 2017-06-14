@@ -67,16 +67,22 @@ void PartieGauche::chargerListeNote()
         // Ajoute chaque article à la liste
         new QListWidgetItem((*it)->getId(), noteActive);
     }
-    for(NoteManager::TypeIterator it2 = instance.begin(MEDIA_IMG); it2 != instance.end(); ++it2)
+    for(NoteManager::TypeIterator it = instance.begin(MEDIA_IMG); it != instance.end(); ++it)
     {
         // Ajoute chaque article à la liste
-        new QListWidgetItem((*it2)->getId(), noteActive);
+        new QListWidgetItem((*it)->getId(), noteActive);
     }
 
-    for(NoteManager::TypeIterator it2 = instance.begin(MEDIA_VID); it2 != instance.end(); ++it2)
+    for(NoteManager::TypeIterator it = instance.begin(MEDIA_VID); it != instance.end(); ++it)
     {
         // Ajoute chaque article à la liste
-        new QListWidgetItem((*it2)->getId(), noteActive);
+        new QListWidgetItem((*it)->getId(), noteActive);
+    }
+
+    for(NoteManager::TypeIterator it = instance.begin(MEDIA_AUDIO); it != instance.end(); ++it)
+    {
+        // Ajoute chaque article à la liste
+        new QListWidgetItem((*it)->getId(), noteActive);
     }
 }
 

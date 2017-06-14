@@ -64,8 +64,6 @@ Video::~Video()
 void Video::writeInFile(QXmlStreamWriter &stream) const
 {
     stream.writeStartElement("Version");
-    QString s = textFromType(type());
-
 
     stream.writeTextElement("Type", textFromType(type()));
     stream.writeTextElement("Date", dateModif.toString());
@@ -75,3 +73,34 @@ void Video::writeInFile(QXmlStreamWriter &stream) const
 
     stream.writeEndElement();
 }
+
+Audio::Audio(const QString &_titre, const QString &_descr, const QString _file, QDateTime modif)
+    :MultiMedia(_titre, _descr, _file, modif)
+{
+
+}
+
+Audio::Audio(QXmlStreamReader &stream) :MultiMedia(stream)
+{
+
+}
+
+Audio::~Audio()
+{
+
+}
+
+void Audio::writeInFile(QXmlStreamWriter &stream) const
+{
+    stream.writeStartElement("Version");
+
+    stream.writeTextElement("Type", textFromType(type()));
+    stream.writeTextElement("Date", dateModif.toString());
+    stream.writeTextElement("Titre", titre);
+    stream.writeTextElement("Description", texte);
+    stream.writeTextElement("Fichier", filepath);
+
+    stream.writeEndElement();
+}
+
+

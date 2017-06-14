@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     fichier->addAction("Nouvelle Tache");
     fichier->addAction("Nouvelle Image");
     fichier->addAction("Nouvelle Vidéo");
+    fichier->addAction("Nouvelle note Audio");
     fichier->addAction("Nouveau Type de Relation");
     fichier->addAction("Ajouter un couple");
 
@@ -101,6 +102,12 @@ void MainWindow::clicFichier(QAction *a)
     {
         d->setLabelText(QString("Id de la nouvelle note vidéo"));
         connect(d,SIGNAL(textValueSelected(QString)),&instance,SLOT(nouvelleVideo(QString)));
+        d->exec();
+    }
+    else if(a->text() == QString("Nouvelle note Audio"))
+    {
+        d->setLabelText(QString("Id de la nouvelle note audio"));
+        connect(d,SIGNAL(textValueSelected(QString)),&instance,SLOT(nouvelleAudio(QString)));
         d->exec();
     }
     else if(a->text() == QString("Nouveau Type de Relation"))
