@@ -65,25 +65,17 @@ void PartieGauche::chargerListeNote()
     for(NoteManager::TypeIterator it = instance.begin(ARTICLE); it != instance.end(); ++it)
     {
         // Ajoute chaque article à la liste
-        new QListWidgetItem((*it)->getId(), noteActive);
+        new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(ARTICLE) + QString(")"), noteActive);
     }
+
     for(NoteManager::TypeIterator it = instance.begin(MEDIA_IMG); it != instance.end(); ++it)
-    {
-        // Ajoute chaque article à la liste
-        new QListWidgetItem((*it)->getId(), noteActive);
-    }
+        new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(MEDIA_IMG) + QString(")"), noteActive);
 
     for(NoteManager::TypeIterator it = instance.begin(MEDIA_VID); it != instance.end(); ++it)
-    {
-        // Ajoute chaque article à la liste
-        new QListWidgetItem((*it)->getId(), noteActive);
-    }
+        new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(MEDIA_VID) + QString(")"), noteActive);
 
     for(NoteManager::TypeIterator it = instance.begin(MEDIA_AUDIO); it != instance.end(); ++it)
-    {
-        // Ajoute chaque article à la liste
-        new QListWidgetItem((*it)->getId(), noteActive);
-    }
+        new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(MEDIA_AUDIO) + QString(")"), noteActive);
 }
 
 void PartieGauche::chargerListeTaches()
@@ -94,7 +86,7 @@ void PartieGauche::chargerListeTaches()
 
     for(NoteManager::TypeIterator it = instance.begin(TACHE); it != instance.end();++it)
     {
-        new QListWidgetItem((*it)->getId(),tache);
+        new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(TACHE) + QString(")"), tache);
     }
 }
 
@@ -110,7 +102,7 @@ void PartieGauche::chargerListeArchive()
 
         for(NoteManager::TypeIterator it = instance.begin(type, true); it != instance.end(); ++it)
         {
-            new QListWidgetItem((*it)->getId(), archive);
+            new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(type) + QString(")"), archive);
         }
     }
 }
@@ -127,7 +119,7 @@ void PartieGauche::chargerListeCorbeille()
 
         for(NoteManager::TypeIterator it = instance.begin(type, false, true); it != instance.end(); ++it)
         {
-            new QListWidgetItem((*it)->getId(), corbeille);
+            new QListWidgetItem((*it)->getId() + QString(" (") + VersionNote::textFromType(type) + QString(")"), corbeille);
         }
     }
 }

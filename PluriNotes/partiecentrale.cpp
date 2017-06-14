@@ -8,7 +8,12 @@ PartieCentrale::PartieCentrale(QWidget *parent) : QMdiArea(parent)
 // SLOT, appelé lorsque qu'on double clic sur une note dans le menu à gauche
 void PartieCentrale::ouvrirNote(QListWidgetItem *item)
 {
-    ouvrirNote(item->text());
+    QString s = item->text();
+    QStringList liste = s.split("(");
+    s = liste.first(); // L'id correspond à la première partie
+    s.remove(s.size() - 1, 1); // On enlève l'espace de la fin
+
+    ouvrirNote(s);
 }
 
 // SLOT, appelé lorsque qu'on double clic sur une note dans le menu à droite (arborescense)
