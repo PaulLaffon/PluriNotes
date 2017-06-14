@@ -19,6 +19,8 @@ AffichageMultimedia::AffichageMultimedia(Note *n, QWidget *parent) : AffichageAr
     }
     else
         connect(buttonPath, SIGNAL(clicked(bool)), this, SLOT(changerPath()));
+
+    connect(path, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
 }
 
 void AffichageMultimedia::chargerVersion(unsigned int i)
@@ -32,6 +34,8 @@ void AffichageMultimedia::chargerVersion(unsigned int i)
     texte->setText(m->getDescription());
     titre->setText(m->getTitre());
     id->setText(note->getId());
+
+    save->setDisabled(true);
 }
 
 void AffichageMultimedia::nouvelleVersion()
@@ -39,6 +43,8 @@ void AffichageMultimedia::nouvelleVersion()
     note->supprimerVersionVide();
     note->ajouterVersion(titre->text(), texte->toPlainText(), path->text());
     chargerListeVersion();
+
+    save->setDisabled(true);
 
     emit actualisation(note);
 }
@@ -126,6 +132,8 @@ void AffichageVideo::nouvelleVersion()
     note->supprimerVersionVide();
     note->ajouterVersionVideo(titre->text(), texte->toPlainText(), path->text());
     chargerListeVersion();
+
+    save->setDisabled(true);
 
     emit actualisation(note);
 }

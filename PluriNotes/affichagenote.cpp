@@ -25,8 +25,6 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
     // Récupérer lorsque l'on change de version dans la liste déroulante
     connect(listeVersion, SIGNAL(currentIndexChanged(int)), this, SLOT(selectionVersion(int)));
 
-
-
     layoutId->addWidget(labelId);
     layoutId->addWidget(id);
 
@@ -49,7 +47,13 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
     else
         connect(supprimer, SIGNAL(clicked(bool)), this, SLOT(supprimerNote()));
 
+    connect(titre, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
     setWidget(window); // On affiche le widget dans le QMdiSubWindow
+}
+
+void AffichageNote::sauvegardePossible()
+{
+    save->setEnabled(true);
 }
 
 void AffichageNote::chargerListeVersion()
@@ -114,6 +118,8 @@ AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(n, p
     }
     else
         connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
+
+    connect(texte, SIGNAL(textChanged()), this, SLOT(sauvegardePossible()));
 }
 
 // Charge la i-ème version de l'article
@@ -128,6 +134,8 @@ void AffichageArticle::chargerVersion(unsigned int i)
     texte->setText(a->getDescription());
     titre->setText(a->getTitre());
     id->setText(note->getId());
+
+    save->setDisabled(true);
 }
 
 // SLOT change la version quand on choisi dans la liste déroulante
@@ -144,6 +152,8 @@ void AffichageArticle::nouvelleVersion()
     note->supprimerVersionVide();
     note->ajouterVersion(titre->text(), texte->toPlainText());
     chargerListeVersion();
+
+    save->setDisabled(true);
 
     emit actualisation(note);
 }
@@ -202,6 +212,10 @@ AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent
     }
     else
         connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
+
+    connect(action, SIGNAL(textChanged()), this, SLOT(sauvegardePossible()));
+    connect(echeance, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
+    connect(priorite, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
 }
 
 void AffichageTache::setStatus()
@@ -242,12 +256,16 @@ void AffichageTache::chargerVersion(unsigned int i)
 
     modifStatus(t);
 
+    save->setDisabled(true);
+
 }
 
 void AffichageTache::nouvelleVersion()
 {
     note->ajouterVersion(titre->text(), action->toPlainText(),priorite->text().toInt(),QDateTime::fromString(echeance->text()),statusAffichage);
     chargerListeVersion();
+
+    save->setDisabled(true);
 
     emit actualisation(note);
 }
