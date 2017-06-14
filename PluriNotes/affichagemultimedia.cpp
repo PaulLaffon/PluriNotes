@@ -137,3 +137,9 @@ void AffichageVideo::nouvelleVersion()
 
     emit actualisation(note);
 }
+
+void AffichageVideo::closeEvent(QCloseEvent *event)
+{
+    AffichageNote::closeEvent(event);
+    player->stop();
+}

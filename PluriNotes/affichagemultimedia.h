@@ -65,6 +65,8 @@ public:
 
     void resizeEvent(QResizeEvent* event);
 
+    void closeEvent(QCloseEvent* event);
+
 public slots:
     void changerPath();
 };
