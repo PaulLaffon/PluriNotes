@@ -6,6 +6,7 @@ NoteManager* NoteManager::instance = nullptr;
 NoteManager::NoteManager() : QObject()
 {
     filename = "save.xml";
+    viderCorbeilleAuto = false;
 }
 
 NoteManager::~NoteManager()
@@ -121,6 +122,10 @@ void NoteManager::saveAll()
     stream.writeStartDocument();
     stream.writeStartElement("Sauvegarde");
 
+    stream.writeStartElement("Préférences");
+    stream.writeTextElement("ViderAuto", QString::number(viderCorbeilleAuto));
+    stream.writeEndElement();
+
     for(auto it = notes.begin(); it != notes.end(); it++)
     {
         Note& actu = **it;
@@ -223,6 +228,11 @@ void NoteManager::load()
                 QString fils = VersionNote::textNextBaliseXml(stream);
 
                 relations.back()->ajoutCouple(label, find(pere), find(fils));
+            }
+
+            else if(stream.name() == "Préférences")
+            {
+                viderCorbeilleAuto = VersionNote::textNextBaliseXml(stream).toInt();
             }
         }
     }

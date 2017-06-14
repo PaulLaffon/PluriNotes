@@ -25,6 +25,8 @@ private:
 
     QString filename;
 
+    bool viderCorbeilleAuto;
+
     NoteManager(); /*!< \brief Singleton, le constructeur est privé */
     ~NoteManager();
     NoteManager(const NoteManager& m);
@@ -57,6 +59,9 @@ public:
     void supprimerCorbeille(); /*!< \brief Supprime toutes les notes de la corbeille */
 
     bool corbeilleVide(); /*!< \brief Indique si aucune note est dans la corbeille */
+
+    void setViderCorbeilleAuto(bool b) {viderCorbeilleAuto = b;}
+    bool getViderCorbeilleAuto() const {return viderCorbeilleAuto;}
 
     /*! \class TypeIterator
      *  \brief Itérateur sur le d'une d'une note

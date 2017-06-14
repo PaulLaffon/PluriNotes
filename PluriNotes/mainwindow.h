@@ -14,6 +14,7 @@
 #include "creationrelation.h"
 #include "creationcouple.h"
 #include "gestionrelation.h"
+#include "preferences.h"
 
 class MainWindow : public QMainWindow
 {
@@ -25,6 +26,7 @@ private:
     QMenuBar *menu;
     QMenu *fichier;
     QMenu *vue;
+    QMenu *option;
 
 public:
     MainWindow(QWidget *parent = 0);
@@ -36,7 +38,10 @@ public slots:
     void clicFichier(QAction* a);
     void clicVue(QAction *a);
     void erreur(QString s);
-    void ouvertureGestionRelation();
+    void ouvertureGestionRelation(); /*!< \brief Recoit un signal provenant du bouton GestionRelation et permet d'ouvrir une fenetre QDialog */
+
+private slots:
+    void clicOption();
 };
 
 #endif // MAINWINDOW_H

@@ -32,8 +32,12 @@ MainWindow::MainWindow(QWidget *parent)
     vue->addAction("Menu de gauche");
     vue->addAction("Menu de droite");
 
+    option = new QMenu("Option", this);
+    option->addAction("Préférences");
+
     menu->addMenu(fichier);
     menu->addMenu(vue);
+    menu->addMenu(option);
 
     // Lorsqu'on double clic sur une note dans la partie gauche ==> Affiche la note dans la partie centrale
     connect(gauche->getNoteActive(), SIGNAL(itemDoubleClicked(QListWidgetItem*)), centre, SLOT(ouvrirNote(QListWidgetItem*)));
@@ -50,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Lorsqu'on clic dans le menu fichier
     connect(fichier, SIGNAL(triggered(QAction*)), this, SLOT(clicFichier(QAction*)));
     connect(vue, SIGNAL(triggered(QAction*)), this, SLOT(clicVue(QAction*)));
+    connect(option, SIGNAL(triggered(QAction*)), this, SLOT(clicOption()));
 
     // Lorsqu'une note est créé, on actualise la partie gauche
     connect(&instance, SIGNAL(creationNote()), gauche, SLOT(chargerAll()));
@@ -138,6 +143,12 @@ void MainWindow::clicVue(QAction *a)
        droite->show();
 }
 
+void MainWindow::clicOption()
+{
+    Preferences p(this);
+    p.exec();
+}
+
 void MainWindow::erreur(QString s)
 {
     QMessageBox message;
@@ -158,6 +169,11 @@ void MainWindow::closeEvent(QCloseEvent *event)
     if(instance.corbeilleVide())
     {
         event->accept();
+        return;
+    }
+    else if(instance.getViderCorbeilleAuto())
+    {
+        instance.supprimerCorbeille();
         return;
     }
 

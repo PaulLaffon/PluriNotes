@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     reference.cpp \
     gestionrelation.cpp \
     versionmultimedia.cpp \
-    affichagemultimedia.cpp
+    affichagemultimedia.cpp \
+    preferences.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -46,5 +47,6 @@ HEADERS  += mainwindow.h \
     reference.h \
     gestionrelation.h \
     versionmultimedia.h \
-    affichagemultimedia.h
+    affichagemultimedia.h \
+    preferences.h
 
