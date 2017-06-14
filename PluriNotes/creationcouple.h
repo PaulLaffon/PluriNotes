@@ -16,6 +16,11 @@
 #include "relationmanager.h"
 #include "versionnote.h"
 
+/*! \class CreationCouple
+ *  \brief Classe abstraite pour l'affichage de la création d'un couple
+ *  Hérite de QDialog, affiche la liste des relation et des notes pour pouvoir créer un couple
+ * */
+
 class CreationCouple : public QDialog
 {
     Q_OBJECT
@@ -37,12 +42,12 @@ private:
 
 public:
     CreationCouple(QWidget *parent = 0);
-    void chargerListeRelation();
-    void chargerListeNote1();
-    void chargerListeNote2();
+    void chargerListeRelation(); /*!< \brief charge la liste des relation à partir de d'une instance de relationmanager */
+    void chargerListeNote1(); /*!< \brief charge la liste des note dans la premiere combobox à partir d'une instance de notemanager */
+    void chargerListeNote2(); /*!< \brief charge la liste des note dans la deuxième combobox à partir d'une instance de notemanager */
 
 signals:
-    void CoupleAccepter(QString titre,QString id, Note* note1,Note* note2);
+    void CoupleAccepter(QString titre,QString id, Note* note1,Note* note2); /*!< \brief emet un signal qui permet la creation d'un couple */
 public slots:
     void valider();
 };
