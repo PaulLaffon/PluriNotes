@@ -40,19 +40,32 @@ public:
     bool isReferenced(Note *n); /*!< \brief Indique si la relation est référencée par la relation Référence */
 
     /*! \class iterator
-     *  \brief Iterateur pour parcourir toutes les relations
+     *  \brief Iterateur pour parcourir toutes les relations, sauf la relation référence qui n'est pas prise en compte
      * */
     class iterator
     {
     private:
         friend class RelationManager;
         QVector<Relation*>::iterator it;
+        int restant;
 
     public:
-        iterator(QVector<Relation*>::iterator i) : it(i) {}
+        iterator(QVector<Relation*>::iterator i, int r) : it(i), restant(r) {
+            if(restant > 0 && (*it)->isReference()) {
+                restant--;
+                it++;
+            }
+        }
 
         bool operator !=(const iterator& i) const {return it != i.it;}
-        iterator& operator++() {it++; return *this;}
+        iterator& operator++() {
+            it++; restant--;
+            if(restant > 0 && (*it)->isReference()) {
+                restant--;
+                it++;
+            }
+            return *this;
+        }
         Relation& operator*() {return **it;}
     };
 
@@ -106,8 +119,8 @@ public:
         Relation* getRelation() const {return *it;}
     };
 
-    iterator begin() {return iterator(relations.begin());}
-    iterator end() {return iterator(relations.end());}
+    iterator begin() {return iterator(relations.begin(), relations.size());}
+    iterator end() {return iterator(relations.end(), 0);}
 
     iteratorPredSucc begin(Note* n, bool successeur) {return iteratorPredSucc(relations.begin(), n, successeur, relations.size());}
     iteratorPredSucc endSuccPred() {return iteratorPredSucc();}
