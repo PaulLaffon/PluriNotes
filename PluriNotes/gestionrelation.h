@@ -54,7 +54,7 @@ public:
 public slots:
     void sauvegarderModif();
     void supprimerCouple();
-    void chargerChangementRelation(QString);
+    void chargerChangementRelation(int i);
     void chargerCouple(QString);
 };
 #endif // GESTIONRELATION_H

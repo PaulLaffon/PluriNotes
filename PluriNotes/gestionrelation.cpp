@@ -11,7 +11,7 @@ GestionRelation::GestionRelation(QWidget *parent) : QDialog(parent)
 
 
     listeRelations = new QComboBox(this);
-    connect(listeRelations, SIGNAL(currentIndexChanged(QString)), this, SLOT(chargerChangementRelation(QString)));
+    connect(listeRelations, SIGNAL(currentIndexChanged(int)), this, SLOT(chargerChangementRelation(int)));
     modifTitre = new QLineEdit(this);
     modifDescription= new QTextEdit(this);
     listeCouples = new QComboBox(this);
@@ -92,15 +92,14 @@ void GestionRelation::chargerListeCouples(QString titre)
 
 void GestionRelation::sauvegarderModif()
 {
-    Relation* relation = selectionnerRelation();
-
-    relation->setTitre(modifTitre->text());
-    relation->setDescription(modifDescription->toPlainText());
     Couple* couple = selectionnerCouple();
     couple->setLabel(modifCouple->text());
-    chargerListeCouples(relation->getTitre());
+    Relation* relation = selectionnerRelation();
     relation->setTitre(modifTitre->text());
-    chargerListeRelations();
+    relation->setDescription(modifDescription->toPlainText());
+    int i = listeRelations->currentIndex();
+    listeRelations->setItemText(i,modifTitre->text());
+
 
 }
 
@@ -148,8 +147,10 @@ void GestionRelation::chargerCouple(QString titre)
     modifCouple->setText(titrecouple);
 }
 
-void GestionRelation::chargerChangementRelation(QString titre)
+void GestionRelation::chargerChangementRelation(int i)
 {
-    chargerListeCouples(titre);
     chargerRelation();
+    QString titrerelation=listeRelations->itemText(i);
+    chargerListeCouples(titrerelation);
+
 }
