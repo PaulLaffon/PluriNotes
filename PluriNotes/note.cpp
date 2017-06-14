@@ -19,6 +19,8 @@ void Note::ajouterVersion(TypeNote type, QXmlStreamReader& stream)
         nouveau = new Image(stream);
     else if(type == MEDIA_VID)
         nouveau = new Video(stream);
+    else if(type == MEDIA_AUDIO)
+        nouveau = new Audio(stream);
     else
         throw NoteException(QString("Type de version non reconnu"));
 
@@ -48,6 +50,12 @@ void Note::ajouterVersion(const QString &titre, const QString &descr, const QStr
 void Note::ajouterVersionVideo(const QString &titre, const QString &descr, const QString &path)
 {
     Video* nouveau = new Video(titre, descr, path);
+    versions.push_back(nouveau);
+}
+
+void Note::ajouterVersionAudio(const QString &titre, const QString &descr, const QString &path)
+{
+    Audio* nouveau = new Audio(titre, descr, path);
     versions.push_back(nouveau);
 }
 

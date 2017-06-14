@@ -77,13 +77,10 @@ void AffichageImage::changerPath()
 
 AffichageVideo::AffichageVideo(Note *n, QWidget *parent) :AffichageMultimedia(n, parent)
 {
-    this->resize(300, 400);
-
     space = new QSpacerItem(100, 100, QSizePolicy::Expanding, QSizePolicy::Expanding);
     video = new QVideoWidget(this);
 
     chargerMultimedia();
-
 
     layoutPrincipal->insertSpacerItem(4, space);
 
@@ -142,4 +139,44 @@ void AffichageVideo::closeEvent(QCloseEvent *event)
 {
     AffichageNote::closeEvent(event);
     player->stop();
+    delete player;
+}
+
+AffichageAudio::AffichageAudio(Note *n, QWidget *parent) : AffichageMultimedia(n, parent)
+{
+    chargerMultimedia();
+}
+
+void AffichageAudio::changerPath()
+{
+    QString filename = QFileDialog::getOpenFileName(this, QString("Ouvrir fichier"), QDir::currentPath(), QString("Audio (*.mp3)"));
+    path->setText(filename);
+    chargerMultimedia();
+}
+
+void AffichageAudio::chargerMultimedia()
+{
+    player = new QMediaPlayer(this);
+
+    player->setMedia(QUrl::fromLocalFile(path->text()));
+    player->setVolume(10);
+    player->play();
+}
+
+void AffichageAudio::nouvelleVersion()
+{
+    note->supprimerVersionVide();
+    note->ajouterVersionAudio(titre->text(), texte->toPlainText(), path->text());
+    chargerListeVersion();
+
+    save->setDisabled(true);
+
+    emit actualisation(note);
+}
+
+void AffichageAudio::closeEvent(QCloseEvent *event)
+{
+    AffichageNote::closeEvent(event);
+    player->stop();
+    delete player;
 }

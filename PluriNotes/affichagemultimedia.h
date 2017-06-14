@@ -71,5 +71,23 @@ public slots:
     void changerPath();
 };
 
+class AffichageAudio : public AffichageMultimedia
+{
+    Q_OBJECT
+private:
+    QMediaPlayer *player;
+
+public:
+    AffichageAudio(Note* n, QWidget *parent = 0);
+
+    void nouvelleVersion();
+    void chargerMultimedia();
+
+    void closeEvent(QCloseEvent* event);
+
+public slots:
+    void changerPath();
+};
+
 
 #endif // AFFICHAGEMULTIMEDIA_H

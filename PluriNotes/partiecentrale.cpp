@@ -41,6 +41,8 @@ void PartieCentrale::ouvrirNote(const QString &id)
         affichage = new AffichageImage(n,this);
     else if(n->type() == MEDIA_VID)
         affichage = new AffichageVideo(n, this);
+    else if(n->type() == MEDIA_AUDIO)
+        affichage = new AffichageAudio(n, this);
     else
         throw NoteException("Type de note non pris en charge lors de l'ouverture de l'affichage de la note");
 

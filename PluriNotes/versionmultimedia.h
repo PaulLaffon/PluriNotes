@@ -52,4 +52,18 @@ public:
     TypeNote type() const {return MEDIA_VID;}
 };
 
+class Audio : public MultiMedia
+{
+    Q_OBJECT
+
+public:
+    Audio(const QString& _titre,const QString& _descr,const QString _file, QDateTime modif = QDateTime::currentDateTime());
+    Audio(QXmlStreamReader &stream);
+    ~Audio();
+
+    virtual void writeInFile(QXmlStreamWriter& stream) const;
+
+    TypeNote type() const {return MEDIA_AUDIO;}
+};
+
 #endif // VERSIONMULTIMEDIA_H
