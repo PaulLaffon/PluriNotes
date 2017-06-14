@@ -15,6 +15,7 @@
 #include <QGroupBox>
 #include <QRadioButton>
 #include <QPixmap>
+#include <QDateTimeEdit>
 
 #include "notemanager.h"
 
@@ -119,7 +120,7 @@ private :
     QGroupBox *groupStatus;
 
     QTextEdit *action;
-    QLineEdit *echeance;
+    QDateTimeEdit *echeance;
     QRadioButton *statusEnAttente;
     QRadioButton *statusEnCours;
     QRadioButton *statusTerminee;
@@ -129,10 +130,6 @@ public :
     AffichageTache(Note* n,QWidget *parent = 0);
 
     void chargerVersion(unsigned int i);
-
-    void setStatus();
-
-    void modifStatus(Tache *t);
 
 public slots :
     void nouvelleVersion();

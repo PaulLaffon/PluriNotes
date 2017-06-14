@@ -173,7 +173,7 @@ AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent
 
     action = new QTextEdit(this);
     priorite = new QLineEdit(this);
-    echeance = new QLineEdit(this);
+    echeance = new QDateTimeEdit(this);
     statusEnAttente = new QRadioButton("En attente");
     statusEnCours = new QRadioButton("En cours");
     statusTerminee = new QRadioButton("Terminee");
@@ -214,29 +214,9 @@ AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent
         connect(save, SIGNAL(clicked(bool)), this, SLOT(nouvelleVersion()));
 
     connect(action, SIGNAL(textChanged()), this, SLOT(sauvegardePossible()));
-    connect(echeance, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
+    connect(echeance, SIGNAL(dateTimeChanged(QDateTime)), this, SLOT(sauvegardePossible()));
     connect(priorite, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
 }
-
-void AffichageTache::setStatus()
-{
-    if (statusAffichage==enCours)
-    {
-        statusEnCours->setChecked(true);
-        statusEnAttente->setChecked(false);
-    }
-    else if (statusAffichage==terminee)
-    {
-        statusTerminee->setChecked(true);
-        statusEnAttente->setChecked(false);
-    }
-    else if (statusAffichage==enAttente)
-    {
-        statusEnAttente->setChecked(true);
-    }
-}
-
-
 
 void AffichageTache::chargerVersion(unsigned int i)
 {
@@ -249,12 +229,16 @@ void AffichageTache::chargerVersion(unsigned int i)
     action->setText(t->getAction());
     titre->setText(t->getTitre());
     id->setText(note->getId());
-    echeance->setText(t->getEcheance().toString());
+    echeance->setDateTime(t->getEcheance());
     priorite->setText(QString::number(t->getPriorite()));
     statusAffichage = t->getStatus();
-    setStatus();
 
-    modifStatus(t);
+    if(statusAffichage == enAttente)
+        statusEnAttente->setChecked(true);
+    else if(statusAffichage == enCours)
+        statusEnCours->setChecked(true);
+    else
+        statusTerminee->setChecked(true);
 
     save->setDisabled(true);
 
@@ -262,6 +246,15 @@ void AffichageTache::chargerVersion(unsigned int i)
 
 void AffichageTache::nouvelleVersion()
 {
+    note->supprimerVersionVide();
+
+    if(statusEnAttente->isChecked())
+        statusAffichage = enAttente;
+    else if(statusEnCours->isChecked())
+        statusAffichage = enCours;
+    else
+        statusAffichage = terminee;
+
     note->ajouterVersion(titre->text(), action->toPlainText(),priorite->text().toInt(),QDateTime::fromString(echeance->text()),statusAffichage);
     chargerListeVersion();
 
@@ -270,10 +263,3 @@ void AffichageTache::nouvelleVersion()
     emit actualisation(note);
 }
 
-void AffichageTache::modifStatus(Tache *t)
-{
-    connect(statusEnAttente,SIGNAL(toggled(bool)),t,SLOT(setStatusEnAttente(bool)));
-    connect(statusEnCours,SIGNAL(toggled(bool)),t,SLOT(setStatusEnCours(bool)));
-    connect(statusTerminee,SIGNAL(toggled(bool)),t,SLOT(setStatusTerminee(bool)));
-    statusAffichage = t->getStatus();
-}
