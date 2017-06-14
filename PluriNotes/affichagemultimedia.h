@@ -54,6 +54,8 @@ private:
     QVideoWidget *video;
     QMediaPlayer *player;
 
+    QPushButton *pause;
+
     QSpacerItem *space;
 
 public:
@@ -69,6 +71,9 @@ public:
 
 public slots:
     void changerPath();
+
+private slots:
+    void playPause();
 };
 
 class AffichageAudio : public AffichageMultimedia
@@ -76,6 +81,7 @@ class AffichageAudio : public AffichageMultimedia
     Q_OBJECT
 private:
     QMediaPlayer *player;
+    QPushButton *pause;
 
 public:
     AffichageAudio(Note* n, QWidget *parent = 0);
@@ -87,6 +93,9 @@ public:
 
 public slots:
     void changerPath();
+
+private slots:
+    void playPause();
 };
 
 

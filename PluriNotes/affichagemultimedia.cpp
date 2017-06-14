@@ -70,25 +70,46 @@ void AffichageImage::chargerMultimedia()
 void AffichageImage::changerPath()
 {
     QString filename = QFileDialog::getOpenFileName(this, QString("Ouvrir fichier"), QDir::currentPath(), QString("Images (*.png *.jpg)"));
-    path->setText(filename);
+
+    if(filename != QString(""))
+        path->setText(filename);
     chargerMultimedia();
 }
 
 
 AffichageVideo::AffichageVideo(Note *n, QWidget *parent) :AffichageMultimedia(n, parent)
 {
+    pause = new QPushButton("Play", this);
+
     space = new QSpacerItem(100, 100, QSizePolicy::Expanding, QSizePolicy::Expanding);
     video = new QVideoWidget(this);
 
     chargerMultimedia();
 
     layoutPrincipal->insertSpacerItem(4, space);
+    layoutPrincipal->insertWidget(5, pause);
 
     QRect r = space->geometry();
     r.setLeft(r.left() + 15);
     r.setTop(r.top() + 40);
     r.setHeight(r.height() + 20);
     video->setGeometry(r);
+
+    connect(pause, SIGNAL(clicked(bool)), this, SLOT(playPause()));
+}
+
+void AffichageVideo::playPause()
+{
+    if(player->state() == QMediaPlayer::PausedState)
+    {
+        player->play();
+        pause->setText("Pause");
+    }
+    else
+    {
+        player->pause();
+        pause->setText("Play");
+    }
 }
 
 void AffichageVideo::resizeEvent(QResizeEvent *event)
@@ -103,15 +124,15 @@ void AffichageVideo::resizeEvent(QResizeEvent *event)
 
 AffichageVideo::~AffichageVideo()
 {
-    player->stop();
+
 }
 
 void AffichageVideo::chargerMultimedia()
 {
     player = new QMediaPlayer;
     player->setMedia(QUrl::fromLocalFile(path->text()));
-    player->setVolume(10);
-    player->play();
+    player->pause();
+    pause->setText("Play");
 
     player->setVideoOutput(video);
 }
@@ -120,7 +141,9 @@ void AffichageVideo::chargerMultimedia()
 void AffichageVideo::changerPath()
 {
     QString filename = QFileDialog::getOpenFileName(this, QString("Ouvrir fichier"), QDir::currentPath(), QString("Videos (*.wmv)"));
-    path->setText(filename);
+
+    if(filename != QString(""))
+        path->setText(filename);
     chargerMultimedia();
 }
 
@@ -144,13 +167,35 @@ void AffichageVideo::closeEvent(QCloseEvent *event)
 
 AffichageAudio::AffichageAudio(Note *n, QWidget *parent) : AffichageMultimedia(n, parent)
 {
+    pause = new QPushButton("Play", this);
+
+    layoutPrincipal->insertWidget(4, pause);
+
     chargerMultimedia();
+
+    connect(pause, SIGNAL(clicked(bool)), this, SLOT(playPause()));
+}
+
+void AffichageAudio::playPause()
+{
+    if(player->state() == QMediaPlayer::PausedState)
+    {
+        player->play();
+        pause->setText("Pause");
+    }
+    else
+    {
+        player->pause();
+        pause->setText("Play");
+    }
 }
 
 void AffichageAudio::changerPath()
 {
     QString filename = QFileDialog::getOpenFileName(this, QString("Ouvrir fichier"), QDir::currentPath(), QString("Audio (*.mp3)"));
-    path->setText(filename);
+
+    if(filename != QString(""))
+        path->setText(filename);
     chargerMultimedia();
 }
 
@@ -159,8 +204,8 @@ void AffichageAudio::chargerMultimedia()
     player = new QMediaPlayer(this);
 
     player->setMedia(QUrl::fromLocalFile(path->text()));
-    player->setVolume(10);
-    player->play();
+    player->pause();
+    pause->setText("Play");
 }
 
 void AffichageAudio::nouvelleVersion()
