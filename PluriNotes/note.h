@@ -17,7 +17,6 @@
  *  La classe gère toutes les informations relatives a une notes
  *
  * */
-
 class Note : public QObject
 {
     Q_OBJECT
@@ -34,6 +33,7 @@ private:
 
 public:
     Note(const QString& i, QDateTime creation = QDateTime::currentDateTime(), QDateTime modif = QDateTime::currentDateTime(), bool _archive = false, bool _corbeille = false);
+    ~Note();
 
     const QString& getId() const {return id;}
     const QDateTime& getCreation() const {return dateCreation;}
@@ -43,20 +43,20 @@ public:
     bool isArchive() const {return archive;}
     bool isInCorbeille() const {return corbeille;}
 
-    void putInCorbeille() {corbeille = true;}
-    void putInArchive() {archive = true;}
+    void putInCorbeille() {corbeille = true;} /*!< \brief Mets la note à la corbeille */
+    void putInArchive() {archive = true;} /*!< \brief Archive la note */
 
-    void restore() {corbeille = false; archive = false;}
+    void restore() {corbeille = false; archive = false;} /*!< \brief Enlève la note de la corbeille ou des archive */
 
     VersionNote* getVersion(unsigned int i) const {return versions[i];} /*!< \brief Retourne la i-ème version de la note */
     VersionNote* getLastVersion() const {return versions.back();} /*!< \brief Retourne la version la plus récente de la note */
 
     void ajouterVersion(TypeNote type, QXmlStreamReader &stream); /*!< \brief Ajoute une version à partir d'un fichier XML */
     void ajouterVersion(const QString& titre, const QString& texte); /*!< \brief Ajoute une version de type Article */
-    void ajouterVersion(const QString& titre,const QString& action,const int priorite,const QDateTime echeance,Status status);
-    void ajouterVersion(const QString& titre,const QString& descr,const QString& path);
-    void ajouterVersionVideo(const QString &titre, const QString &descr, const QString &path);
-    void ajouterVersionAudio(const QString &titre, const QString &des, const QString& path);
+    void ajouterVersion(const QString& titre,const QString& action,const int priorite,const QDateTime echeance,Status status); /*!< \brief Ajoute une version de type Tache */
+    void ajouterVersion(const QString& titre,const QString& descr,const QString& path);  /*!< \brief Ajoute une version de type Image */
+    void ajouterVersionVideo(const QString &titre, const QString &descr, const QString &path); /*!< \brief Ajoute une version de type Video */
+    void ajouterVersionAudio(const QString &titre, const QString &des, const QString& path); /*!< \brief Ajoute une version de type Audio */
 
     TypeNote type() const {return versions.back()->type();} /*!< \brief Retourne le type de la dernière version de la note */
 

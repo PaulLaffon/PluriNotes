@@ -25,7 +25,7 @@ private:
 
     QString filename;
 
-    bool viderCorbeilleAuto;
+    bool viderCorbeilleAuto; /*!< \brief Indique si il faut vider la corbeille automatiquement à la fermeture de l'application */
 
     NoteManager(); /*!< \brief Singleton, le constructeur est privé */
     ~NoteManager();
@@ -65,6 +65,9 @@ public:
 
     /*! \class TypeIterator
      *  \brief Itérateur sur le d'une d'une note
+     *
+     * Prends aussi en compte le fait que la note est archivé ou à la corbeille
+     *
      *  \example begin(ARTICLE) ==> Itérateur sur tous les articles
      * */
     class TypeIterator

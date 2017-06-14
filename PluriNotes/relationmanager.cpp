@@ -9,7 +9,11 @@ RelationManager::RelationManager() : QObject()
 
 RelationManager::~RelationManager()
 {
-
+    for(QVector<Relation*>::iterator it = relations.begin(); it != relations.end(); it++)
+    {
+        delete *it;
+    }
+    relations.clear();
 }
 
 RelationManager& RelationManager::getInstance()

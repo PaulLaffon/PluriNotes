@@ -9,9 +9,13 @@ NoteManager::NoteManager() : QObject()
     viderCorbeilleAuto = false;
 }
 
-NoteManager::~NoteManager()
+NoteManager::~NoteManager() // On détruit toutes les notes, car elles sont liées par une relation de composition
 {
-
+    for(QVector<Note*>::iterator it = notes.begin(); it != notes.end(); it++)
+    {
+        delete *it;
+    }
+    notes.clear();
 }
 
 NoteManager& NoteManager::getInstance()

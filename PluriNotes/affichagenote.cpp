@@ -51,6 +51,11 @@ AffichageNote::AffichageNote(Note* n, QWidget *parent) : QMdiSubWindow(parent), 
     setWidget(window); // On affiche le widget dans le QMdiSubWindow
 }
 
+AffichageNote::~AffichageNote()
+{
+
+}
+
 void AffichageNote::sauvegardePossible()
 {
     save->setEnabled(true);
@@ -122,6 +127,11 @@ AffichageArticle::AffichageArticle(Note *n, QWidget *parent) :AffichageNote(n, p
     connect(texte, SIGNAL(textChanged()), this, SLOT(sauvegardePossible()));
 }
 
+AffichageArticle::~AffichageArticle()
+{
+
+}
+
 // Charge la i-ème version de l'article
 void AffichageArticle::chargerVersion(unsigned int i)
 {
@@ -174,9 +184,9 @@ AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent
     action = new QTextEdit(this);
     priorite = new QLineEdit(this);
     echeance = new QDateTimeEdit(this);
-    statusEnAttente = new QRadioButton("En attente");
-    statusEnCours = new QRadioButton("En cours");
-    statusTerminee = new QRadioButton("Terminee");
+    statusEnAttente = new QRadioButton("En attente", this);
+    statusEnCours = new QRadioButton("En cours", this);
+    statusTerminee = new QRadioButton("Terminee", this);
     //statusEnAttente->setChecked(true);
     statusAffichage = enAttente;
 
@@ -216,6 +226,15 @@ AffichageTache::AffichageTache(Note *n,QWidget *parent) : AffichageNote(n,parent
     connect(action, SIGNAL(textChanged()), this, SLOT(sauvegardePossible()));
     connect(echeance, SIGNAL(dateTimeChanged(QDateTime)), this, SLOT(sauvegardePossible()));
     connect(priorite, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
+}
+
+AffichageTache::~AffichageTache()
+{
+    delete layoutAction;
+    delete layoutPriorite;
+    delete layoutEcheance;
+    delete layoutStatus;
+    delete layoutButtons;
 }
 
 void AffichageTache::chargerVersion(unsigned int i)

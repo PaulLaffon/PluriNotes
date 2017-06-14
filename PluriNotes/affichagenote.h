@@ -1,8 +1,6 @@
 #ifndef AFFICHAGENOTE_H
 #define AFFICHAGENOTE_H
 
-
-
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QLabel>
@@ -14,7 +12,6 @@
 #include <QComboBox>
 #include <QGroupBox>
 #include <QRadioButton>
-#include <QPixmap>
 #include <QDateTimeEdit>
 
 #include "notemanager.h"
@@ -50,8 +47,8 @@ protected:
     void chargerListeVersion(); /*!< \brief Charge la liste de toutes les versions de la Note dans listeVersion */
 
 public:
-    AffichageNote(Note *n, QWidget *parent = 0);
-    virtual ~AffichageNote() {}
+    AffichageNote(Note *n, QWidget *parent = 0); /*!< \brief Construit l'affichage à partir d'une note */
+    virtual ~AffichageNote();
 
     void closeEvent(QCloseEvent *event); /*!< \brief Redéfinition de la fonction lorsque la fenetre est fermée */
 
@@ -62,18 +59,18 @@ public:
     virtual void chargerVersion(unsigned int i) = 0; /*!< \brief Charge la version de la note afin de pouvoir l'éditer */
 
 signals:
-    void actualisation(Note *n);
+    void actualisation(Note *n); /*!< \brief Signal émit pour indiquer que des changements ont eu lieu sur la note */
     void fermetureNote(const QString& id); /*!< \brief Signal émit lors de la redéfinition de closeEvent() */
     void passagePremierPlan(Note *n); /*!< \brief Signal émit lorsque la note passe au premier plan */
 
 public slots:
-    virtual void nouvelleVersion() = 0;
-    void restaurerNote();
-    void supprimerNote();
+    virtual void nouvelleVersion() = 0; /*!< \brief Slot appelé quand on clic sur le bouton sauvegader */
+    void restaurerNote();  /*!< \brief Restaure une note qui était à la corbeille ou archivé */
+    void supprimerNote(); /*!< \brief Place une note à la corbeille ou dans les archives si elle est référencée */
     void selectionVersion(int i); /*!< \brief Permet de mettre l'affichage de la i-ème version de la note */
 
 protected slots:
-    void sauvegardePossible();
+    void sauvegardePossible(); /*!< \brief Rends la sauvegarde possible en autorisant les clics sur le bouton save */
 };
 
 /*! \class AffichageArticle
@@ -94,6 +91,7 @@ protected:
 
 public:
     AffichageArticle(Note* n, QWidget *parent = 0);
+    ~AffichageArticle();
 
     void chargerVersion(unsigned int i); /*!< Redéfinition de la fonction virtuelle pure pour la gestion des articles */
 
@@ -106,7 +104,7 @@ class AffichageTache : public AffichageNote
     Q_OBJECT
 private :
 
-    Status statusAffichage;
+    Status statusAffichage; /*!< \brief Status de la tache */
 
     QHBoxLayout *layoutAction;
     QHBoxLayout *layoutPriorite;
@@ -128,6 +126,7 @@ private :
 
 public :
     AffichageTache(Note* n,QWidget *parent = 0);
+    ~AffichageTache();
 
     void chargerVersion(unsigned int i);
 

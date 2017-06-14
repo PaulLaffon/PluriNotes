@@ -32,16 +32,16 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void closeEvent(QCloseEvent *event);
+    void closeEvent(QCloseEvent *event); /*!< \brief Redéfinition de la fonction quand la fenetre est fermée, demande à l'utilisateur de vider la corbeille */
 
 public slots:
-    void clicFichier(QAction* a);
-    void clicVue(QAction *a);
-    void erreur(QString s);
+    void clicFichier(QAction* a); /*!< \brief Slot appelé quand on clique sur un élément du menu Fichier */
+    void clicVue(QAction *a); /*!< \brief Slot appelé quand on clique sur un élément du menu Vue */
+    void erreur(QString s); /*!< \brief Ouvre un QMessageBox pour indiquer l'erreur */
     void ouvertureGestionRelation(); /*!< \brief Recoit un signal provenant du bouton GestionRelation et permet d'ouvrir une fenetre QDialog */
 
 private slots:
-    void clicOption();
+    void clicOption(); /*!< \brief Slot appelé quand on clique sur un élément du menu Option */
 };
 
 #endif // MAINWINDOW_H

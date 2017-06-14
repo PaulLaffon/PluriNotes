@@ -9,7 +9,6 @@
 /*! \class Couple
  *  \brief Couple utilisé dans les relations
  * */
-
 class Couple : public QObject
 {
     Q_OBJECT
@@ -26,7 +25,7 @@ public:
     Couple(const QString& _label, Note* _pere, Note* _fils);
 
     const QString& getLabel() const {return label;}
-    void setLabel(const QString& l){label=l;};
+    void setLabel(const QString& l){label=l;}
 
     Note* getPere() const {return pere;}
     Note* getFils() const {return fils;}

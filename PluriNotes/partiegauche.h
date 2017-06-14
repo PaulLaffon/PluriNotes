@@ -47,11 +47,11 @@ public:
     void chargerListeNote(); /*!< \brief Charge toutes les notes actives dans la liste */
     void chargerListeTaches(); /*!< \brief Charge toutes les taches */
 
-    void chargerListeArchive();
-    void chargerListeCorbeille();
+    void chargerListeArchive(); /*!< \brief Charge toutes les notes archives */
+    void chargerListeCorbeille(); /*!< \brief Charge toutes les notes de la corbeille */
 
 public slots:
-    void chargerAll();
+    void chargerAll(); /*!< \brief Charge les 4 liste de notes */
 };
 
 #endif // PARTIEGAUCHE_H

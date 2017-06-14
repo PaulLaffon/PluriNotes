@@ -10,7 +10,6 @@
 /*! \class Relation
  *  \brief Contient toutes les informations d'une relation, est composé de Couple
  * */
-
 class Relation : public QObject
 {
     Q_OBJECT
@@ -22,7 +21,8 @@ private:
 
 
 public:
-    Relation(const QString& _titre, const QString& _description);
+    Relation(const QString& _titre, const QString& _description); /*!< \brief Cree une relation avec un titre et une description */
+    ~Relation();
 
     void ajoutCouple(const QString& label, Note* pere, Note* fils); /*!< \brief Ajoute un couple à la Relation */
 
@@ -116,11 +116,11 @@ public:
         }
     };
 
-    iterator begin() {return iterator(couples.begin());}
-    iterator end() {return iterator(couples.end());}
+    iterator begin() {return iterator(couples.begin());} /*!< \brief Begin pour parcourir tous les couples */
+    iterator end() {return iterator(couples.end());} /*!< \brief S'utilise avec l'itérateur classique */
 
-    iteratorSuccPred begin(Note* n, bool successeur) {return iteratorSuccPred(couples.begin(), n, successeur, couples.size());}
-    iteratorSuccPred endSuccPred() {return iteratorSuccPred(couples.end(), nullptr, true, 0);}
+    iteratorSuccPred begin(Note* n, bool successeur) {return iteratorSuccPred(couples.begin(), n, successeur, couples.size());} /*!< \brief Renvoie l'iterateur pour les successeur/predecesseur */
+    iteratorSuccPred endSuccPred() {return iteratorSuccPred(couples.end(), nullptr, true, 0);} /*!< \brief S'utilise avec l'iterateur des successeur/predecesseur */
 };
 
 #endif // RELATION_H

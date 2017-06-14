@@ -6,6 +6,15 @@ Note::Note(const QString& i, QDateTime creation, QDateTime modif, bool _archive,
 
 }
 
+Note::~Note()  // On détruit toutes les versions, car elles sont liées par une relation de composition
+{
+    for(QVector<VersionNote*>::iterator it = versions.begin(); it != versions.end(); it++)
+    {
+        delete *it;
+    }
+    versions.clear();
+}
+
 void Note::ajouterVersion(TypeNote type, QXmlStreamReader& stream)
 {
     VersionNote* nouveau;

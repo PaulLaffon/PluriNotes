@@ -6,6 +6,15 @@ Relation::Relation(const QString& _titre, const QString& _description)
 
 }
 
+Relation::~Relation()
+{
+    for(QVector<Couple*>::iterator it = couples.begin(); it != couples.end(); it++)
+    {
+        delete *it;
+    }
+    couples.clear();
+}
+
 void Relation::ajoutCouple(const QString& label, Note* pere, Note* fils)
 {
     for(QVector<Couple*>::iterator it = couples.begin(); it != couples.end(); it++)

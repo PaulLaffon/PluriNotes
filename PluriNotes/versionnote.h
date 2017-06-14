@@ -104,9 +104,9 @@ public :
 
 public slots:
 
-    void setStatusEnAttente(bool checked);
-    void setStatusEnCours(bool checked);
-    void setStatusTerminee(bool checked);
+    void setStatusEnAttente(bool checked); /*!< \brief Change le status de la version */
+    void setStatusEnCours(bool checked);  /*!< \brief Change le status de la version */
+    void setStatusTerminee(bool checked);  /*!< \brief Change le status de la version */
 };
 
 #endif // VERSIONNOTE_H

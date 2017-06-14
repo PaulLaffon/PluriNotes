@@ -10,7 +10,6 @@
 /*! \class RelationManager
  *  \brief Singleton factory pour les Relation
  * */
-
 class RelationManager : public QObject
 {
     Q_OBJECT
@@ -119,21 +118,20 @@ public:
         Relation* getRelation() const {return *it;}
     };
 
-    iterator begin() {return iterator(relations.begin(), relations.size());}
-    iterator end() {return iterator(relations.end(), 0);}
+    iterator begin() {return iterator(relations.begin(), relations.size());} /*!< \brief Begin pour parcourir toutes les relations */
+    iterator end() {return iterator(relations.end(), 0);} /*!< \brief S'utilise avec l'itérateur classique */
 
-    iteratorPredSucc begin(Note* n, bool successeur) {return iteratorPredSucc(relations.begin(), n, successeur, relations.size());}
-    iteratorPredSucc endSuccPred() {return iteratorPredSucc();}
-    public slots:
-        void ajouterRelation(const QString& titre, const QString& descrition); /*!< \brief Permet d'ajouter une relation sans aucun Couple */
-        void ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2); /*!< \brief Permet d'ajouter un couple à une relation */
+    iteratorPredSucc begin(Note* n, bool successeur) {return iteratorPredSucc(relations.begin(), n, successeur, relations.size());} /*!< \brief Renvoie l'iterateur pour les successeur/predecesseur */
+    iteratorPredSucc endSuccPred() {return iteratorPredSucc();} /*!< \brief S'utilise avec l'iterateur des successeur/predecesseur */
+public slots:
+    void ajouterRelation(const QString& titre, const QString& descrition); /*!< \brief Permet d'ajouter une relation sans aucun Couple */
+    void ajouterCouple (const QString& titre,const QString& id, Note* note1,Note* note2); /*!< \brief Permet d'ajouter un couple à une relation */
 
-        void ajouterCoupleReference(Note* pere, Note* fils);
+    void ajouterCoupleReference(Note* pere, Note* fils); /*!< \brief Permet d'ajouter une relation Référence sans aucun Couple */
 
-    signals:
-        void creationRelation();
-        void erreur(QString);
-
+signals:
+    void creationRelation(); /*!< \brief Signal émit lorsque qu'une relation est crée */
+    void erreur(QString); /*!< \brief Signal émit lorsque que l'objet rencontre une erreur */
 };
 
 #endif // RELATIONMANAGER_H

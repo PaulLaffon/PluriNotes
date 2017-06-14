@@ -23,7 +23,9 @@ private:
     QTreeWidget *arbreFils; /*!< \brief Arborescence des notes filles par rapport aux relation */
     QTreeWidget *arbrePere; /*!< \brief Arborescence des notes mères par rapport aux relation */
 
+
     void chargerArbreRecursif(QTreeWidgetItem *pere, Note *noteActu, QSet<Note*> &noteDejaAjoutes, bool successeur);
+    /*!< \brief Charge un arbre des successeur/predecesseur récursivement */
 
     PartieDroite();  /*!< \brief Singleton, on ne peut ni créer ni détruire un objet de cette classe */
     ~PartieDroite();
@@ -43,7 +45,7 @@ public:
     QTreeWidget* getArbrePere() const {return arbrePere;}
 
 public slots:
-    void chargerArbre(Note *n);
+    void chargerArbre(Note *n); /*!< \brief Charge les arbres des successeurs et prédécesseurs de la note */
 
 };
 

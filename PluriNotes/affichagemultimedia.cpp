@@ -4,7 +4,7 @@ AffichageMultimedia::AffichageMultimedia(Note *n, QWidget *parent) : AffichageAr
 {
     layoutPath = new QHBoxLayout();
     path = new QLineEdit(this);
-    buttonPath = new QPushButton("Choisir fichier");
+    buttonPath = new QPushButton("Choisir fichier", this);
 
     layoutPath->addWidget(path);
     layoutPath->addWidget(buttonPath);
@@ -20,7 +20,13 @@ AffichageMultimedia::AffichageMultimedia(Note *n, QWidget *parent) : AffichageAr
     else
         connect(buttonPath, SIGNAL(clicked(bool)), this, SLOT(changerPath()));
 
+    // Rends la sauvegarde possible quand on changé le chemin du fichier
     connect(path, SIGNAL(textChanged(QString)), this, SLOT(sauvegardePossible()));
+}
+
+AffichageMultimedia::~AffichageMultimedia()
+{
+
 }
 
 void AffichageMultimedia::chargerVersion(unsigned int i)
@@ -98,6 +104,11 @@ AffichageVideo::AffichageVideo(Note *n, QWidget *parent) :AffichageMultimedia(n,
     connect(pause, SIGNAL(clicked(bool)), this, SLOT(playPause()));
 }
 
+AffichageVideo::~AffichageVideo()
+{
+
+}
+
 void AffichageVideo::playPause()
 {
     if(player->state() == QMediaPlayer::PausedState)
@@ -122,14 +133,9 @@ void AffichageVideo::resizeEvent(QResizeEvent *event)
     video->setGeometry(r);
 }
 
-AffichageVideo::~AffichageVideo()
-{
-
-}
-
 void AffichageVideo::chargerMultimedia()
 {
-    player = new QMediaPlayer;
+    player = new QMediaPlayer(this);
     player->setMedia(QUrl::fromLocalFile(path->text()));
     player->pause();
     pause->setText("Play");
