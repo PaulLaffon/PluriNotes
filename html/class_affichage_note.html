@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -64,6 +64,7 @@ $(function() {
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_affichage_note-members.html">List of all members</a>  </div>
@@ -82,93 +83,781 @@ Inheritance diagram for AffichageNote:</div>
  <div class="center">
   <img src="class_affichage_note.png" usemap="#AffichageNote_map" alt=""/>
   <map id="AffichageNote_map" name="AffichageNote_map">
-<area href="class_affichage_article.html" title="Gère l&#39;affichage des articles. " alt="AffichageArticle" shape="rect" coords="0,112,109,136"/>
+<area href="class_affichage_article.html" title="Gère l&#39;affichage des articles. " alt="AffichageArticle" shape="rect" coords="137,112,264,136"/>
+<area href="class_affichage_tache.html" alt="AffichageTache" shape="rect" coords="274,112,401,136"/>
+<area href="class_affichage_multimedia.html" title="Classe abstraite, généralisation des affichages pour les notes avec fichiers multimédia (image..." alt="AffichageMultimedia" shape="rect" coords="137,168,264,192"/>
+<area href="class_affichage_audio.html" alt="AffichageAudio" shape="rect" coords="0,224,127,248"/>
+<area href="class_affichage_image.html" alt="AffichageImage" shape="rect" coords="137,224,264,248"/>
+<area href="class_affichage_video.html" alt="AffichageVideo" shape="rect" coords="274,224,401,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a52f0a0c33fef946f16f11d09c7aa5826"><td class="memItemLeft" align="right" valign="top"><a id="a52f0a0c33fef946f16f11d09c7aa5826"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a52f0a0c33fef946f16f11d09c7aa5826">selectionVersion</a> (int i)</td></tr>
-<tr class="memdesc:a52f0a0c33fef946f16f11d09c7aa5826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre l'affichage de la i-ème version de la note. <br /></td></tr>
+<tr class="memitem:a05ab79fb72d596f3d326a3be3f91b799"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a05ab79fb72d596f3d326a3be3f91b799">nouvelleVersion</a> ()=0</td></tr>
+<tr class="memdesc:a05ab79fb72d596f3d326a3be3f91b799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot appelé quand on clic sur le bouton sauvegader.  <a href="#a05ab79fb72d596f3d326a3be3f91b799">More...</a><br /></td></tr>
+<tr class="separator:a05ab79fb72d596f3d326a3be3f91b799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbb7e44b7f6765fa6e08e9594d83c37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a7dbb7e44b7f6765fa6e08e9594d83c37">restaurerNote</a> ()</td></tr>
+<tr class="memdesc:a7dbb7e44b7f6765fa6e08e9594d83c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure une note qui était à la corbeille ou archivé  <a href="#a7dbb7e44b7f6765fa6e08e9594d83c37">More...</a><br /></td></tr>
+<tr class="separator:a7dbb7e44b7f6765fa6e08e9594d83c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd8428074b808157681fc3be349b7782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#abd8428074b808157681fc3be349b7782">supprimerNote</a> ()</td></tr>
+<tr class="memdesc:abd8428074b808157681fc3be349b7782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place une note à la corbeille ou dans les archives si elle est référencée.  <a href="#abd8428074b808157681fc3be349b7782">More...</a><br /></td></tr>
+<tr class="separator:abd8428074b808157681fc3be349b7782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f0a0c33fef946f16f11d09c7aa5826"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a52f0a0c33fef946f16f11d09c7aa5826">selectionVersion</a> (int i)</td></tr>
+<tr class="memdesc:a52f0a0c33fef946f16f11d09c7aa5826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre l'affichage de la i-ème version de la note.  <a href="#a52f0a0c33fef946f16f11d09c7aa5826">More...</a><br /></td></tr>
 <tr class="separator:a52f0a0c33fef946f16f11d09c7aa5826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a31ec07691c2f68c1b28066406af93244"><td class="memItemLeft" align="right" valign="top"><a id="a31ec07691c2f68c1b28066406af93244"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a31ec07691c2f68c1b28066406af93244">fermetureNote</a> (const QString &amp;id)</td></tr>
-<tr class="memdesc:a31ec07691c2f68c1b28066406af93244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lors de la redéfinition de <a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0" title="Redéfinition de la fonction lorsque la fenetre est fermée. ">closeEvent()</a> <br /></td></tr>
+<tr class="memitem:a45f41140b52dd8905ff2dae74870122f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a45f41140b52dd8905ff2dae74870122f">actualisation</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a45f41140b52dd8905ff2dae74870122f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit pour indiquer que des changements ont eu lieu sur la note.  <a href="#a45f41140b52dd8905ff2dae74870122f">More...</a><br /></td></tr>
+<tr class="separator:a45f41140b52dd8905ff2dae74870122f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ec07691c2f68c1b28066406af93244"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a31ec07691c2f68c1b28066406af93244">fermetureNote</a> (const QString &amp;<a class="el" href="class_affichage_note.html#a4c7e8c2c911aebd6d017b7e60689f244">id</a>)</td></tr>
+<tr class="memdesc:a31ec07691c2f68c1b28066406af93244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lors de la redéfinition de <a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0" title="Redéfinition de la fonction lorsque la fenetre est fermée. ">closeEvent()</a>  <a href="#a31ec07691c2f68c1b28066406af93244">More...</a><br /></td></tr>
 <tr class="separator:a31ec07691c2f68c1b28066406af93244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa51540d6daf86d1ea941a5d02619f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0aa51540d6daf86d1ea941a5d02619f6">passagePremierPlan</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a0aa51540d6daf86d1ea941a5d02619f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lorsque la note passe au premier plan.  <a href="#a0aa51540d6daf86d1ea941a5d02619f6">More...</a><br /></td></tr>
+<tr class="separator:a0aa51540d6daf86d1ea941a5d02619f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f0d0613541ac39073aaa4062524dfc9"><td class="memItemLeft" align="right" valign="top"><a id="a0f0d0613541ac39073aaa4062524dfc9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AffichageNote</b> (<a class="el" href="class_note.html">Note</a> *n, QWidget *parent=0)</td></tr>
+<tr class="memitem:a0f0d0613541ac39073aaa4062524dfc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0f0d0613541ac39073aaa4062524dfc9">AffichageNote</a> (<a class="el" href="class_note.html">Note</a> *n, QWidget *parent=0)</td></tr>
+<tr class="memdesc:a0f0d0613541ac39073aaa4062524dfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit l'affichage à partir d'une note.  <a href="#a0f0d0613541ac39073aaa4062524dfc9">More...</a><br /></td></tr>
 <tr class="separator:a0f0d0613541ac39073aaa4062524dfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c06899d8e622984c03583e9594388a0"><td class="memItemLeft" align="right" valign="top"><a id="a3c06899d8e622984c03583e9594388a0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0">closeEvent</a> (QCloseEvent *event)</td></tr>
-<tr class="memdesc:a3c06899d8e622984c03583e9594388a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition de la fonction lorsque la fenetre est fermée. <br /></td></tr>
+<tr class="memitem:a27560d2c3c7a8ac7bdd89bfaa7c2127b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a27560d2c3c7a8ac7bdd89bfaa7c2127b">~AffichageNote</a> ()</td></tr>
+<tr class="separator:a27560d2c3c7a8ac7bdd89bfaa7c2127b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c06899d8e622984c03583e9594388a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0">closeEvent</a> (QCloseEvent *event)</td></tr>
+<tr class="memdesc:a3c06899d8e622984c03583e9594388a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition de la fonction lorsque la fenetre est fermée.  <a href="#a3c06899d8e622984c03583e9594388a0">More...</a><br /></td></tr>
 <tr class="separator:a3c06899d8e622984c03583e9594388a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a433237af88a3e3e1029539fdc2561ce8"><td class="memItemLeft" align="right" valign="top"><a id="a433237af88a3e3e1029539fdc2561ce8"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
+<tr class="memitem:a0c1212d3478bffc388d6fd5c9960698f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0c1212d3478bffc388d6fd5c9960698f">focusInEvent</a> (QFocusEvent *event)</td></tr>
+<tr class="memdesc:a0c1212d3478bffc388d6fd5c9960698f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition de la fonciton lors que la fenetre passe au premier plan.  <a href="#a0c1212d3478bffc388d6fd5c9960698f">More...</a><br /></td></tr>
+<tr class="separator:a0c1212d3478bffc388d6fd5c9960698f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433237af88a3e3e1029539fdc2561ce8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a433237af88a3e3e1029539fdc2561ce8">getId</a> () const</td></tr>
 <tr class="separator:a433237af88a3e3e1029539fdc2561ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6bb06d1d8c9bc0e63574dfc42037bf2"><td class="memItemLeft" align="right" valign="top"><a id="af6bb06d1d8c9bc0e63574dfc42037bf2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#af6bb06d1d8c9bc0e63574dfc42037bf2">chargerVersion</a> (unsigned int i)=0</td></tr>
-<tr class="memdesc:af6bb06d1d8c9bc0e63574dfc42037bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la version de la note afin de pouvoir l'éditer. <br /></td></tr>
+<tr class="memitem:af6bb06d1d8c9bc0e63574dfc42037bf2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#af6bb06d1d8c9bc0e63574dfc42037bf2">chargerVersion</a> (unsigned int i)=0</td></tr>
+<tr class="memdesc:af6bb06d1d8c9bc0e63574dfc42037bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la version de la note afin de pouvoir l'éditer.  <a href="#af6bb06d1d8c9bc0e63574dfc42037bf2">More...</a><br /></td></tr>
 <tr class="separator:af6bb06d1d8c9bc0e63574dfc42037bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
+Protected Slots</h2></td></tr>
+<tr class="memitem:a5d6d982c8efcdbccb1f3b9972105de33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a5d6d982c8efcdbccb1f3b9972105de33">sauvegardePossible</a> ()</td></tr>
+<tr class="memdesc:a5d6d982c8efcdbccb1f3b9972105de33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rends la sauvegarde possible en autorisant les clics sur le bouton save.  <a href="#a5d6d982c8efcdbccb1f3b9972105de33">More...</a><br /></td></tr>
+<tr class="separator:a5d6d982c8efcdbccb1f3b9972105de33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a9810d98d57eed8388a7adbc80c1dffbc"><td class="memItemLeft" align="right" valign="top"><a id="a9810d98d57eed8388a7adbc80c1dffbc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a9810d98d57eed8388a7adbc80c1dffbc">chargerListeVersion</a> ()</td></tr>
-<tr class="memdesc:a9810d98d57eed8388a7adbc80c1dffbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la liste de toutes les versions de la <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> dans listeVersion. <br /></td></tr>
+<tr class="memitem:a9810d98d57eed8388a7adbc80c1dffbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a9810d98d57eed8388a7adbc80c1dffbc">chargerListeVersion</a> ()</td></tr>
+<tr class="memdesc:a9810d98d57eed8388a7adbc80c1dffbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la liste de toutes les versions de la <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> dans listeVersion.  <a href="#a9810d98d57eed8388a7adbc80c1dffbc">More...</a><br /></td></tr>
 <tr class="separator:a9810d98d57eed8388a7adbc80c1dffbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aadec26cccac19704b551fde032ee0ed9"><td class="memItemLeft" align="right" valign="top"><a id="aadec26cccac19704b551fde032ee0ed9"></a>
-QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aadec26cccac19704b551fde032ee0ed9">window</a></td></tr>
-<tr class="memdesc:aadec26cccac19704b551fde032ee0ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget qui prend toute la surface du QMdiSubWindow. <br /></td></tr>
+<tr class="memitem:aadec26cccac19704b551fde032ee0ed9"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aadec26cccac19704b551fde032ee0ed9">window</a></td></tr>
+<tr class="memdesc:aadec26cccac19704b551fde032ee0ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget qui prend toute la surface du QMdiSubWindow.  <a href="#aadec26cccac19704b551fde032ee0ed9">More...</a><br /></td></tr>
 <tr class="separator:aadec26cccac19704b551fde032ee0ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaacef5baff1f8d68664a432a9c02b16e"><td class="memItemLeft" align="right" valign="top"><a id="aaacef5baff1f8d68664a432a9c02b16e"></a>
-QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>layoutPrincipal</b></td></tr>
+<tr class="memitem:aaacef5baff1f8d68664a432a9c02b16e"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aaacef5baff1f8d68664a432a9c02b16e">layoutPrincipal</a></td></tr>
 <tr class="separator:aaacef5baff1f8d68664a432a9c02b16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0928d520306344fe37b96d929b541877"><td class="memItemLeft" align="right" valign="top"><a id="a0928d520306344fe37b96d929b541877"></a>
-QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>layoutId</b></td></tr>
+<tr class="memitem:a0928d520306344fe37b96d929b541877"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0928d520306344fe37b96d929b541877">layoutId</a></td></tr>
 <tr class="separator:a0928d520306344fe37b96d929b541877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e33e0b7037f16160ad25d4daf583098"><td class="memItemLeft" align="right" valign="top"><a id="a4e33e0b7037f16160ad25d4daf583098"></a>
-QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>layoutTitre</b></td></tr>
+<tr class="memitem:a4e33e0b7037f16160ad25d4daf583098"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a4e33e0b7037f16160ad25d4daf583098">layoutTitre</a></td></tr>
 <tr class="separator:a4e33e0b7037f16160ad25d4daf583098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509a199f213fc3680f77ee8265999d08"><td class="memItemLeft" align="right" valign="top"><a id="a509a199f213fc3680f77ee8265999d08"></a>
-QLabel *&#160;</td><td class="memItemRight" valign="bottom"><b>labelId</b></td></tr>
+<tr class="memitem:a509a199f213fc3680f77ee8265999d08"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a509a199f213fc3680f77ee8265999d08">labelId</a></td></tr>
 <tr class="separator:a509a199f213fc3680f77ee8265999d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44d5bf6b9aeee778663bfb47c8228d8f"><td class="memItemLeft" align="right" valign="top"><a id="a44d5bf6b9aeee778663bfb47c8228d8f"></a>
-QLabel *&#160;</td><td class="memItemRight" valign="bottom"><b>labelTitre</b></td></tr>
+<tr class="memitem:a44d5bf6b9aeee778663bfb47c8228d8f"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a44d5bf6b9aeee778663bfb47c8228d8f">labelTitre</a></td></tr>
 <tr class="separator:a44d5bf6b9aeee778663bfb47c8228d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c7e8c2c911aebd6d017b7e60689f244"><td class="memItemLeft" align="right" valign="top"><a id="a4c7e8c2c911aebd6d017b7e60689f244"></a>
-QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="memitem:a4c7e8c2c911aebd6d017b7e60689f244"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a4c7e8c2c911aebd6d017b7e60689f244">id</a></td></tr>
 <tr class="separator:a4c7e8c2c911aebd6d017b7e60689f244"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40a8885ab20053096babb048764b6e39"><td class="memItemLeft" align="right" valign="top"><a id="a40a8885ab20053096babb048764b6e39"></a>
-QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><b>titre</b></td></tr>
+<tr class="memitem:a40a8885ab20053096babb048764b6e39"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a40a8885ab20053096babb048764b6e39">titre</a></td></tr>
 <tr class="separator:a40a8885ab20053096babb048764b6e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e020b1a54f50fe2a77595cf73ce6c3"><td class="memItemLeft" align="right" valign="top"><a id="a71e020b1a54f50fe2a77595cf73ce6c3"></a>
-QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a71e020b1a54f50fe2a77595cf73ce6c3">listeVersion</a></td></tr>
-<tr class="memdesc:a71e020b1a54f50fe2a77595cf73ce6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste déroulante des différentes versions. <br /></td></tr>
+<tr class="memitem:a71e020b1a54f50fe2a77595cf73ce6c3"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a71e020b1a54f50fe2a77595cf73ce6c3">listeVersion</a></td></tr>
+<tr class="memdesc:a71e020b1a54f50fe2a77595cf73ce6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste déroulante des différentes versions.  <a href="#a71e020b1a54f50fe2a77595cf73ce6c3">More...</a><br /></td></tr>
 <tr class="separator:a71e020b1a54f50fe2a77595cf73ce6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a89b65a329ed0aa7ee9c755b292f846"><td class="memItemLeft" align="right" valign="top"><a id="a5a89b65a329ed0aa7ee9c755b292f846"></a>
-QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><b>save</b></td></tr>
+<tr class="memitem:a5a89b65a329ed0aa7ee9c755b292f846"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a5a89b65a329ed0aa7ee9c755b292f846">save</a></td></tr>
 <tr class="separator:a5a89b65a329ed0aa7ee9c755b292f846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa49c2ac2f01e45928693cb709d9bc94a"><td class="memItemLeft" align="right" valign="top"><a id="aa49c2ac2f01e45928693cb709d9bc94a"></a>
-<a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aa49c2ac2f01e45928693cb709d9bc94a">note</a></td></tr>
-<tr class="memdesc:aa49c2ac2f01e45928693cb709d9bc94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur sur la note qui correspond à l'affichage. <br /></td></tr>
+<tr class="memitem:a2e4b45d0e2226e3b2b029ab2a8558d52"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a2e4b45d0e2226e3b2b029ab2a8558d52">supprimer</a></td></tr>
+<tr class="separator:a2e4b45d0e2226e3b2b029ab2a8558d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49c2ac2f01e45928693cb709d9bc94a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aa49c2ac2f01e45928693cb709d9bc94a">note</a></td></tr>
+<tr class="memdesc:aa49c2ac2f01e45928693cb709d9bc94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur sur la note qui correspond à l'affichage.  <a href="#aa49c2ac2f01e45928693cb709d9bc94a">More...</a><br /></td></tr>
 <tr class="separator:aa49c2ac2f01e45928693cb709d9bc94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe abstraite pour l'affichage d'une <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a>. </p>
 <p>Hérite de QMdiSubWindow, gère l'affichage commun à toutes les notes (Articles, Taches ...) </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="affichagenote_8h_source.html">affichagenote.h</a></li>
-<li>affichagenote.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0f0d0613541ac39073aaa4062524dfc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0d0613541ac39073aaa4062524dfc9">&#9670;&nbsp;</a></span>AffichageNote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AffichageNote::AffichageNote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit l'affichage à partir d'une note. </p>
+
+</div>
+</div>
+<a id="a27560d2c3c7a8ac7bdd89bfaa7c2127b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27560d2c3c7a8ac7bdd89bfaa7c2127b">&#9670;&nbsp;</a></span>~AffichageNote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AffichageNote::~AffichageNote </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a45f41140b52dd8905ff2dae74870122f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f41140b52dd8905ff2dae74870122f">&#9670;&nbsp;</a></span>actualisation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::actualisation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émit pour indiquer que des changements ont eu lieu sur la note. </p>
+
+</div>
+</div>
+<a id="a9810d98d57eed8388a7adbc80c1dffbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9810d98d57eed8388a7adbc80c1dffbc">&#9670;&nbsp;</a></span>chargerListeVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::chargerListeVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Charge la liste de toutes les versions de la <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> dans listeVersion. </p>
+
+</div>
+</div>
+<a id="af6bb06d1d8c9bc0e63574dfc42037bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6bb06d1d8c9bc0e63574dfc42037bf2">&#9670;&nbsp;</a></span>chargerVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AffichageNote::chargerVersion </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Charge la version de la note afin de pouvoir l'éditer. </p>
+
+<p>Implemented in <a class="el" href="class_affichage_tache.html#a7077b0d95bee12f7a514ebcf8cb936af">AffichageTache</a>, <a class="el" href="class_affichage_article.html#ac25ccd5e113fb8eacd8243d350541978">AffichageArticle</a>, and <a class="el" href="class_affichage_multimedia.html#ae3cb26bd67c41d74a2a970fa806b6d49">AffichageMultimedia</a>.</p>
+
+</div>
+</div>
+<a id="a3c06899d8e622984c03583e9594388a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c06899d8e622984c03583e9594388a0">&#9670;&nbsp;</a></span>closeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::closeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QCloseEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Redéfinition de la fonction lorsque la fenetre est fermée. </p>
+
+</div>
+</div>
+<a id="a31ec07691c2f68c1b28066406af93244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ec07691c2f68c1b28066406af93244">&#9670;&nbsp;</a></span>fermetureNote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::fermetureNote </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émit lors de la redéfinition de <a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0" title="Redéfinition de la fonction lorsque la fenetre est fermée. ">closeEvent()</a> </p>
+
+</div>
+</div>
+<a id="a0c1212d3478bffc388d6fd5c9960698f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1212d3478bffc388d6fd5c9960698f">&#9670;&nbsp;</a></span>focusInEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::focusInEvent </td>
+          <td>(</td>
+          <td class="paramtype">QFocusEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Redéfinition de la fonciton lors que la fenetre passe au premier plan. </p>
+
+</div>
+</div>
+<a id="a433237af88a3e3e1029539fdc2561ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433237af88a3e3e1029539fdc2561ce8">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AffichageNote::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05ab79fb72d596f3d326a3be3f91b799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ab79fb72d596f3d326a3be3f91b799">&#9670;&nbsp;</a></span>nouvelleVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AffichageNote::nouvelleVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot appelé quand on clic sur le bouton sauvegader. </p>
+
+<p>Implemented in <a class="el" href="class_affichage_audio.html#a2bbbc5b46effc7134f2e7fcdf00f44da">AffichageAudio</a>, and <a class="el" href="class_affichage_video.html#aafcf1c1f8a524dbdde4fbf05dafce498">AffichageVideo</a>.</p>
+
+</div>
+</div>
+<a id="a0aa51540d6daf86d1ea941a5d02619f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa51540d6daf86d1ea941a5d02619f6">&#9670;&nbsp;</a></span>passagePremierPlan</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::passagePremierPlan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émit lorsque la note passe au premier plan. </p>
+
+</div>
+</div>
+<a id="a7dbb7e44b7f6765fa6e08e9594d83c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dbb7e44b7f6765fa6e08e9594d83c37">&#9670;&nbsp;</a></span>restaurerNote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::restaurerNote </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restaure une note qui était à la corbeille ou archivé </p>
+
+</div>
+</div>
+<a id="a5d6d982c8efcdbccb1f3b9972105de33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d6d982c8efcdbccb1f3b9972105de33">&#9670;&nbsp;</a></span>sauvegardePossible</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::sauvegardePossible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rends la sauvegarde possible en autorisant les clics sur le bouton save. </p>
+
+</div>
+</div>
+<a id="a52f0a0c33fef946f16f11d09c7aa5826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f0a0c33fef946f16f11d09c7aa5826">&#9670;&nbsp;</a></span>selectionVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::selectionVersion </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet de mettre l'affichage de la i-ème version de la note. </p>
+
+</div>
+</div>
+<a id="abd8428074b808157681fc3be349b7782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd8428074b808157681fc3be349b7782">&#9670;&nbsp;</a></span>supprimerNote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageNote::supprimerNote </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Place une note à la corbeille ou dans les archives si elle est référencée. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4c7e8c2c911aebd6d017b7e60689f244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7e8c2c911aebd6d017b7e60689f244">&#9670;&nbsp;</a></span>id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* AffichageNote::id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a509a199f213fc3680f77ee8265999d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509a199f213fc3680f77ee8265999d08">&#9670;&nbsp;</a></span>labelId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* AffichageNote::labelId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44d5bf6b9aeee778663bfb47c8228d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d5bf6b9aeee778663bfb47c8228d8f">&#9670;&nbsp;</a></span>labelTitre</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* AffichageNote::labelTitre</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0928d520306344fe37b96d929b541877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0928d520306344fe37b96d929b541877">&#9670;&nbsp;</a></span>layoutId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* AffichageNote::layoutId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaacef5baff1f8d68664a432a9c02b16e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacef5baff1f8d68664a432a9c02b16e">&#9670;&nbsp;</a></span>layoutPrincipal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVBoxLayout* AffichageNote::layoutPrincipal</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e33e0b7037f16160ad25d4daf583098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e33e0b7037f16160ad25d4daf583098">&#9670;&nbsp;</a></span>layoutTitre</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* AffichageNote::layoutTitre</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71e020b1a54f50fe2a77595cf73ce6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e020b1a54f50fe2a77595cf73ce6c3">&#9670;&nbsp;</a></span>listeVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QComboBox* AffichageNote::listeVersion</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liste déroulante des différentes versions. </p>
+
+</div>
+</div>
+<a id="aa49c2ac2f01e45928693cb709d9bc94a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa49c2ac2f01e45928693cb709d9bc94a">&#9670;&nbsp;</a></span>note</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note.html">Note</a>* AffichageNote::note</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pointeur sur la note qui correspond à l'affichage. </p>
+
+</div>
+</div>
+<a id="a5a89b65a329ed0aa7ee9c755b292f846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a89b65a329ed0aa7ee9c755b292f846">&#9670;&nbsp;</a></span>save</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AffichageNote::save</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e4b45d0e2226e3b2b029ab2a8558d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4b45d0e2226e3b2b029ab2a8558d52">&#9670;&nbsp;</a></span>supprimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* AffichageNote::supprimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40a8885ab20053096babb048764b6e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a8885ab20053096babb048764b6e39">&#9670;&nbsp;</a></span>titre</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* AffichageNote::titre</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadec26cccac19704b551fde032ee0ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadec26cccac19704b551fde032ee0ed9">&#9670;&nbsp;</a></span>window</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* AffichageNote::window</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Widget qui prend toute la surface du QMdiSubWindow. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>PluriNotes/<a class="el" href="affichagenote_8h_source.html">affichagenote.h</a></li>
+<li>PluriNotes/<a class="el" href="affichagenote_8cpp.html">affichagenote.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

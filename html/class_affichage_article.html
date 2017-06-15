@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -63,6 +63,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_affichage_article-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AffichageArticle Class Reference</div>  </div>
@@ -79,95 +80,164 @@ Inheritance diagram for AffichageArticle:</div>
  <div class="center">
   <img src="class_affichage_article.png" usemap="#AffichageArticle_map" alt=""/>
   <map id="AffichageArticle_map" name="AffichageArticle_map">
-<area href="class_affichage_note.html" title="Classe abstraite pour l&#39;affichage d&#39;une Note. " alt="AffichageNote" shape="rect" coords="0,56,109,80"/>
+<area href="class_affichage_note.html" title="Classe abstraite pour l&#39;affichage d&#39;une Note. " alt="AffichageNote" shape="rect" coords="137,56,264,80"/>
+<area href="class_affichage_multimedia.html" title="Classe abstraite, généralisation des affichages pour les notes avec fichiers multimédia (image..." alt="AffichageMultimedia" shape="rect" coords="137,168,264,192"/>
+<area href="class_affichage_audio.html" alt="AffichageAudio" shape="rect" coords="0,224,127,248"/>
+<area href="class_affichage_image.html" alt="AffichageImage" shape="rect" coords="137,224,264,248"/>
+<area href="class_affichage_video.html" alt="AffichageVideo" shape="rect" coords="274,224,401,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:aacccafd17d260e7084716866a97484ee"><td class="memItemLeft" align="right" valign="top"><a id="aacccafd17d260e7084716866a97484ee"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#aacccafd17d260e7084716866a97484ee">nouvelleVersion</a> ()</td></tr>
-<tr class="memdesc:aacccafd17d260e7084716866a97484ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de créer une nouvelle version de la note. <br /></td></tr>
+<tr class="memitem:aacccafd17d260e7084716866a97484ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#aacccafd17d260e7084716866a97484ee">nouvelleVersion</a> ()</td></tr>
+<tr class="memdesc:aacccafd17d260e7084716866a97484ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de créer une nouvelle version de la note.  <a href="#aacccafd17d260e7084716866a97484ee">More...</a><br /></td></tr>
 <tr class="separator:aacccafd17d260e7084716866a97484ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_slots_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Public Slots inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
-<tr class="memitem:a52f0a0c33fef946f16f11d09c7aa5826 inherit pub_slots_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a52f0a0c33fef946f16f11d09c7aa5826"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a52f0a0c33fef946f16f11d09c7aa5826">selectionVersion</a> (int i)</td></tr>
-<tr class="memdesc:a52f0a0c33fef946f16f11d09c7aa5826 inherit pub_slots_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre l'affichage de la i-ème version de la note. <br /></td></tr>
+<tr class="memitem:a05ab79fb72d596f3d326a3be3f91b799 inherit pub_slots_class_affichage_note"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a05ab79fb72d596f3d326a3be3f91b799">nouvelleVersion</a> ()=0</td></tr>
+<tr class="memdesc:a05ab79fb72d596f3d326a3be3f91b799 inherit pub_slots_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot appelé quand on clic sur le bouton sauvegader.  <a href="class_affichage_note.html#a05ab79fb72d596f3d326a3be3f91b799">More...</a><br /></td></tr>
+<tr class="separator:a05ab79fb72d596f3d326a3be3f91b799 inherit pub_slots_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbb7e44b7f6765fa6e08e9594d83c37 inherit pub_slots_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a7dbb7e44b7f6765fa6e08e9594d83c37">restaurerNote</a> ()</td></tr>
+<tr class="memdesc:a7dbb7e44b7f6765fa6e08e9594d83c37 inherit pub_slots_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaure une note qui était à la corbeille ou archivé  <a href="class_affichage_note.html#a7dbb7e44b7f6765fa6e08e9594d83c37">More...</a><br /></td></tr>
+<tr class="separator:a7dbb7e44b7f6765fa6e08e9594d83c37 inherit pub_slots_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd8428074b808157681fc3be349b7782 inherit pub_slots_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#abd8428074b808157681fc3be349b7782">supprimerNote</a> ()</td></tr>
+<tr class="memdesc:abd8428074b808157681fc3be349b7782 inherit pub_slots_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place une note à la corbeille ou dans les archives si elle est référencée.  <a href="class_affichage_note.html#abd8428074b808157681fc3be349b7782">More...</a><br /></td></tr>
+<tr class="separator:abd8428074b808157681fc3be349b7782 inherit pub_slots_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f0a0c33fef946f16f11d09c7aa5826 inherit pub_slots_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a52f0a0c33fef946f16f11d09c7aa5826">selectionVersion</a> (int i)</td></tr>
+<tr class="memdesc:a52f0a0c33fef946f16f11d09c7aa5826 inherit pub_slots_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre l'affichage de la i-ème version de la note.  <a href="class_affichage_note.html#a52f0a0c33fef946f16f11d09c7aa5826">More...</a><br /></td></tr>
 <tr class="separator:a52f0a0c33fef946f16f11d09c7aa5826 inherit pub_slots_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a93c09c578caeac7858f22cc597b56d74"><td class="memItemLeft" align="right" valign="top"><a id="a93c09c578caeac7858f22cc597b56d74"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AffichageArticle</b> (<a class="el" href="class_note.html">Note</a> *n, QWidget *parent=0)</td></tr>
+<tr class="memitem:a93c09c578caeac7858f22cc597b56d74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#a93c09c578caeac7858f22cc597b56d74">AffichageArticle</a> (<a class="el" href="class_note.html">Note</a> *n, QWidget *parent=0)</td></tr>
 <tr class="separator:a93c09c578caeac7858f22cc597b56d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54cf604738ea0a62cb4d995abb346b91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#a54cf604738ea0a62cb4d995abb346b91">~AffichageArticle</a> ()</td></tr>
+<tr class="separator:a54cf604738ea0a62cb4d995abb346b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac25ccd5e113fb8eacd8243d350541978"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#ac25ccd5e113fb8eacd8243d350541978">chargerVersion</a> (unsigned int i)</td></tr>
 <tr class="separator:ac25ccd5e113fb8eacd8243d350541978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
-<tr class="memitem:a0f0d0613541ac39073aaa4062524dfc9 inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a0f0d0613541ac39073aaa4062524dfc9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AffichageNote</b> (<a class="el" href="class_note.html">Note</a> *n, QWidget *parent=0)</td></tr>
+<tr class="memitem:a0f0d0613541ac39073aaa4062524dfc9 inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0f0d0613541ac39073aaa4062524dfc9">AffichageNote</a> (<a class="el" href="class_note.html">Note</a> *n, QWidget *parent=0)</td></tr>
+<tr class="memdesc:a0f0d0613541ac39073aaa4062524dfc9 inherit pub_methods_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit l'affichage à partir d'une note.  <a href="class_affichage_note.html#a0f0d0613541ac39073aaa4062524dfc9">More...</a><br /></td></tr>
 <tr class="separator:a0f0d0613541ac39073aaa4062524dfc9 inherit pub_methods_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c06899d8e622984c03583e9594388a0 inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a3c06899d8e622984c03583e9594388a0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0">closeEvent</a> (QCloseEvent *event)</td></tr>
-<tr class="memdesc:a3c06899d8e622984c03583e9594388a0 inherit pub_methods_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition de la fonction lorsque la fenetre est fermée. <br /></td></tr>
+<tr class="memitem:a27560d2c3c7a8ac7bdd89bfaa7c2127b inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a27560d2c3c7a8ac7bdd89bfaa7c2127b">~AffichageNote</a> ()</td></tr>
+<tr class="separator:a27560d2c3c7a8ac7bdd89bfaa7c2127b inherit pub_methods_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c06899d8e622984c03583e9594388a0 inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0">closeEvent</a> (QCloseEvent *event)</td></tr>
+<tr class="memdesc:a3c06899d8e622984c03583e9594388a0 inherit pub_methods_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition de la fonction lorsque la fenetre est fermée.  <a href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0">More...</a><br /></td></tr>
 <tr class="separator:a3c06899d8e622984c03583e9594388a0 inherit pub_methods_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a433237af88a3e3e1029539fdc2561ce8 inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a433237af88a3e3e1029539fdc2561ce8"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const</td></tr>
+<tr class="memitem:a0c1212d3478bffc388d6fd5c9960698f inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0c1212d3478bffc388d6fd5c9960698f">focusInEvent</a> (QFocusEvent *event)</td></tr>
+<tr class="memdesc:a0c1212d3478bffc388d6fd5c9960698f inherit pub_methods_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition de la fonciton lors que la fenetre passe au premier plan.  <a href="class_affichage_note.html#a0c1212d3478bffc388d6fd5c9960698f">More...</a><br /></td></tr>
+<tr class="separator:a0c1212d3478bffc388d6fd5c9960698f inherit pub_methods_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433237af88a3e3e1029539fdc2561ce8 inherit pub_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a433237af88a3e3e1029539fdc2561ce8">getId</a> () const</td></tr>
 <tr class="separator:a433237af88a3e3e1029539fdc2561ce8 inherit pub_methods_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a3f2ce4b71304c34a75712dedc8033648"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#a3f2ce4b71304c34a75712dedc8033648">layoutTexte</a></td></tr>
+<tr class="separator:a3f2ce4b71304c34a75712dedc8033648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b3318941d05656284eb7d56c7d5468c"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#a7b3318941d05656284eb7d56c7d5468c">labelTexte</a></td></tr>
+<tr class="separator:a7b3318941d05656284eb7d56c7d5468c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61c9fce7980e523ea9cfb22efafedf7"><td class="memItemLeft" align="right" valign="top">QTextEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_article.html#ad61c9fce7980e523ea9cfb22efafedf7">texte</a></td></tr>
+<tr class="separator:ad61c9fce7980e523ea9cfb22efafedf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
+<tr class="memitem:aadec26cccac19704b551fde032ee0ed9 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aadec26cccac19704b551fde032ee0ed9">window</a></td></tr>
+<tr class="memdesc:aadec26cccac19704b551fde032ee0ed9 inherit pro_attribs_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget qui prend toute la surface du QMdiSubWindow.  <a href="class_affichage_note.html#aadec26cccac19704b551fde032ee0ed9">More...</a><br /></td></tr>
+<tr class="separator:aadec26cccac19704b551fde032ee0ed9 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacef5baff1f8d68664a432a9c02b16e inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aaacef5baff1f8d68664a432a9c02b16e">layoutPrincipal</a></td></tr>
+<tr class="separator:aaacef5baff1f8d68664a432a9c02b16e inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0928d520306344fe37b96d929b541877 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0928d520306344fe37b96d929b541877">layoutId</a></td></tr>
+<tr class="separator:a0928d520306344fe37b96d929b541877 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e33e0b7037f16160ad25d4daf583098 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a4e33e0b7037f16160ad25d4daf583098">layoutTitre</a></td></tr>
+<tr class="separator:a4e33e0b7037f16160ad25d4daf583098 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509a199f213fc3680f77ee8265999d08 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a509a199f213fc3680f77ee8265999d08">labelId</a></td></tr>
+<tr class="separator:a509a199f213fc3680f77ee8265999d08 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d5bf6b9aeee778663bfb47c8228d8f inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a44d5bf6b9aeee778663bfb47c8228d8f">labelTitre</a></td></tr>
+<tr class="separator:a44d5bf6b9aeee778663bfb47c8228d8f inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7e8c2c911aebd6d017b7e60689f244 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a4c7e8c2c911aebd6d017b7e60689f244">id</a></td></tr>
+<tr class="separator:a4c7e8c2c911aebd6d017b7e60689f244 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a8885ab20053096babb048764b6e39 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a40a8885ab20053096babb048764b6e39">titre</a></td></tr>
+<tr class="separator:a40a8885ab20053096babb048764b6e39 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e020b1a54f50fe2a77595cf73ce6c3 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a71e020b1a54f50fe2a77595cf73ce6c3">listeVersion</a></td></tr>
+<tr class="memdesc:a71e020b1a54f50fe2a77595cf73ce6c3 inherit pro_attribs_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste déroulante des différentes versions.  <a href="class_affichage_note.html#a71e020b1a54f50fe2a77595cf73ce6c3">More...</a><br /></td></tr>
+<tr class="separator:a71e020b1a54f50fe2a77595cf73ce6c3 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a89b65a329ed0aa7ee9c755b292f846 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a5a89b65a329ed0aa7ee9c755b292f846">save</a></td></tr>
+<tr class="separator:a5a89b65a329ed0aa7ee9c755b292f846 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4b45d0e2226e3b2b029ab2a8558d52 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a2e4b45d0e2226e3b2b029ab2a8558d52">supprimer</a></td></tr>
+<tr class="separator:a2e4b45d0e2226e3b2b029ab2a8558d52 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa49c2ac2f01e45928693cb709d9bc94a inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aa49c2ac2f01e45928693cb709d9bc94a">note</a></td></tr>
+<tr class="memdesc:aa49c2ac2f01e45928693cb709d9bc94a inherit pro_attribs_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur sur la note qui correspond à l'affichage.  <a href="class_affichage_note.html#aa49c2ac2f01e45928693cb709d9bc94a">More...</a><br /></td></tr>
+<tr class="separator:aa49c2ac2f01e45928693cb709d9bc94a inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('signals_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
-<tr class="memitem:a31ec07691c2f68c1b28066406af93244 inherit signals_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a31ec07691c2f68c1b28066406af93244"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a31ec07691c2f68c1b28066406af93244">fermetureNote</a> (const QString &amp;id)</td></tr>
-<tr class="memdesc:a31ec07691c2f68c1b28066406af93244 inherit signals_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lors de la redéfinition de <a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0" title="Redéfinition de la fonction lorsque la fenetre est fermée. ">closeEvent()</a> <br /></td></tr>
+<tr class="memitem:a45f41140b52dd8905ff2dae74870122f inherit signals_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a45f41140b52dd8905ff2dae74870122f">actualisation</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a45f41140b52dd8905ff2dae74870122f inherit signals_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit pour indiquer que des changements ont eu lieu sur la note.  <a href="class_affichage_note.html#a45f41140b52dd8905ff2dae74870122f">More...</a><br /></td></tr>
+<tr class="separator:a45f41140b52dd8905ff2dae74870122f inherit signals_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ec07691c2f68c1b28066406af93244 inherit signals_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a31ec07691c2f68c1b28066406af93244">fermetureNote</a> (const QString &amp;<a class="el" href="class_affichage_note.html#a4c7e8c2c911aebd6d017b7e60689f244">id</a>)</td></tr>
+<tr class="memdesc:a31ec07691c2f68c1b28066406af93244 inherit signals_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lors de la redéfinition de <a class="el" href="class_affichage_note.html#a3c06899d8e622984c03583e9594388a0" title="Redéfinition de la fonction lorsque la fenetre est fermée. ">closeEvent()</a>  <a href="class_affichage_note.html#a31ec07691c2f68c1b28066406af93244">More...</a><br /></td></tr>
 <tr class="separator:a31ec07691c2f68c1b28066406af93244 inherit signals_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa51540d6daf86d1ea941a5d02619f6 inherit signals_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a0aa51540d6daf86d1ea941a5d02619f6">passagePremierPlan</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a0aa51540d6daf86d1ea941a5d02619f6 inherit signals_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lorsque la note passe au premier plan.  <a href="class_affichage_note.html#a0aa51540d6daf86d1ea941a5d02619f6">More...</a><br /></td></tr>
+<tr class="separator:a0aa51540d6daf86d1ea941a5d02619f6 inherit signals_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_slots_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('pro_slots_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Protected Slots inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
+<tr class="memitem:a5d6d982c8efcdbccb1f3b9972105de33 inherit pro_slots_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a5d6d982c8efcdbccb1f3b9972105de33">sauvegardePossible</a> ()</td></tr>
+<tr class="memdesc:a5d6d982c8efcdbccb1f3b9972105de33 inherit pro_slots_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rends la sauvegarde possible en autorisant les clics sur le bouton save.  <a href="class_affichage_note.html#a5d6d982c8efcdbccb1f3b9972105de33">More...</a><br /></td></tr>
+<tr class="separator:a5d6d982c8efcdbccb1f3b9972105de33 inherit pro_slots_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
-<tr class="memitem:a9810d98d57eed8388a7adbc80c1dffbc inherit pro_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a9810d98d57eed8388a7adbc80c1dffbc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a9810d98d57eed8388a7adbc80c1dffbc">chargerListeVersion</a> ()</td></tr>
-<tr class="memdesc:a9810d98d57eed8388a7adbc80c1dffbc inherit pro_methods_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la liste de toutes les versions de la <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> dans listeVersion. <br /></td></tr>
+<tr class="memitem:a9810d98d57eed8388a7adbc80c1dffbc inherit pro_methods_class_affichage_note"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a9810d98d57eed8388a7adbc80c1dffbc">chargerListeVersion</a> ()</td></tr>
+<tr class="memdesc:a9810d98d57eed8388a7adbc80c1dffbc inherit pro_methods_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge la liste de toutes les versions de la <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> dans listeVersion.  <a href="class_affichage_note.html#a9810d98d57eed8388a7adbc80c1dffbc">More...</a><br /></td></tr>
 <tr class="separator:a9810d98d57eed8388a7adbc80c1dffbc inherit pro_methods_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_affichage_note"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_affichage_note')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_affichage_note.html">AffichageNote</a></td></tr>
-<tr class="memitem:aadec26cccac19704b551fde032ee0ed9 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="aadec26cccac19704b551fde032ee0ed9"></a>
-QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aadec26cccac19704b551fde032ee0ed9">window</a></td></tr>
-<tr class="memdesc:aadec26cccac19704b551fde032ee0ed9 inherit pro_attribs_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Widget qui prend toute la surface du QMdiSubWindow. <br /></td></tr>
-<tr class="separator:aadec26cccac19704b551fde032ee0ed9 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaacef5baff1f8d68664a432a9c02b16e inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="aaacef5baff1f8d68664a432a9c02b16e"></a>
-QVBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>layoutPrincipal</b></td></tr>
-<tr class="separator:aaacef5baff1f8d68664a432a9c02b16e inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0928d520306344fe37b96d929b541877 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a0928d520306344fe37b96d929b541877"></a>
-QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>layoutId</b></td></tr>
-<tr class="separator:a0928d520306344fe37b96d929b541877 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e33e0b7037f16160ad25d4daf583098 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a4e33e0b7037f16160ad25d4daf583098"></a>
-QHBoxLayout *&#160;</td><td class="memItemRight" valign="bottom"><b>layoutTitre</b></td></tr>
-<tr class="separator:a4e33e0b7037f16160ad25d4daf583098 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509a199f213fc3680f77ee8265999d08 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a509a199f213fc3680f77ee8265999d08"></a>
-QLabel *&#160;</td><td class="memItemRight" valign="bottom"><b>labelId</b></td></tr>
-<tr class="separator:a509a199f213fc3680f77ee8265999d08 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44d5bf6b9aeee778663bfb47c8228d8f inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a44d5bf6b9aeee778663bfb47c8228d8f"></a>
-QLabel *&#160;</td><td class="memItemRight" valign="bottom"><b>labelTitre</b></td></tr>
-<tr class="separator:a44d5bf6b9aeee778663bfb47c8228d8f inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c7e8c2c911aebd6d017b7e60689f244 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a4c7e8c2c911aebd6d017b7e60689f244"></a>
-QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
-<tr class="separator:a4c7e8c2c911aebd6d017b7e60689f244 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40a8885ab20053096babb048764b6e39 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a40a8885ab20053096babb048764b6e39"></a>
-QLineEdit *&#160;</td><td class="memItemRight" valign="bottom"><b>titre</b></td></tr>
-<tr class="separator:a40a8885ab20053096babb048764b6e39 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e020b1a54f50fe2a77595cf73ce6c3 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a71e020b1a54f50fe2a77595cf73ce6c3"></a>
-QComboBox *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#a71e020b1a54f50fe2a77595cf73ce6c3">listeVersion</a></td></tr>
-<tr class="memdesc:a71e020b1a54f50fe2a77595cf73ce6c3 inherit pro_attribs_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste déroulante des différentes versions. <br /></td></tr>
-<tr class="separator:a71e020b1a54f50fe2a77595cf73ce6c3 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a89b65a329ed0aa7ee9c755b292f846 inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="a5a89b65a329ed0aa7ee9c755b292f846"></a>
-QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><b>save</b></td></tr>
-<tr class="separator:a5a89b65a329ed0aa7ee9c755b292f846 inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa49c2ac2f01e45928693cb709d9bc94a inherit pro_attribs_class_affichage_note"><td class="memItemLeft" align="right" valign="top"><a id="aa49c2ac2f01e45928693cb709d9bc94a"></a>
-<a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_affichage_note.html#aa49c2ac2f01e45928693cb709d9bc94a">note</a></td></tr>
-<tr class="memdesc:aa49c2ac2f01e45928693cb709d9bc94a inherit pro_attribs_class_affichage_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur sur la note qui correspond à l'affichage. <br /></td></tr>
-<tr class="separator:aa49c2ac2f01e45928693cb709d9bc94a inherit pro_attribs_class_affichage_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gère l'affichage des articles. </p>
 <p>Classe fille de <a class="el" href="class_affichage_note.html" title="Classe abstraite pour l&#39;affichage d&#39;une Note. ">AffichageNote</a> qui permet la modification des articles </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a93c09c578caeac7858f22cc597b56d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c09c578caeac7858f22cc597b56d74">&#9670;&nbsp;</a></span>AffichageArticle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AffichageArticle::AffichageArticle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54cf604738ea0a62cb4d995abb346b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54cf604738ea0a62cb4d995abb346b91">&#9670;&nbsp;</a></span>~AffichageArticle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AffichageArticle::~AffichageArticle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac25ccd5e113fb8eacd8243d350541978"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac25ccd5e113fb8eacd8243d350541978">&#9670;&nbsp;</a></span>chargerVersion()</h2>
 
@@ -197,9 +267,103 @@ QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><b>save</b></td
 
 </div>
 </div>
+<a id="aacccafd17d260e7084716866a97484ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacccafd17d260e7084716866a97484ee">&#9670;&nbsp;</a></span>nouvelleVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AffichageArticle::nouvelleVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet de créer une nouvelle version de la note. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7b3318941d05656284eb7d56c7d5468c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b3318941d05656284eb7d56c7d5468c">&#9670;&nbsp;</a></span>labelTexte</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* AffichageArticle::labelTexte</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f2ce4b71304c34a75712dedc8033648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2ce4b71304c34a75712dedc8033648">&#9670;&nbsp;</a></span>layoutTexte</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHBoxLayout* AffichageArticle::layoutTexte</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad61c9fce7980e523ea9cfb22efafedf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61c9fce7980e523ea9cfb22efafedf7">&#9670;&nbsp;</a></span>texte</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTextEdit* AffichageArticle::texte</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="affichagenote_8h_source.html">affichagenote.h</a></li>
-<li>affichagenote.cpp</li>
+<li>PluriNotes/<a class="el" href="affichagenote_8h_source.html">affichagenote.h</a></li>
+<li>PluriNotes/<a class="el" href="affichagenote_8cpp.html">affichagenote.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

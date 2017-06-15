@@ -50,6 +50,10 @@ public:
 };
 
 
+/*! \class Article
+ *  \brief Version d'une note de type Article
+ * */
+
 class Article : public VersionNote
 {
     Q_OBJECT
@@ -69,6 +73,10 @@ public:
 };
 
 
+
+/*! \class Tache
+ *  \brief Version d'une note de type Tache
+ * */
 
 class Tache : public VersionNote
 {

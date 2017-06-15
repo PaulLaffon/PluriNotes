@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -61,6 +61,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_relation_manager-members.html">List of all members</a>  </div>
@@ -82,28 +85,65 @@ Inheritance diagram for RelationManager:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager_1_1iterator.html">iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterateur pour parcourir toutes les relations, sauf la relation référence qui n'est pas prise en compte.  <a href="class_relation_manager_1_1iterator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager_1_1iterator_pred_succ.html">iteratorPredSucc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterateur pour parcourir tous les successeurs ou predecesseurs d'une note.  <a href="class_relation_manager_1_1iterator_pred_succ.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:ab5fe252ede99fa3b48cb6bacd75e04b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#ab5fe252ede99fa3b48cb6bacd75e04b3">ajouterRelation</a> (const QString &amp;titre, const QString &amp;descrition)</td></tr>
+<tr class="memdesc:ab5fe252ede99fa3b48cb6bacd75e04b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter une relation sans aucun <a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a>.  <a href="#ab5fe252ede99fa3b48cb6bacd75e04b3">More...</a><br /></td></tr>
+<tr class="separator:ab5fe252ede99fa3b48cb6bacd75e04b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8f5685ac19628ec916a36411019ce7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a1c8f5685ac19628ec916a36411019ce7">ajouterCouple</a> (const QString &amp;titre, const QString &amp;id, <a class="el" href="class_note.html">Note</a> *note1, <a class="el" href="class_note.html">Note</a> *note2)</td></tr>
+<tr class="memdesc:a1c8f5685ac19628ec916a36411019ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter un couple à une relation.  <a href="#a1c8f5685ac19628ec916a36411019ce7">More...</a><br /></td></tr>
+<tr class="separator:a1c8f5685ac19628ec916a36411019ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cba88b1cf960c2b740939c418fcc6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a94cba88b1cf960c2b740939c418fcc6e">ajouterCoupleReference</a> (<a class="el" href="class_note.html">Note</a> *pere, <a class="el" href="class_note.html">Note</a> *fils)</td></tr>
+<tr class="memdesc:a94cba88b1cf960c2b740939c418fcc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter une relation Référence sans aucun <a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a>.  <a href="#a94cba88b1cf960c2b740939c418fcc6e">More...</a><br /></td></tr>
+<tr class="separator:a94cba88b1cf960c2b740939c418fcc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a3636482f055d667f7b3fe5e8597a4101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a3636482f055d667f7b3fe5e8597a4101">creationRelation</a> ()</td></tr>
+<tr class="memdesc:a3636482f055d667f7b3fe5e8597a4101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lorsque qu'une relation est crée.  <a href="#a3636482f055d667f7b3fe5e8597a4101">More...</a><br /></td></tr>
+<tr class="separator:a3636482f055d667f7b3fe5e8597a4101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af850dfbc9d1d81aa6c42c18ded7c2d27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#af850dfbc9d1d81aa6c42c18ded7c2d27">erreur</a> (QString)</td></tr>
+<tr class="memdesc:af850dfbc9d1d81aa6c42c18ded7c2d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lorsque que l'objet rencontre une erreur.  <a href="#af850dfbc9d1d81aa6c42c18ded7c2d27">More...</a><br /></td></tr>
+<tr class="separator:af850dfbc9d1d81aa6c42c18ded7c2d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f635dd1b392d8e4afa02eb507bd0bf4"><td class="memItemLeft" align="right" valign="top"><a id="a5f635dd1b392d8e4afa02eb507bd0bf4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4">saveAll</a> (QXmlStreamWriter &amp;stream)</td></tr>
-<tr class="memdesc:a5f635dd1b392d8e4afa02eb507bd0bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde toutes les relations dans un fichier XML, est appelé par <a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4" title="Sauvegarde toutes les relations dans un fichier XML, est appelé par saveAll() de NoteManager. ">saveAll()</a> de <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. <br /></td></tr>
+<tr class="memitem:a5f635dd1b392d8e4afa02eb507bd0bf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4">saveAll</a> (QXmlStreamWriter &amp;stream)</td></tr>
+<tr class="memdesc:a5f635dd1b392d8e4afa02eb507bd0bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde toutes les relations dans un fichier XML, est appelé par <a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4" title="Sauvegarde toutes les relations dans un fichier XML, est appelé par saveAll() de NoteManager. ">saveAll()</a> de <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>.  <a href="#a5f635dd1b392d8e4afa02eb507bd0bf4">More...</a><br /></td></tr>
 <tr class="separator:a5f635dd1b392d8e4afa02eb507bd0bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96bd994b43f0dd8946a514087538d8c5"><td class="memItemLeft" align="right" valign="top"><a id="a96bd994b43f0dd8946a514087538d8c5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a96bd994b43f0dd8946a514087538d8c5">load</a> (QXmlStreamReader &amp;stream)</td></tr>
-<tr class="memdesc:a96bd994b43f0dd8946a514087538d8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les relations à partir d'une fichier XML, est appelé par <a class="el" href="class_relation_manager.html#a96bd994b43f0dd8946a514087538d8c5" title="Charge les relations à partir d&#39;une fichier XML, est appelé par load() de NoteManager. ">load()</a> de <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. <br /></td></tr>
-<tr class="separator:a96bd994b43f0dd8946a514087538d8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5fe252ede99fa3b48cb6bacd75e04b3"><td class="memItemLeft" align="right" valign="top"><a id="ab5fe252ede99fa3b48cb6bacd75e04b3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#ab5fe252ede99fa3b48cb6bacd75e04b3">ajouterRelation</a> (const QString &amp;titre, const QString &amp;descrition)</td></tr>
-<tr class="memdesc:ab5fe252ede99fa3b48cb6bacd75e04b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter une relation sans aucun <a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a>. <br /></td></tr>
-<tr class="separator:ab5fe252ede99fa3b48cb6bacd75e04b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab13a2549a63908819f84427a3144f8fa"><td class="memItemLeft" align="right" valign="top"><a id="ab13a2549a63908819f84427a3144f8fa"></a>
-<a class="el" href="class_relation.html">Relation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#ab13a2549a63908819f84427a3144f8fa">find</a> (const QString &amp;titre)</td></tr>
-<tr class="memdesc:ab13a2549a63908819f84427a3144f8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur sur la relation correspondant au titre, ou nullptr si elle n'existe pas. <br /></td></tr>
+<tr class="memitem:ab13a2549a63908819f84427a3144f8fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation.html">Relation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#ab13a2549a63908819f84427a3144f8fa">find</a> (const QString &amp;titre)</td></tr>
+<tr class="memdesc:ab13a2549a63908819f84427a3144f8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur sur la relation correspondant au titre, ou nullptr si elle n'existe pas.  <a href="#ab13a2549a63908819f84427a3144f8fa">More...</a><br /></td></tr>
 <tr class="separator:ab13a2549a63908819f84427a3144f8fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a208f9abaaf82695cc5abb917868ee619"><td class="memItemLeft" align="right" valign="top"><a id="a208f9abaaf82695cc5abb917868ee619"></a>
-<a class="el" href="class_relation.html">Relation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a208f9abaaf82695cc5abb917868ee619">back</a> () const</td></tr>
-<tr class="memdesc:a208f9abaaf82695cc5abb917868ee619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la dernière <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a> créé, utilisé dans la fonction <a class="el" href="class_relation_manager.html#a96bd994b43f0dd8946a514087538d8c5" title="Charge les relations à partir d&#39;une fichier XML, est appelé par load() de NoteManager. ">load()</a> <br /></td></tr>
+<tr class="memitem:a208f9abaaf82695cc5abb917868ee619"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation.html">Relation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a208f9abaaf82695cc5abb917868ee619">back</a> () const</td></tr>
+<tr class="memdesc:a208f9abaaf82695cc5abb917868ee619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la dernière <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a> créé, utilisé dans la fonction load()  <a href="#a208f9abaaf82695cc5abb917868ee619">More...</a><br /></td></tr>
 <tr class="separator:a208f9abaaf82695cc5abb917868ee619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0fb0e4c4b5e17818f4b0308756ce71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#aea0fb0e4c4b5e17818f4b0308756ce71">ajouterReference</a> ()</td></tr>
+<tr class="memdesc:aea0fb0e4c4b5e17818f4b0308756ce71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'ajouter une référence sans aucun couple.  <a href="#aea0fb0e4c4b5e17818f4b0308756ce71">More...</a><br /></td></tr>
+<tr class="separator:aea0fb0e4c4b5e17818f4b0308756ce71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f886742da8faeb50d4da18eb7149840"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a7f886742da8faeb50d4da18eb7149840">isReferenced</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a7f886742da8faeb50d4da18eb7149840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si la relation est référencée par la relation Référence.  <a href="#a7f886742da8faeb50d4da18eb7149840">More...</a><br /></td></tr>
+<tr class="separator:a7f886742da8faeb50d4da18eb7149840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cbea7cf6799fb13153d1fab8b345487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_manager_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a0cbea7cf6799fb13153d1fab8b345487">begin</a> ()</td></tr>
+<tr class="memdesc:a0cbea7cf6799fb13153d1fab8b345487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin pour parcourir toutes les relations.  <a href="#a0cbea7cf6799fb13153d1fab8b345487">More...</a><br /></td></tr>
+<tr class="separator:a0cbea7cf6799fb13153d1fab8b345487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9425308e362ee6921041d1e904785f19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_manager_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a9425308e362ee6921041d1e904785f19">end</a> ()</td></tr>
+<tr class="memdesc:a9425308e362ee6921041d1e904785f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">S'utilise avec l'itérateur classique.  <a href="#a9425308e362ee6921041d1e904785f19">More...</a><br /></td></tr>
+<tr class="separator:a9425308e362ee6921041d1e904785f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb4a1f55cd175902a26d7187f5002a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_manager_1_1iterator_pred_succ.html">iteratorPredSucc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a9cb4a1f55cd175902a26d7187f5002a5">begin</a> (<a class="el" href="class_note.html">Note</a> *n, bool successeur)</td></tr>
+<tr class="memdesc:a9cb4a1f55cd175902a26d7187f5002a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'iterateur pour les successeur/predecesseur.  <a href="#a9cb4a1f55cd175902a26d7187f5002a5">More...</a><br /></td></tr>
+<tr class="separator:a9cb4a1f55cd175902a26d7187f5002a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ef3d1d323e20bdb1c37458d21fc360"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_manager_1_1iterator_pred_succ.html">iteratorPredSucc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_manager.html#a65ef3d1d323e20bdb1c37458d21fc360">endSuccPred</a> ()</td></tr>
+<tr class="memdesc:a65ef3d1d323e20bdb1c37458d21fc360"><td class="mdescLeft">&#160;</td><td class="mdescRight">S'utilise avec l'iterateur des successeur/predecesseur.  <a href="#a65ef3d1d323e20bdb1c37458d21fc360">More...</a><br /></td></tr>
+<tr class="separator:a65ef3d1d323e20bdb1c37458d21fc360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -115,6 +155,270 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton factory pour les <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1c8f5685ac19628ec916a36411019ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8f5685ac19628ec916a36411019ce7">&#9670;&nbsp;</a></span>ajouterCouple</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::ajouterCouple </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>titre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>note1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>note2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet d'ajouter un couple à une relation. </p>
+
+</div>
+</div>
+<a id="a94cba88b1cf960c2b740939c418fcc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cba88b1cf960c2b740939c418fcc6e">&#9670;&nbsp;</a></span>ajouterCoupleReference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::ajouterCoupleReference </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>pere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>fils</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet d'ajouter une relation Référence sans aucun <a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a>. </p>
+
+</div>
+</div>
+<a id="aea0fb0e4c4b5e17818f4b0308756ce71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0fb0e4c4b5e17818f4b0308756ce71">&#9670;&nbsp;</a></span>ajouterReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::ajouterReference </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet d'ajouter une référence sans aucun couple. </p>
+
+</div>
+</div>
+<a id="ab5fe252ede99fa3b48cb6bacd75e04b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5fe252ede99fa3b48cb6bacd75e04b3">&#9670;&nbsp;</a></span>ajouterRelation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::ajouterRelation </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>titre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>descrition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Permet d'ajouter une relation sans aucun <a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a>. </p>
+
+</div>
+</div>
+<a id="a208f9abaaf82695cc5abb917868ee619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208f9abaaf82695cc5abb917868ee619">&#9670;&nbsp;</a></span>back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation.html">Relation</a>* RelationManager::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie la dernière <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a> créé, utilisé dans la fonction load() </p>
+
+</div>
+</div>
+<a id="a0cbea7cf6799fb13153d1fab8b345487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cbea7cf6799fb13153d1fab8b345487">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_manager_1_1iterator.html">iterator</a> RelationManager::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Begin pour parcourir toutes les relations. </p>
+
+</div>
+</div>
+<a id="a9cb4a1f55cd175902a26d7187f5002a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cb4a1f55cd175902a26d7187f5002a5">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_manager_1_1iterator_pred_succ.html">iteratorPredSucc</a> RelationManager::begin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>successeur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie l'iterateur pour les successeur/predecesseur. </p>
+
+</div>
+</div>
+<a id="a3636482f055d667f7b3fe5e8597a4101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3636482f055d667f7b3fe5e8597a4101">&#9670;&nbsp;</a></span>creationRelation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::creationRelation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émit lorsque qu'une relation est crée. </p>
+
+</div>
+</div>
 <a id="a7782244be832b5029e20397bf9f94ff2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7782244be832b5029e20397bf9f94ff2">&#9670;&nbsp;</a></span>deleteInstance()</h2>
 
@@ -138,6 +442,108 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Supprime l'instance de la classe </p>
+
+</div>
+</div>
+<a id="a9425308e362ee6921041d1e904785f19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9425308e362ee6921041d1e904785f19">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_manager_1_1iterator.html">iterator</a> RelationManager::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>S'utilise avec l'itérateur classique. </p>
+
+</div>
+</div>
+<a id="a65ef3d1d323e20bdb1c37458d21fc360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ef3d1d323e20bdb1c37458d21fc360">&#9670;&nbsp;</a></span>endSuccPred()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_manager_1_1iterator_pred_succ.html">iteratorPredSucc</a> RelationManager::endSuccPred </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>S'utilise avec l'iterateur des successeur/predecesseur. </p>
+
+</div>
+</div>
+<a id="af850dfbc9d1d81aa6c42c18ded7c2d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af850dfbc9d1d81aa6c42c18ded7c2d27">&#9670;&nbsp;</a></span>erreur</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::erreur </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émit lorsque que l'objet rencontre une erreur. </p>
+
+</div>
+</div>
+<a id="ab13a2549a63908819f84427a3144f8fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13a2549a63908819f84427a3144f8fa">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation.html">Relation</a> * RelationManager::find </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>titre</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un pointeur sur la relation correspondant au titre, ou nullptr si elle n'existe pas. </p>
 
 </div>
 </div>
@@ -167,9 +573,49 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7f886742da8faeb50d4da18eb7149840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f886742da8faeb50d4da18eb7149840">&#9670;&nbsp;</a></span>isReferenced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RelationManager::isReferenced </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si la relation est référencée par la relation Référence. </p>
+
+</div>
+</div>
+<a id="a5f635dd1b392d8e4afa02eb507bd0bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f635dd1b392d8e4afa02eb507bd0bf4">&#9670;&nbsp;</a></span>saveAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RelationManager::saveAll </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamWriter &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sauvegarde toutes les relations dans un fichier XML, est appelé par <a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4" title="Sauvegarde toutes les relations dans un fichier XML, est appelé par saveAll() de NoteManager. ">saveAll()</a> de <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="relationmanager_8h_source.html">relationmanager.h</a></li>
-<li>relationmanager.cpp</li>
+<li>PluriNotes/<a class="el" href="relationmanager_8h_source.html">relationmanager.h</a></li>
+<li>PluriNotes/<a class="el" href="relationmanager_8cpp.html">relationmanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

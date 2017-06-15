@@ -68,7 +68,7 @@ public:
      *
      * Prends aussi en compte le fait que la note est archivé ou à la corbeille
      *
-     *  \example begin(ARTICLE) ==> Itérateur sur tous les articles
+     *  exemple : begin(ARTICLE) ==> Itérateur sur tous les articles
      * */
     class TypeIterator
     {

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -83,29 +83,185 @@ Inheritance diagram for Couple:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0001093dd86adaaedcbb667773d94f3a"><td class="memItemLeft" align="right" valign="top"><a id="a0001093dd86adaaedcbb667773d94f3a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a0001093dd86adaaedcbb667773d94f3a">Couple</a> (const QString &amp;_label, <a class="el" href="class_note.html">Note</a> *_pere, <a class="el" href="class_note.html">Note</a> *_fils)</td></tr>
-<tr class="memdesc:a0001093dd86adaaedcbb667773d94f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur Construit un couple avec un label, une note père et une note fils. <br /></td></tr>
+<tr class="memitem:a0001093dd86adaaedcbb667773d94f3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a0001093dd86adaaedcbb667773d94f3a">Couple</a> (const QString &amp;_label, <a class="el" href="class_note.html">Note</a> *_pere, <a class="el" href="class_note.html">Note</a> *_fils)</td></tr>
+<tr class="memdesc:a0001093dd86adaaedcbb667773d94f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur Construit un couple avec un label, une note père et une note fils.  <a href="#a0001093dd86adaaedcbb667773d94f3a">More...</a><br /></td></tr>
 <tr class="separator:a0001093dd86adaaedcbb667773d94f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f04e0130d4d44ce39e322033d85a8df"><td class="memItemLeft" align="right" valign="top"><a id="a0f04e0130d4d44ce39e322033d85a8df"></a>
-const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getLabel</b> () const</td></tr>
+<tr class="memitem:a0f04e0130d4d44ce39e322033d85a8df"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a0f04e0130d4d44ce39e322033d85a8df">getLabel</a> () const</td></tr>
 <tr class="separator:a0f04e0130d4d44ce39e322033d85a8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848e2cf94dbb14aa2b12ac993cd4f818"><td class="memItemLeft" align="right" valign="top"><a id="a848e2cf94dbb14aa2b12ac993cd4f818"></a>
-<a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPere</b> () const</td></tr>
+<tr class="memitem:a69d515652c18d65feacd71ca4a110937"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a69d515652c18d65feacd71ca4a110937">setLabel</a> (const QString &amp;l)</td></tr>
+<tr class="separator:a69d515652c18d65feacd71ca4a110937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a848e2cf94dbb14aa2b12ac993cd4f818"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a848e2cf94dbb14aa2b12ac993cd4f818">getPere</a> () const</td></tr>
 <tr class="separator:a848e2cf94dbb14aa2b12ac993cd4f818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab27fa8e95afb70ff3cb73697115e4f3"><td class="memItemLeft" align="right" valign="top"><a id="aab27fa8e95afb70ff3cb73697115e4f3"></a>
-<a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getFils</b> () const</td></tr>
+<tr class="memitem:aab27fa8e95afb70ff3cb73697115e4f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#aab27fa8e95afb70ff3cb73697115e4f3">getFils</a> () const</td></tr>
 <tr class="separator:aab27fa8e95afb70ff3cb73697115e4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cae42d330372f8b59aa34bd1cc713ec"><td class="memItemLeft" align="right" valign="top"><a id="a5cae42d330372f8b59aa34bd1cc713ec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a5cae42d330372f8b59aa34bd1cc713ec">writeInFile</a> (QXmlStreamWriter &amp;stream) const</td></tr>
-<tr class="memdesc:a5cae42d330372f8b59aa34bd1cc713ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde le couple dans un fichier XML Sauvegarde toutes les données du couple dans un fichier XML, appelé dans la fonction saveAll() de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a>. <br /></td></tr>
+<tr class="memitem:a5cae42d330372f8b59aa34bd1cc713ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_couple.html#a5cae42d330372f8b59aa34bd1cc713ec">writeInFile</a> (QXmlStreamWriter &amp;stream) const</td></tr>
+<tr class="memdesc:a5cae42d330372f8b59aa34bd1cc713ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde le couple dans un fichier XML Sauvegarde toutes les données du couple dans un fichier XML, appelé dans la fonction saveAll() de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a>.  <a href="#a5cae42d330372f8b59aa34bd1cc713ec">More...</a><br /></td></tr>
 <tr class="separator:a5cae42d330372f8b59aa34bd1cc713ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a> utilisé dans les relations. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="couple_8h_source.html">couple.h</a></li>
-<li>couple.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0001093dd86adaaedcbb667773d94f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0001093dd86adaaedcbb667773d94f3a">&#9670;&nbsp;</a></span>Couple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Couple::Couple </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>_label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>_pere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>_fils</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur Construit un couple avec un label, une note père et une note fils. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aab27fa8e95afb70ff3cb73697115e4f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab27fa8e95afb70ff3cb73697115e4f3">&#9670;&nbsp;</a></span>getFils()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note.html">Note</a>* Couple::getFils </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f04e0130d4d44ce39e322033d85a8df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f04e0130d4d44ce39e322033d85a8df">&#9670;&nbsp;</a></span>getLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString&amp; Couple::getLabel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a848e2cf94dbb14aa2b12ac993cd4f818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a848e2cf94dbb14aa2b12ac993cd4f818">&#9670;&nbsp;</a></span>getPere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note.html">Note</a>* Couple::getPere </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69d515652c18d65feacd71ca4a110937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d515652c18d65feacd71ca4a110937">&#9670;&nbsp;</a></span>setLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Couple::setLabel </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cae42d330372f8b59aa34bd1cc713ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cae42d330372f8b59aa34bd1cc713ec">&#9670;&nbsp;</a></span>writeInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Couple::writeInFile </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamWriter &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sauvegarde le couple dans un fichier XML Sauvegarde toutes les données du couple dans un fichier XML, appelé dans la fonction saveAll() de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a>. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>PluriNotes/<a class="el" href="couple_8h_source.html">couple.h</a></li>
+<li>PluriNotes/<a class="el" href="couple_8cpp.html">couple.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

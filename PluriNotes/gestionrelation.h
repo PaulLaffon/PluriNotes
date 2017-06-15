@@ -15,9 +15,9 @@
 #include "relationmanager.h"
 #include "notemanager.h"
 
-/*! \class CreationCouple
- *  \brief Classe abstraite pour le parcours et la modification des relations ainsi que des
- *  couples qui lui sont associés
+/*! \class GestionRelation
+ *  \brief Classe qui gère le parcours et la modification des relations ainsi que des couples qui lui sont associés
+ *
  *  Hérite de QDialog, affiche la liste des relations, le titre de la description de la
  *  relation sélectionée ainsi que la liste des couples associés à cetet relation avec le titre
  *  du couples selectionné

@@ -10,6 +10,12 @@
 
 #include "notemanager.h"
 
+/*! \class PartieDroite
+ *
+ *  \brief Affichage de la partie droite de l'application (arbre des dépendances)
+ * */
+
+
 class PartieDroite : public QDockWidget
 {
     Q_OBJECT

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['tache',['Tache',['../class_tache.html',1,'']]],
-  ['typeiterator',['TypeIterator',['../class_note_manager_1_1_type_iterator.html',1,'NoteManager']]]
+  ['reference',['Reference',['../class_reference.html',1,'']]],
+  ['relation',['Relation',['../class_relation.html',1,'']]],
+  ['relationmanager',['RelationManager',['../class_relation_manager.html',1,'']]]
 ];

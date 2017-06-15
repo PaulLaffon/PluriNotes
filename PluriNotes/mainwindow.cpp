@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     NoteManager& instance = NoteManager::getInstance();
     RelationManager& relations = RelationManager::getInstance();
 
+    instance.load();
 
     centre = new PartieCentrale(this);
     setCentralWidget(centre);
@@ -71,6 +72,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    NoteManager& instance = NoteManager::getInstance();
+
+    instance.saveAll();
+
+
     PartieGauche::deleteInstance();
     PartieDroite::deleteInstance();
 }

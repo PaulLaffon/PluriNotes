@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="RelationManager::iterator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_relation_manager_1_1iterator.html",tooltip="Iterateur pour parcourir toutes les relations, sauf la relation référence qui n&#39;est pas prise en comp..."];
+}

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -79,6 +79,7 @@ Inheritance diagram for Relation:</div>
  <div class="center">
   <img src="class_relation.png" usemap="#Relation_map" alt=""/>
   <map id="Relation_map" name="Relation_map">
+<area href="class_reference.html" title="C&#39;est une relation particulière, elle hérite de Relation. " alt="Reference" shape="rect" coords="0,112,71,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -87,38 +88,554 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_1_1iterator.html">iterator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterateur pour parcourir tous les couples d'une relation.  <a href="class_relation_1_1iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation_1_1iterator_succ_pred.html">iteratorSuccPred</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterateur pour parcourir tous les successeurs ou predecesseurs d'une note dans une relation.  <a href="class_relation_1_1iterator_succ_pred.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a57a5f7fcb1de38055e3fdf336bed31b7"><td class="memItemLeft" align="right" valign="top"><a id="a57a5f7fcb1de38055e3fdf336bed31b7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Relation</b> (const QString &amp;_titre, const QString &amp;_description)</td></tr>
+<tr class="memitem:a57a5f7fcb1de38055e3fdf336bed31b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a57a5f7fcb1de38055e3fdf336bed31b7">Relation</a> (const QString &amp;_titre, const QString &amp;_description)</td></tr>
+<tr class="memdesc:a57a5f7fcb1de38055e3fdf336bed31b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une relation avec un titre et une description.  <a href="#a57a5f7fcb1de38055e3fdf336bed31b7">More...</a><br /></td></tr>
 <tr class="separator:a57a5f7fcb1de38055e3fdf336bed31b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eea6ecc047642334226fec8d2e36685"><td class="memItemLeft" align="right" valign="top"><a id="a3eea6ecc047642334226fec8d2e36685"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a3eea6ecc047642334226fec8d2e36685">ajouterCouple</a> (const QString &amp;label, <a class="el" href="class_note.html">Note</a> *pere, <a class="el" href="class_note.html">Note</a> *fils)</td></tr>
-<tr class="memdesc:a3eea6ecc047642334226fec8d2e36685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un couple à la <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>. <br /></td></tr>
-<tr class="separator:a3eea6ecc047642334226fec8d2e36685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411be3a1dfc417342db768555a2afe41"><td class="memItemLeft" align="right" valign="top"><a id="a411be3a1dfc417342db768555a2afe41"></a>
-const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTitre</b> () const</td></tr>
+<tr class="memitem:ad8bc5c349f9d98b15972fd0b09f341cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#ad8bc5c349f9d98b15972fd0b09f341cc">~Relation</a> ()</td></tr>
+<tr class="separator:ad8bc5c349f9d98b15972fd0b09f341cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1bb2e8db12a76145e20a4e2ddbbf16e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#ac1bb2e8db12a76145e20a4e2ddbbf16e">ajoutCouple</a> (const QString &amp;label, <a class="el" href="class_note.html">Note</a> *pere, <a class="el" href="class_note.html">Note</a> *fils)</td></tr>
+<tr class="memdesc:ac1bb2e8db12a76145e20a4e2ddbbf16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un couple à la <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>.  <a href="#ac1bb2e8db12a76145e20a4e2ddbbf16e">More...</a><br /></td></tr>
+<tr class="separator:ac1bb2e8db12a76145e20a4e2ddbbf16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61718b25433e986eeddac0dafe63d728"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_couple.html">Couple</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a61718b25433e986eeddac0dafe63d728">findCouple</a> (const QString &amp;label, <a class="el" href="class_note.html">Note</a> *pere, <a class="el" href="class_note.html">Note</a> *fils)</td></tr>
+<tr class="memdesc:a61718b25433e986eeddac0dafe63d728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recherche un couple dans la <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>.  <a href="#a61718b25433e986eeddac0dafe63d728">More...</a><br /></td></tr>
+<tr class="separator:a61718b25433e986eeddac0dafe63d728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca312946f2855d16d49b9a96bebcf91d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#aca312946f2855d16d49b9a96bebcf91d">retireCouple</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:aca312946f2855d16d49b9a96bebcf91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retire tous les couples où la note est référencée.  <a href="#aca312946f2855d16d49b9a96bebcf91d">More...</a><br /></td></tr>
+<tr class="separator:aca312946f2855d16d49b9a96bebcf91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411be3a1dfc417342db768555a2afe41"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a411be3a1dfc417342db768555a2afe41">getTitre</a> () const</td></tr>
 <tr class="separator:a411be3a1dfc417342db768555a2afe41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078c6c43b163152aa40a9ac535175b9e"><td class="memItemLeft" align="right" valign="top"><a id="a078c6c43b163152aa40a9ac535175b9e"></a>
-const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getDescription</b> () const</td></tr>
+<tr class="memitem:a078c6c43b163152aa40a9ac535175b9e"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a078c6c43b163152aa40a9ac535175b9e">getDescription</a> () const</td></tr>
 <tr class="separator:a078c6c43b163152aa40a9ac535175b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a765b62bba38a06e1885d6108b2c4ab52"><td class="memItemLeft" align="right" valign="top"><a id="a765b62bba38a06e1885d6108b2c4ab52"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a765b62bba38a06e1885d6108b2c4ab52">isReference</a> () const</td></tr>
-<tr class="memdesc:a765b62bba38a06e1885d6108b2c4ab52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si la relation est une Reference. <br /></td></tr>
+<tr class="memitem:adda18ee0d9203edb7d2513a50c95e21e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#adda18ee0d9203edb7d2513a50c95e21e">setTitre</a> (const QString &amp;t)</td></tr>
+<tr class="separator:adda18ee0d9203edb7d2513a50c95e21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e77a436a749f0200e6eaa7c47859cac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a6e77a436a749f0200e6eaa7c47859cac">setDescription</a> (const QString &amp;d)</td></tr>
+<tr class="separator:a6e77a436a749f0200e6eaa7c47859cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab781c5847e0e33b6260f2681ca54df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_couple.html">Couple</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a1ab781c5847e0e33b6260f2681ca54df">find</a> (<a class="el" href="class_note.html">Note</a> *pere, <a class="el" href="class_note.html">Note</a> *fils)</td></tr>
+<tr class="memdesc:a1ab781c5847e0e33b6260f2681ca54df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recherche ce couple dans la liste des couples, renvoie le couple ou nullptr si il n'existe pas.  <a href="#a1ab781c5847e0e33b6260f2681ca54df">More...</a><br /></td></tr>
+<tr class="separator:a1ab781c5847e0e33b6260f2681ca54df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d85aa690b2132c54bdf0f90949e053"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a24d85aa690b2132c54bdf0f90949e053">isReferenced</a> (<a class="el" href="class_note.html">Note</a> *n) const</td></tr>
+<tr class="memdesc:a24d85aa690b2132c54bdf0f90949e053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si la note est référencée.  <a href="#a24d85aa690b2132c54bdf0f90949e053">More...</a><br /></td></tr>
+<tr class="separator:a24d85aa690b2132c54bdf0f90949e053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf3f2c0ffb87478d5c11c122d06dbb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#aaaf3f2c0ffb87478d5c11c122d06dbb1">retireAllCouple</a> ()</td></tr>
+<tr class="memdesc:aaaf3f2c0ffb87478d5c11c122d06dbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retire tous les couples de la relation.  <a href="#aaaf3f2c0ffb87478d5c11c122d06dbb1">More...</a><br /></td></tr>
+<tr class="separator:aaaf3f2c0ffb87478d5c11c122d06dbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f87c307323a0860ea9fe3b2e0a9ce1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a0f87c307323a0860ea9fe3b2e0a9ce1d">supprimerCouple</a> (<a class="el" href="class_note.html">Note</a> *n1, <a class="el" href="class_note.html">Note</a> *n2)</td></tr>
+<tr class="separator:a0f87c307323a0860ea9fe3b2e0a9ce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765b62bba38a06e1885d6108b2c4ab52"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a765b62bba38a06e1885d6108b2c4ab52">isReference</a> () const</td></tr>
+<tr class="memdesc:a765b62bba38a06e1885d6108b2c4ab52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si la relation est une <a class="el" href="class_reference.html" title="C&#39;est une relation particulière, elle hérite de Relation. ">Reference</a>.  <a href="#a765b62bba38a06e1885d6108b2c4ab52">More...</a><br /></td></tr>
 <tr class="separator:a765b62bba38a06e1885d6108b2c4ab52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa436b19e8361edc4de25b7b30b3bd010"><td class="memItemLeft" align="right" valign="top"><a id="aa436b19e8361edc4de25b7b30b3bd010"></a>
-<a class="el" href="class_relation_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:aa436b19e8361edc4de25b7b30b3bd010"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#aa436b19e8361edc4de25b7b30b3bd010">begin</a> ()</td></tr>
+<tr class="memdesc:aa436b19e8361edc4de25b7b30b3bd010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin pour parcourir tous les couples.  <a href="#aa436b19e8361edc4de25b7b30b3bd010">More...</a><br /></td></tr>
 <tr class="separator:aa436b19e8361edc4de25b7b30b3bd010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee4ecfac883dc307d257d6976e7a191b"><td class="memItemLeft" align="right" valign="top"><a id="aee4ecfac883dc307d257d6976e7a191b"></a>
-<a class="el" href="class_relation_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:aee4ecfac883dc307d257d6976e7a191b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#aee4ecfac883dc307d257d6976e7a191b">end</a> ()</td></tr>
+<tr class="memdesc:aee4ecfac883dc307d257d6976e7a191b"><td class="mdescLeft">&#160;</td><td class="mdescRight">S'utilise avec l'itérateur classique.  <a href="#aee4ecfac883dc307d257d6976e7a191b">More...</a><br /></td></tr>
 <tr class="separator:aee4ecfac883dc307d257d6976e7a191b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfaeb7d5b985725e8dfffff0b8972e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_1_1iterator_succ_pred.html">iteratorSuccPred</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#a1bfaeb7d5b985725e8dfffff0b8972e4">begin</a> (<a class="el" href="class_note.html">Note</a> *n, bool successeur)</td></tr>
+<tr class="memdesc:a1bfaeb7d5b985725e8dfffff0b8972e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'iterateur pour les successeur/predecesseur.  <a href="#a1bfaeb7d5b985725e8dfffff0b8972e4">More...</a><br /></td></tr>
+<tr class="separator:a1bfaeb7d5b985725e8dfffff0b8972e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3dd3ced466514893901497e729d02eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_relation_1_1iterator_succ_pred.html">iteratorSuccPred</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_relation.html#ae3dd3ced466514893901497e729d02eb">endSuccPred</a> ()</td></tr>
+<tr class="memdesc:ae3dd3ced466514893901497e729d02eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">S'utilise avec l'iterateur des successeur/predecesseur.  <a href="#ae3dd3ced466514893901497e729d02eb">More...</a><br /></td></tr>
+<tr class="separator:ae3dd3ced466514893901497e729d02eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contient toutes les informations d'une relation, est composé de <a class="el" href="class_couple.html" title="Couple utilisé dans les relations. ">Couple</a>. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="relation_8h_source.html">relation.h</a></li>
-<li>relation.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a57a5f7fcb1de38055e3fdf336bed31b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a5f7fcb1de38055e3fdf336bed31b7">&#9670;&nbsp;</a></span>Relation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Relation::Relation </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>_titre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>_description</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cree une relation avec un titre et une description. </p>
+
+</div>
+</div>
+<a id="ad8bc5c349f9d98b15972fd0b09f341cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8bc5c349f9d98b15972fd0b09f341cc">&#9670;&nbsp;</a></span>~Relation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Relation::~Relation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac1bb2e8db12a76145e20a4e2ddbbf16e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bb2e8db12a76145e20a4e2ddbbf16e">&#9670;&nbsp;</a></span>ajoutCouple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::ajoutCouple </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>pere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>fils</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un couple à la <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>. </p>
+
+</div>
+</div>
+<a id="aa436b19e8361edc4de25b7b30b3bd010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa436b19e8361edc4de25b7b30b3bd010">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_1_1iterator.html">iterator</a> Relation::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Begin pour parcourir tous les couples. </p>
+
+</div>
+</div>
+<a id="a1bfaeb7d5b985725e8dfffff0b8972e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bfaeb7d5b985725e8dfffff0b8972e4">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_1_1iterator_succ_pred.html">iteratorSuccPred</a> Relation::begin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>successeur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie l'iterateur pour les successeur/predecesseur. </p>
+
+</div>
+</div>
+<a id="aee4ecfac883dc307d257d6976e7a191b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee4ecfac883dc307d257d6976e7a191b">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_1_1iterator.html">iterator</a> Relation::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>S'utilise avec l'itérateur classique. </p>
+
+</div>
+</div>
+<a id="ae3dd3ced466514893901497e729d02eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3dd3ced466514893901497e729d02eb">&#9670;&nbsp;</a></span>endSuccPred()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_relation_1_1iterator_succ_pred.html">iteratorSuccPred</a> Relation::endSuccPred </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>S'utilise avec l'iterateur des successeur/predecesseur. </p>
+
+</div>
+</div>
+<a id="a1ab781c5847e0e33b6260f2681ca54df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab781c5847e0e33b6260f2681ca54df">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_couple.html">Couple</a> * Relation::find </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>pere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>fils</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recherche ce couple dans la liste des couples, renvoie le couple ou nullptr si il n'existe pas. </p>
+
+</div>
+</div>
+<a id="a61718b25433e986eeddac0dafe63d728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61718b25433e986eeddac0dafe63d728">&#9670;&nbsp;</a></span>findCouple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_couple.html">Couple</a> * Relation::findCouple </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>pere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>fils</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recherche un couple dans la <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>. </p>
+
+</div>
+</div>
+<a id="a078c6c43b163152aa40a9ac535175b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078c6c43b163152aa40a9ac535175b9e">&#9670;&nbsp;</a></span>getDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString&amp; Relation::getDescription </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a411be3a1dfc417342db768555a2afe41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411be3a1dfc417342db768555a2afe41">&#9670;&nbsp;</a></span>getTitre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString&amp; Relation::getTitre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a765b62bba38a06e1885d6108b2c4ab52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765b62bba38a06e1885d6108b2c4ab52">&#9670;&nbsp;</a></span>isReference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Relation::isReference </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si la relation est une <a class="el" href="class_reference.html" title="C&#39;est une relation particulière, elle hérite de Relation. ">Reference</a>. </p>
+
+<p>Reimplemented in <a class="el" href="class_reference.html#a9e40518fd3a0f86d3358254468d39607">Reference</a>.</p>
+
+</div>
+</div>
+<a id="a24d85aa690b2132c54bdf0f90949e053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d85aa690b2132c54bdf0f90949e053">&#9670;&nbsp;</a></span>isReferenced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Relation::isReferenced </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si la note est référencée. </p>
+
+</div>
+</div>
+<a id="aaaf3f2c0ffb87478d5c11c122d06dbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf3f2c0ffb87478d5c11c122d06dbb1">&#9670;&nbsp;</a></span>retireAllCouple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::retireAllCouple </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retire tous les couples de la relation. </p>
+
+</div>
+</div>
+<a id="aca312946f2855d16d49b9a96bebcf91d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca312946f2855d16d49b9a96bebcf91d">&#9670;&nbsp;</a></span>retireCouple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::retireCouple </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retire tous les couples où la note est référencée. </p>
+
+</div>
+</div>
+<a id="a6e77a436a749f0200e6eaa7c47859cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e77a436a749f0200e6eaa7c47859cac">&#9670;&nbsp;</a></span>setDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::setDescription </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adda18ee0d9203edb7d2513a50c95e21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda18ee0d9203edb7d2513a50c95e21e">&#9670;&nbsp;</a></span>setTitre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::setTitre </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f87c307323a0860ea9fe3b2e0a9ce1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f87c307323a0860ea9fe3b2e0a9ce1d">&#9670;&nbsp;</a></span>supprimerCouple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Relation::supprimerCouple </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>PluriNotes/<a class="el" href="relation_8h_source.html">relation.h</a></li>
+<li>PluriNotes/<a class="el" href="relation_8cpp.html">relation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

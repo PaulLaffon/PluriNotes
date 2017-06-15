@@ -1,0 +1,12 @@
+digraph "AffichageNote"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node8 [label="AffichageNote",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="QMdiSubWindow",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" note" ,fontname="Helvetica"];
+  Node10 [label="Note",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_note.html",tooltip="Classe gérant une note, composée de toutes ses versions. "];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

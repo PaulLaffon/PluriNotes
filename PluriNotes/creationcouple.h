@@ -17,7 +17,7 @@
 #include "versionnote.h"
 
 /*! \class CreationCouple
- *  \brief Classe abstraite pour l'affichage de la création d'un couple
+ *  \brief Classe qui gère l'affichage de la création d'un couple
  *  Hérite de QDialog, affiche la liste des relation et des notes pour pouvoir créer un couple
  * */
 

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -62,6 +62,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_note_manager-members.html">List of all members</a>  </div>
@@ -89,48 +91,706 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Itérateur sur le d'une d'une note.  <a href="class_note_manager_1_1_type_iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:a50569bb835b634844a7245ecdee60c36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a50569bb835b634844a7245ecdee60c36">nouvelleArticle</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a50569bb835b634844a7245ecdee60c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree un nouvel article avec une première version vide.  <a href="#a50569bb835b634844a7245ecdee60c36">More...</a><br /></td></tr>
+<tr class="separator:a50569bb835b634844a7245ecdee60c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412f6b5740f788fef0235ab3598dd63d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a412f6b5740f788fef0235ab3598dd63d">nouvelleTache</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a412f6b5740f788fef0235ab3598dd63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une nouvelle tache avec une première version vide.  <a href="#a412f6b5740f788fef0235ab3598dd63d">More...</a><br /></td></tr>
+<tr class="separator:a412f6b5740f788fef0235ab3598dd63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90463efd8d3be95fa21440acbb87940f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a90463efd8d3be95fa21440acbb87940f">nouvelleImage</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a90463efd8d3be95fa21440acbb87940f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une nouvelle note image avec une première version vide.  <a href="#a90463efd8d3be95fa21440acbb87940f">More...</a><br /></td></tr>
+<tr class="separator:a90463efd8d3be95fa21440acbb87940f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ff4cdfc12c089da2ce4d32eadf07bb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a1ff4cdfc12c089da2ce4d32eadf07bb6">nouvelleVideo</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a1ff4cdfc12c089da2ce4d32eadf07bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une nouvelle note video avec une première version vide.  <a href="#a1ff4cdfc12c089da2ce4d32eadf07bb6">More...</a><br /></td></tr>
+<tr class="separator:a1ff4cdfc12c089da2ce4d32eadf07bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07102f8982efaee9b2d92ba28d354a49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a07102f8982efaee9b2d92ba28d354a49">nouvelleAudio</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:a07102f8982efaee9b2d92ba28d354a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une nouvelle note audio avec une première version vide.  <a href="#a07102f8982efaee9b2d92ba28d354a49">More...</a><br /></td></tr>
+<tr class="separator:a07102f8982efaee9b2d92ba28d354a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27caba7a462aedead48dfcd8335055de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a27caba7a462aedead48dfcd8335055de">actualiserReference</a> ()</td></tr>
+<tr class="memdesc:a27caba7a462aedead48dfcd8335055de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualise les références par rapport a toutes les notes.  <a href="#a27caba7a462aedead48dfcd8335055de">More...</a><br /></td></tr>
+<tr class="separator:a27caba7a462aedead48dfcd8335055de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4810d460a40a732f7e46c12a8a2bac53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a4810d460a40a732f7e46c12a8a2bac53">clicSupprimerNote</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a4810d460a40a732f7e46c12a8a2bac53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelé lorsque que l'on clique pour supprimer une note.  <a href="#a4810d460a40a732f7e46c12a8a2bac53">More...</a><br /></td></tr>
+<tr class="separator:a4810d460a40a732f7e46c12a8a2bac53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36cd683dbebf88016efe873fd4bf0b3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a36cd683dbebf88016efe873fd4bf0b3b">restaurerNote</a> (<a class="el" href="class_note.html">Note</a> *n)</td></tr>
+<tr class="memdesc:a36cd683dbebf88016efe873fd4bf0b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelé lorsqu'on restaure une note archivé ou de la corbeille.  <a href="#a36cd683dbebf88016efe873fd4bf0b3b">More...</a><br /></td></tr>
+<tr class="separator:a36cd683dbebf88016efe873fd4bf0b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:afcc7168d3bcf9f23d33288e4355623d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#afcc7168d3bcf9f23d33288e4355623d8">erreur</a> (QString)</td></tr>
+<tr class="memdesc:afcc7168d3bcf9f23d33288e4355623d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà  <a href="#afcc7168d3bcf9f23d33288e4355623d8">More...</a><br /></td></tr>
+<tr class="separator:afcc7168d3bcf9f23d33288e4355623d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2006f9bc169d75c6e695e6b74251feee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a2006f9bc169d75c6e695e6b74251feee">creationNote</a> ()</td></tr>
+<tr class="memdesc:a2006f9bc169d75c6e695e6b74251feee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal qui indique qu'une nouvelle note a été créée, recharger la liste des notes.  <a href="#a2006f9bc169d75c6e695e6b74251feee">More...</a><br /></td></tr>
+<tr class="separator:a2006f9bc169d75c6e695e6b74251feee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa0ee3cbb998fa333b6bd3f21706f2e0c"><td class="memItemLeft" align="right" valign="top"><a id="aa0ee3cbb998fa333b6bd3f21706f2e0c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#aa0ee3cbb998fa333b6bd3f21706f2e0c">load</a> ()</td></tr>
-<tr class="memdesc:aa0ee3cbb998fa333b6bd3f21706f2e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les notes du fichier de sauvegarde filename Appeler au lancement de l'application Appel de la fonction <a class="el" href="class_note_manager.html#aa0ee3cbb998fa333b6bd3f21706f2e0c" title="Charge les notes du fichier de sauvegarde filename Appeler au lancement de l&#39;application Appel de la ...">load()</a> de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a> en même temps pour charger toutes les informations sur les <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> et <a class="el" href="class_relation.html" title="Contient toutes les informations d&#39;une relation, est composé de Couple. ">Relation</a>. <br /></td></tr>
+<tr class="memitem:aa0ee3cbb998fa333b6bd3f21706f2e0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#aa0ee3cbb998fa333b6bd3f21706f2e0c">load</a> ()</td></tr>
+<tr class="memdesc:aa0ee3cbb998fa333b6bd3f21706f2e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge les notes du fichier de sauvegarde filename Appeler au lancement de l'application.  <a href="#aa0ee3cbb998fa333b6bd3f21706f2e0c">More...</a><br /></td></tr>
 <tr class="separator:aa0ee3cbb998fa333b6bd3f21706f2e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a547ef2fac355d641bbedf6434e947ac2"><td class="memItemLeft" align="right" valign="top"><a id="a547ef2fac355d641bbedf6434e947ac2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a547ef2fac355d641bbedf6434e947ac2">saveAll</a> () const</td></tr>
-<tr class="memdesc:a547ef2fac355d641bbedf6434e947ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde toutes les notes dans un fichier XML Appeler à la fermeture de l'application Appel la fonction <a class="el" href="class_note_manager.html#a547ef2fac355d641bbedf6434e947ac2" title="Sauvegarde toutes les notes dans un fichier XML Appeler à la fermeture de l&#39;application Appel la fonc...">saveAll()</a> de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a> pour sauvegarder en même temps les différentes Relations. <br /></td></tr>
-<tr class="separator:a547ef2fac355d641bbedf6434e947ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdf7ffbe235514d1f563ce5518d563cd"><td class="memItemLeft" align="right" valign="top"><a id="acdf7ffbe235514d1f563ce5518d563cd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#acdf7ffbe235514d1f563ce5518d563cd">nouvelleNote</a> (const QString &amp;id, const QDateTime &amp;crea, const QDateTime &amp;modif, bool archive, bool corbeille)</td></tr>
-<tr class="memdesc:acdf7ffbe235514d1f563ce5518d563cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une nouvelle note sans Version. <br /></td></tr>
+<tr class="memitem:ae8b8978f5310184e89d0b0b4859039b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#ae8b8978f5310184e89d0b0b4859039b0">saveAll</a> ()</td></tr>
+<tr class="memdesc:ae8b8978f5310184e89d0b0b4859039b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde toutes les notes dans un fichier XML Appeler à la fermeture de l'application Appel la fonction <a class="el" href="class_note_manager.html#ae8b8978f5310184e89d0b0b4859039b0" title="Sauvegarde toutes les notes dans un fichier XML Appeler à la fermeture de l&#39;application Appel la fonc...">saveAll()</a> de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a> pour sauvegarder en même temps les différentes Relations.  <a href="#ae8b8978f5310184e89d0b0b4859039b0">More...</a><br /></td></tr>
+<tr class="separator:ae8b8978f5310184e89d0b0b4859039b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf7ffbe235514d1f563ce5518d563cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#acdf7ffbe235514d1f563ce5518d563cd">nouvelleNote</a> (const QString &amp;id, const QDateTime &amp;crea, const QDateTime &amp;modif, bool archive, bool corbeille)</td></tr>
+<tr class="memdesc:acdf7ffbe235514d1f563ce5518d563cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree une nouvelle note sans Version, utilisé lors de la fonction <a class="el" href="class_note_manager.html#aa0ee3cbb998fa333b6bd3f21706f2e0c" title="Charge les notes du fichier de sauvegarde filename Appeler au lancement de l&#39;application. ">load()</a>  <a href="#acdf7ffbe235514d1f563ce5518d563cd">More...</a><br /></td></tr>
 <tr class="separator:acdf7ffbe235514d1f563ce5518d563cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88a12954fa187780062beea1ce836986"><td class="memItemLeft" align="right" valign="top"><a id="a88a12954fa187780062beea1ce836986"></a>
-<a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a88a12954fa187780062beea1ce836986">find</a> (const QString &amp;id) const</td></tr>
-<tr class="memdesc:a88a12954fa187780062beea1ce836986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la note correspondant à l'id. <br /></td></tr>
+<tr class="memitem:a88a12954fa187780062beea1ce836986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note.html">Note</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a88a12954fa187780062beea1ce836986">find</a> (const QString &amp;id) const</td></tr>
+<tr class="memdesc:a88a12954fa187780062beea1ce836986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la note correspondant à l'id.  <a href="#a88a12954fa187780062beea1ce836986">More...</a><br /></td></tr>
 <tr class="separator:a88a12954fa187780062beea1ce836986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1530816e66aab91117b21c171b736f4"><td class="memItemLeft" align="right" valign="top"><a id="af1530816e66aab91117b21c171b736f4"></a>
-<a class="el" href="class_note_manager_1_1_type_iterator.html">TypeIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#af1530816e66aab91117b21c171b736f4">begin</a> (TypeNote type)</td></tr>
-<tr class="memdesc:af1530816e66aab91117b21c171b736f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un itérateur sur le premier élément du type souhaité <br /></td></tr>
-<tr class="separator:af1530816e66aab91117b21c171b736f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a915f722f68464f85e60d1cda8ced2d05"><td class="memItemLeft" align="right" valign="top"><a id="a915f722f68464f85e60d1cda8ced2d05"></a>
-<a class="el" href="class_note_manager_1_1_type_iterator.html">TypeIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:ab16cc5268a7e84b21471eb9f7bbf5042"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#ab16cc5268a7e84b21471eb9f7bbf5042">supprimerNote</a> (const QString &amp;id)</td></tr>
+<tr class="memdesc:ab16cc5268a7e84b21471eb9f7bbf5042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime la note ainsi que tous les couples où elle apparaît.  <a href="#ab16cc5268a7e84b21471eb9f7bbf5042">More...</a><br /></td></tr>
+<tr class="separator:ab16cc5268a7e84b21471eb9f7bbf5042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacfca94ad6db366778db9cf4b87f7e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#aaacfca94ad6db366778db9cf4b87f7e3">supprimerCorbeille</a> ()</td></tr>
+<tr class="memdesc:aaacfca94ad6db366778db9cf4b87f7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime toutes les notes de la corbeille.  <a href="#aaacfca94ad6db366778db9cf4b87f7e3">More...</a><br /></td></tr>
+<tr class="separator:aaacfca94ad6db366778db9cf4b87f7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a8987182541ce784285fd5362a1c13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#ab1a8987182541ce784285fd5362a1c13">corbeilleVide</a> ()</td></tr>
+<tr class="memdesc:ab1a8987182541ce784285fd5362a1c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si aucune note est dans la corbeille.  <a href="#ab1a8987182541ce784285fd5362a1c13">More...</a><br /></td></tr>
+<tr class="separator:ab1a8987182541ce784285fd5362a1c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f6f0a37bd305bc0c182132621592c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#af0f6f0a37bd305bc0c182132621592c7">setViderCorbeilleAuto</a> (bool b)</td></tr>
+<tr class="separator:af0f6f0a37bd305bc0c182132621592c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1999ce93ced16321558795385f3d5d28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a1999ce93ced16321558795385f3d5d28">getViderCorbeilleAuto</a> () const</td></tr>
+<tr class="separator:a1999ce93ced16321558795385f3d5d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade97b19826e2c0cb0b9ca754d2f02e08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note_manager_1_1_type_iterator.html">TypeIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#ade97b19826e2c0cb0b9ca754d2f02e08">begin</a> (<a class="el" href="versionnote_8h.html#ae9e654f5716c53eb2b588737271297ae">TypeNote</a> type, bool archive=false, bool corbeille=false)</td></tr>
+<tr class="memdesc:ade97b19826e2c0cb0b9ca754d2f02e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un itérateur sur le premier élément du type souhaité  <a href="#ade97b19826e2c0cb0b9ca754d2f02e08">More...</a><br /></td></tr>
+<tr class="separator:ade97b19826e2c0cb0b9ca754d2f02e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915f722f68464f85e60d1cda8ced2d05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_note_manager_1_1_type_iterator.html">TypeIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a915f722f68464f85e60d1cda8ced2d05">end</a> ()</td></tr>
 <tr class="separator:a915f722f68464f85e60d1cda8ced2d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a66d09f446993085eee7b322ec8b289f1"><td class="memItemLeft" align="right" valign="top"><a id="a66d09f446993085eee7b322ec8b289f1"></a>
-static <a class="el" href="class_note_manager.html">NoteManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a66d09f446993085eee7b322ec8b289f1">getInstance</a> ()</td></tr>
-<tr class="memdesc:a66d09f446993085eee7b322ec8b289f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'instance de la classe <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. <br /></td></tr>
+<tr class="memitem:a66d09f446993085eee7b322ec8b289f1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_note_manager.html">NoteManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#a66d09f446993085eee7b322ec8b289f1">getInstance</a> ()</td></tr>
+<tr class="memdesc:a66d09f446993085eee7b322ec8b289f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère l'instance de la classe <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>.  <a href="#a66d09f446993085eee7b322ec8b289f1">More...</a><br /></td></tr>
 <tr class="separator:a66d09f446993085eee7b322ec8b289f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3af9c812ef4297360214d61217cc9aa"><td class="memItemLeft" align="right" valign="top"><a id="ac3af9c812ef4297360214d61217cc9aa"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#ac3af9c812ef4297360214d61217cc9aa">deleteInstance</a> ()</td></tr>
-<tr class="memdesc:ac3af9c812ef4297360214d61217cc9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime l'instance de la classe <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. <br /></td></tr>
+<tr class="memitem:ac3af9c812ef4297360214d61217cc9aa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_note_manager.html#ac3af9c812ef4297360214d61217cc9aa">deleteInstance</a> ()</td></tr>
+<tr class="memdesc:ac3af9c812ef4297360214d61217cc9aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime l'instance de la classe <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>.  <a href="#ac3af9c812ef4297360214d61217cc9aa">More...</a><br /></td></tr>
 <tr class="separator:ac3af9c812ef4297360214d61217cc9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton factory pour les <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a> Singleton qui s'occupe de la crétion et de la gestion des différentes <a class="el" href="class_note.html" title="Classe gérant une note, composée de toutes ses versions. ">Note</a>. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="notemanager_8h_source.html">notemanager.h</a></li>
-<li>notemanager.cpp</li>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a27caba7a462aedead48dfcd8335055de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27caba7a462aedead48dfcd8335055de">&#9670;&nbsp;</a></span>actualiserReference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::actualiserReference </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualise les références par rapport a toutes les notes. </p>
+
+</div>
+</div>
+<a id="ade97b19826e2c0cb0b9ca754d2f02e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade97b19826e2c0cb0b9ca754d2f02e08">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note_manager_1_1_type_iterator.html">TypeIterator</a> NoteManager::begin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="versionnote_8h.html#ae9e654f5716c53eb2b588737271297ae">TypeNote</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>archive</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>corbeille</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne un itérateur sur le premier élément du type souhaité </p>
+
+</div>
+</div>
+<a id="a4810d460a40a732f7e46c12a8a2bac53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4810d460a40a732f7e46c12a8a2bac53">&#9670;&nbsp;</a></span>clicSupprimerNote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::clicSupprimerNote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction appelé lorsque que l'on clique pour supprimer une note. </p>
+
+</div>
+</div>
+<a id="ab1a8987182541ce784285fd5362a1c13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a8987182541ce784285fd5362a1c13">&#9670;&nbsp;</a></span>corbeilleVide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NoteManager::corbeilleVide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si aucune note est dans la corbeille. </p>
+
+</div>
+</div>
+<a id="a2006f9bc169d75c6e695e6b74251feee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2006f9bc169d75c6e695e6b74251feee">&#9670;&nbsp;</a></span>creationNote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::creationNote </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal qui indique qu'une nouvelle note a été créée, recharger la liste des notes. </p>
+
+</div>
+</div>
+<a id="ac3af9c812ef4297360214d61217cc9aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3af9c812ef4297360214d61217cc9aa">&#9670;&nbsp;</a></span>deleteInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::deleteInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Supprime l'instance de la classe <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. </p>
+
+</div>
+</div>
+<a id="a915f722f68464f85e60d1cda8ced2d05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a915f722f68464f85e60d1cda8ced2d05">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note_manager_1_1_type_iterator.html">TypeIterator</a> NoteManager::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcc7168d3bcf9f23d33288e4355623d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc7168d3bcf9f23d33288e4355623d8">&#9670;&nbsp;</a></span>erreur</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::erreur </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal émit lorqu'on rencontre une erreur, tel que la création d'une note dont l'id existe déjà </p>
+
+</div>
+</div>
+<a id="a88a12954fa187780062beea1ce836986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88a12954fa187780062beea1ce836986">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note.html">Note</a> * NoteManager::find </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la note correspondant à l'id. </p>
+
+</div>
+</div>
+<a id="a66d09f446993085eee7b322ec8b289f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d09f446993085eee7b322ec8b289f1">&#9670;&nbsp;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_note_manager.html">NoteManager</a> &amp; NoteManager::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Récupère l'instance de la classe <a class="el" href="class_note_manager.html" title="Singleton factory pour les Note Singleton qui s&#39;occupe de la crétion et de la gestion des différentes...">NoteManager</a>. </p>
+
+</div>
+</div>
+<a id="a1999ce93ced16321558795385f3d5d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1999ce93ced16321558795385f3d5d28">&#9670;&nbsp;</a></span>getViderCorbeilleAuto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool NoteManager::getViderCorbeilleAuto </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0ee3cbb998fa333b6bd3f21706f2e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ee3cbb998fa333b6bd3f21706f2e0c">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Charge les notes du fichier de sauvegarde filename Appeler au lancement de l'application. </p>
+
+</div>
+</div>
+<a id="a50569bb835b634844a7245ecdee60c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50569bb835b634844a7245ecdee60c36">&#9670;&nbsp;</a></span>nouvelleArticle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::nouvelleArticle </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cree un nouvel article avec une première version vide. </p>
+
+</div>
+</div>
+<a id="a07102f8982efaee9b2d92ba28d354a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07102f8982efaee9b2d92ba28d354a49">&#9670;&nbsp;</a></span>nouvelleAudio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::nouvelleAudio </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cree une nouvelle note audio avec une première version vide. </p>
+
+</div>
+</div>
+<a id="a90463efd8d3be95fa21440acbb87940f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90463efd8d3be95fa21440acbb87940f">&#9670;&nbsp;</a></span>nouvelleImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::nouvelleImage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cree une nouvelle note image avec une première version vide. </p>
+
+</div>
+</div>
+<a id="acdf7ffbe235514d1f563ce5518d563cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf7ffbe235514d1f563ce5518d563cd">&#9670;&nbsp;</a></span>nouvelleNote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::nouvelleNote </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QDateTime &amp;&#160;</td>
+          <td class="paramname"><em>crea</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QDateTime &amp;&#160;</td>
+          <td class="paramname"><em>modif</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>archive</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>corbeille</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cree une nouvelle note sans Version, utilisé lors de la fonction <a class="el" href="class_note_manager.html#aa0ee3cbb998fa333b6bd3f21706f2e0c" title="Charge les notes du fichier de sauvegarde filename Appeler au lancement de l&#39;application. ">load()</a> </p>
+
+</div>
+</div>
+<a id="a412f6b5740f788fef0235ab3598dd63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412f6b5740f788fef0235ab3598dd63d">&#9670;&nbsp;</a></span>nouvelleTache</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::nouvelleTache </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cree une nouvelle tache avec une première version vide. </p>
+
+</div>
+</div>
+<a id="a1ff4cdfc12c089da2ce4d32eadf07bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ff4cdfc12c089da2ce4d32eadf07bb6">&#9670;&nbsp;</a></span>nouvelleVideo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::nouvelleVideo </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cree une nouvelle note video avec une première version vide. </p>
+
+</div>
+</div>
+<a id="a36cd683dbebf88016efe873fd4bf0b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36cd683dbebf88016efe873fd4bf0b3b">&#9670;&nbsp;</a></span>restaurerNote</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::restaurerNote </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_note.html">Note</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction appelé lorsqu'on restaure une note archivé ou de la corbeille. </p>
+
+</div>
+</div>
+<a id="ae8b8978f5310184e89d0b0b4859039b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b8978f5310184e89d0b0b4859039b0">&#9670;&nbsp;</a></span>saveAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::saveAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sauvegarde toutes les notes dans un fichier XML Appeler à la fermeture de l'application Appel la fonction <a class="el" href="class_note_manager.html#ae8b8978f5310184e89d0b0b4859039b0" title="Sauvegarde toutes les notes dans un fichier XML Appeler à la fermeture de l&#39;application Appel la fonc...">saveAll()</a> de <a class="el" href="class_relation_manager.html" title="Singleton factory pour les Relation. ">RelationManager</a> pour sauvegarder en même temps les différentes Relations. </p>
+
+</div>
+</div>
+<a id="af0f6f0a37bd305bc0c182132621592c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f6f0a37bd305bc0c182132621592c7">&#9670;&nbsp;</a></span>setViderCorbeilleAuto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::setViderCorbeilleAuto </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaacfca94ad6db366778db9cf4b87f7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacfca94ad6db366778db9cf4b87f7e3">&#9670;&nbsp;</a></span>supprimerCorbeille()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::supprimerCorbeille </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime toutes les notes de la corbeille. </p>
+
+</div>
+</div>
+<a id="ab16cc5268a7e84b21471eb9f7bbf5042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16cc5268a7e84b21471eb9f7bbf5042">&#9670;&nbsp;</a></span>supprimerNote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NoteManager::supprimerNote </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime la note ainsi que tous les couples où elle apparaît. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>PluriNotes/<a class="el" href="notemanager_8h_source.html">notemanager.h</a></li>
+<li>PluriNotes/<a class="el" href="notemanager_8cpp.html">notemanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -67,13 +67,24 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_relation.html">Relation</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a3eea6ecc047642334226fec8d2e36685">ajouterCouple</a>(const QString &amp;label, Note *pere, Note *fils)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>begin</b>() (defined in <a class="el" href="class_relation.html">Relation</a>)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>end</b>() (defined in <a class="el" href="class_relation.html">Relation</a>)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>getDescription</b>() const (defined in <a class="el" href="class_relation.html">Relation</a>)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>getTitre</b>() const (defined in <a class="el" href="class_relation.html">Relation</a>)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#ac1bb2e8db12a76145e20a4e2ddbbf16e">ajoutCouple</a>(const QString &amp;label, Note *pere, Note *fils)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#aa436b19e8361edc4de25b7b30b3bd010">begin</a>()</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a1bfaeb7d5b985725e8dfffff0b8972e4">begin</a>(Note *n, bool successeur)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#aee4ecfac883dc307d257d6976e7a191b">end</a>()</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#ae3dd3ced466514893901497e729d02eb">endSuccPred</a>()</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#a1ab781c5847e0e33b6260f2681ca54df">find</a>(Note *pere, Note *fils)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a61718b25433e986eeddac0dafe63d728">findCouple</a>(const QString &amp;label, Note *pere, Note *fils)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#a078c6c43b163152aa40a9ac535175b9e">getDescription</a>() const</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a411be3a1dfc417342db768555a2afe41">getTitre</a>() const</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_relation.html#a765b62bba38a06e1885d6108b2c4ab52">isReference</a>() const</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Relation</b>(const QString &amp;_titre, const QString &amp;_description) (defined in <a class="el" href="class_relation.html">Relation</a>)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a24d85aa690b2132c54bdf0f90949e053">isReferenced</a>(Note *n) const</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#a57a5f7fcb1de38055e3fdf336bed31b7">Relation</a>(const QString &amp;_titre, const QString &amp;_description)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#aaaf3f2c0ffb87478d5c11c122d06dbb1">retireAllCouple</a>()</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#aca312946f2855d16d49b9a96bebcf91d">retireCouple</a>(Note *n)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a6e77a436a749f0200e6eaa7c47859cac">setDescription</a>(const QString &amp;d)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#adda18ee0d9203edb7d2513a50c95e21e">setTitre</a>(const QString &amp;t)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation.html#a0f87c307323a0860ea9fe3b2e0a9ce1d">supprimerCouple</a>(Note *n1, Note *n2)</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation.html#ad8bc5c349f9d98b15972fd0b09f341cc">~Relation</a>()</td><td class="entry"><a class="el" href="class_relation.html">Relation</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

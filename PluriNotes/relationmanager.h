@@ -68,7 +68,7 @@ public:
         Relation& operator*() {return **it;}
     };
 
-    /*! \class iteratorSuccPred
+    /*! \class iteratorPredSucc
      *  \brief Iterateur pour parcourir tous les successeurs ou predecesseurs d'une note
      * */
     class iteratorPredSucc

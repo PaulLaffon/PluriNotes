@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -67,13 +67,22 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_relation_manager.html">RelationManager</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#ab5fe252ede99fa3b48cb6bacd75e04b3">ajouterRelation</a>(const QString &amp;titre, const QString &amp;descrition)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a208f9abaaf82695cc5abb917868ee619">back</a>() const</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a1c8f5685ac19628ec916a36411019ce7">ajouterCouple</a>(const QString &amp;titre, const QString &amp;id, Note *note1, Note *note2)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a94cba88b1cf960c2b740939c418fcc6e">ajouterCoupleReference</a>(Note *pere, Note *fils)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#aea0fb0e4c4b5e17818f4b0308756ce71">ajouterReference</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#ab5fe252ede99fa3b48cb6bacd75e04b3">ajouterRelation</a>(const QString &amp;titre, const QString &amp;descrition)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a208f9abaaf82695cc5abb917868ee619">back</a>() const</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a0cbea7cf6799fb13153d1fab8b345487">begin</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a9cb4a1f55cd175902a26d7187f5002a5">begin</a>(Note *n, bool successeur)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a3636482f055d667f7b3fe5e8597a4101">creationRelation</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a7782244be832b5029e20397bf9f94ff2">deleteInstance</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_relation_manager.html#ab13a2549a63908819f84427a3144f8fa">find</a>(const QString &amp;titre)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396">getInstance</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a96bd994b43f0dd8946a514087538d8c5">load</a>(QXmlStreamReader &amp;stream)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4">saveAll</a>(QXmlStreamWriter &amp;stream)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a9425308e362ee6921041d1e904785f19">end</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a65ef3d1d323e20bdb1c37458d21fc360">endSuccPred</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#af850dfbc9d1d81aa6c42c18ded7c2d27">erreur</a>(QString)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#ab13a2549a63908819f84427a3144f8fa">find</a>(const QString &amp;titre)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a35c3622f29ccfbda84be848503041396">getInstance</a>()</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_relation_manager.html#a7f886742da8faeb50d4da18eb7149840">isReferenced</a>(Note *n)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4">saveAll</a>(QXmlStreamWriter &amp;stream)</td><td class="entry"><a class="el" href="class_relation_manager.html">RelationManager</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

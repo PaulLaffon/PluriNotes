@@ -16,6 +16,10 @@
 #include "gestionrelation.h"
 #include "preferences.h"
 
+/*! \class MainWindow
+ *  \brief Fenetre principale de l'application
+ * */
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

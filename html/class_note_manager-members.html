@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -67,14 +67,29 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="class_note_manager.html">NoteManager</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#af1530816e66aab91117b21c171b736f4">begin</a>(TypeNote type)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a27caba7a462aedead48dfcd8335055de">actualiserReference</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#ade97b19826e2c0cb0b9ca754d2f02e08">begin</a>(TypeNote type, bool archive=false, bool corbeille=false)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a4810d460a40a732f7e46c12a8a2bac53">clicSupprimerNote</a>(Note *n)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#ab1a8987182541ce784285fd5362a1c13">corbeilleVide</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a2006f9bc169d75c6e695e6b74251feee">creationNote</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_note_manager.html#ac3af9c812ef4297360214d61217cc9aa">deleteInstance</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>end</b>() (defined in <a class="el" href="class_note_manager.html">NoteManager</a>)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_note_manager.html#a88a12954fa187780062beea1ce836986">find</a>(const QString &amp;id) const</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a66d09f446993085eee7b322ec8b289f1">getInstance</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a915f722f68464f85e60d1cda8ced2d05">end</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#afcc7168d3bcf9f23d33288e4355623d8">erreur</a>(QString)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a88a12954fa187780062beea1ce836986">find</a>(const QString &amp;id) const</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#a66d09f446993085eee7b322ec8b289f1">getInstance</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a1999ce93ced16321558795385f3d5d28">getViderCorbeilleAuto</a>() const</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_note_manager.html#aa0ee3cbb998fa333b6bd3f21706f2e0c">load</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#acdf7ffbe235514d1f563ce5518d563cd">nouvelleNote</a>(const QString &amp;id, const QDateTime &amp;crea, const QDateTime &amp;modif, bool archive, bool corbeille)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_note_manager.html#a547ef2fac355d641bbedf6434e947ac2">saveAll</a>() const</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a50569bb835b634844a7245ecdee60c36">nouvelleArticle</a>(const QString &amp;id)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#a07102f8982efaee9b2d92ba28d354a49">nouvelleAudio</a>(const QString &amp;id)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a90463efd8d3be95fa21440acbb87940f">nouvelleImage</a>(const QString &amp;id)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#acdf7ffbe235514d1f563ce5518d563cd">nouvelleNote</a>(const QString &amp;id, const QDateTime &amp;crea, const QDateTime &amp;modif, bool archive, bool corbeille)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a412f6b5740f788fef0235ab3598dd63d">nouvelleTache</a>(const QString &amp;id)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#a1ff4cdfc12c089da2ce4d32eadf07bb6">nouvelleVideo</a>(const QString &amp;id)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#a36cd683dbebf88016efe873fd4bf0b3b">restaurerNote</a>(Note *n)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#ae8b8978f5310184e89d0b0b4859039b0">saveAll</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#af0f6f0a37bd305bc0c182132621592c7">setViderCorbeilleAuto</a>(bool b)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_note_manager.html#aaacfca94ad6db366778db9cf4b87f7e3">supprimerCorbeille</a>()</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_note_manager.html#ab16cc5268a7e84b21471eb9f7bbf5042">supprimerNote</a>(const QString &amp;id)</td><td class="entry"><a class="el" href="class_note_manager.html">NoteManager</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

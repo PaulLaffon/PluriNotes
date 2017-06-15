@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['writeinfile',['writeInFile',['../class_couple.html#a5cae42d330372f8b59aa34bd1cc713ec',1,'Couple::writeInFile()'],['../class_version_note.html#a5db6092a5a7bec4dcf89af49c3c098cd',1,'VersionNote::writeInFile()'],['../class_article.html#a5e259ad53fad78ebb690415207973d4f',1,'Article::writeInFile()'],['../class_tache.html#a5340f4952ea29d3401bd550a56355e22',1,'Tache::writeInFile()']]]
+  ['sauvegardepossible',['sauvegardePossible',['../class_affichage_note.html#a5d6d982c8efcdbccb1f3b9972105de33',1,'AffichageNote']]],
+  ['sauvegardermodif',['sauvegarderModif',['../class_gestion_relation.html#a8169292dc129fcd3c4e213459c425e9d',1,'GestionRelation']]],
+  ['saveall',['saveAll',['../class_note_manager.html#ae8b8978f5310184e89d0b0b4859039b0',1,'NoteManager::saveAll()'],['../class_relation_manager.html#a5f635dd1b392d8e4afa02eb507bd0bf4',1,'RelationManager::saveAll()']]],
+  ['selectionnercouple',['selectionnerCouple',['../class_gestion_relation.html#a0000ca088fac3637f0009006922b64ac',1,'GestionRelation']]],
+  ['selectionnerrelation',['selectionnerRelation',['../class_gestion_relation.html#abba8e4d61e6ad41f40f184c18283d0ba',1,'GestionRelation']]],
+  ['selectionversion',['selectionVersion',['../class_affichage_note.html#a52f0a0c33fef946f16f11d09c7aa5826',1,'AffichageNote']]],
+  ['setdescription',['setDescription',['../class_relation.html#a6e77a436a749f0200e6eaa7c47859cac',1,'Relation']]],
+  ['setlabel',['setLabel',['../class_couple.html#a69d515652c18d65feacd71ca4a110937',1,'Couple']]],
+  ['setstatus',['setStatus',['../class_tache.html#ad7108a59fd8418766b5d83a05b3eb883',1,'Tache']]],
+  ['setstatusenattente',['setStatusEnAttente',['../class_tache.html#a2c63328613129db37fbc6fa8969e396b',1,'Tache']]],
+  ['setstatusencours',['setStatusEnCours',['../class_tache.html#a36e975aa2eca9f3dfff84928c1e9c48f',1,'Tache']]],
+  ['setstatusterminee',['setStatusTerminee',['../class_tache.html#a163d303690f0aefb80cd58cef91de2ba',1,'Tache']]],
+  ['settitre',['setTitre',['../class_relation.html#adda18ee0d9203edb7d2513a50c95e21e',1,'Relation']]],
+  ['setvidercorbeilleauto',['setViderCorbeilleAuto',['../class_note_manager.html#af0f6f0a37bd305bc0c182132621592c7',1,'NoteManager']]],
+  ['supprimercorbeille',['supprimerCorbeille',['../class_note_manager.html#aaacfca94ad6db366778db9cf4b87f7e3',1,'NoteManager']]],
+  ['supprimercouple',['supprimerCouple',['../class_gestion_relation.html#a0aded1b67bb09f554d0c6a82db09b829',1,'GestionRelation::supprimerCouple()'],['../class_relation.html#a0f87c307323a0860ea9fe3b2e0a9ce1d',1,'Relation::supprimerCouple()']]],
+  ['supprimernote',['supprimerNote',['../class_affichage_note.html#abd8428074b808157681fc3be349b7782',1,'AffichageNote::supprimerNote()'],['../class_note_manager.html#ab16cc5268a7e84b21471eb9f7bbf5042',1,'NoteManager::supprimerNote()']]],
+  ['supprimerversionvide',['supprimerVersionVide',['../class_note.html#a33f74835299b620e5cb603d1275c65a0',1,'Note']]]
 ];

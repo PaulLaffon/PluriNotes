@@ -1,5 +1,19 @@
 var searchData=
 [
-  ['partiecentrale',['PartieCentrale',['../class_partie_centrale.html',1,'']]],
-  ['partiegauche',['PartieGauche',['../class_partie_gauche.html',1,'']]]
+  ['partiecentrale',['PartieCentrale',['../class_partie_centrale.html',1,'PartieCentrale'],['../class_partie_centrale.html#a7d751cb5c469134f70d8736b1307399a',1,'PartieCentrale::PartieCentrale()']]],
+  ['partiecentrale_2ecpp',['partiecentrale.cpp',['../partiecentrale_8cpp.html',1,'']]],
+  ['partiecentrale_2eh',['partiecentrale.h',['../partiecentrale_8h.html',1,'']]],
+  ['partiedroite',['PartieDroite',['../class_partie_droite.html',1,'']]],
+  ['partiedroite_2ecpp',['partiedroite.cpp',['../partiedroite_8cpp.html',1,'']]],
+  ['partiedroite_2eh',['partiedroite.h',['../partiedroite_8h.html',1,'']]],
+  ['partiegauche',['PartieGauche',['../class_partie_gauche.html',1,'']]],
+  ['partiegauche_2ecpp',['partiegauche.cpp',['../partiegauche_8cpp.html',1,'']]],
+  ['partiegauche_2eh',['partiegauche.h',['../partiegauche_8h.html',1,'']]],
+  ['passagepremierplan',['passagePremierPlan',['../class_affichage_note.html#a0aa51540d6daf86d1ea941a5d02619f6',1,'AffichageNote']]],
+  ['path',['path',['../class_affichage_multimedia.html#a8cc81b33f2a8a47dc934c3fdc4e606ea',1,'AffichageMultimedia']]],
+  ['preferences',['Preferences',['../class_preferences.html',1,'Preferences'],['../class_preferences.html#a3fc460c1a11115945b78b2d35d7ade00',1,'Preferences::Preferences()']]],
+  ['preferences_2ecpp',['preferences.cpp',['../preferences_8cpp.html',1,'']]],
+  ['preferences_2eh',['preferences.h',['../preferences_8h.html',1,'']]],
+  ['putinarchive',['putInArchive',['../class_note.html#a56fdb920f299aae703f632698e5121fe',1,'Note']]],
+  ['putincorbeille',['putInCorbeille',['../class_note.html#a27fdfd99521a119ef5f1cbc0c945d59e',1,'Note']]]
 ];

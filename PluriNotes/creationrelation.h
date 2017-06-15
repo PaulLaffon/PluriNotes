@@ -13,6 +13,10 @@
 #include <QFormLayout>
 #include <QInputDialog>
 
+/*! \class CreationRelation
+ *  \brief Classe qui gère l'affichage de la création d'une relation
+ *  Hérite de QDialog
+ * */
 
 class CreationRelation : public QDialog
 {
@@ -31,9 +35,9 @@ public:
     CreationRelation(QWidget *parent = 0);
 
 signals:
-    void RelationAccepter(QString id, QString Description);
+    void RelationAccepter(QString id, QString Description); /*!< \brief emet un signal qui permet la création d'une relation */
 public slots:
-    void valider();
+    void valider(); /*!< \brief reçoit le signal de la button box puis et emet le signal RelationAccepter */
 };
 
 

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PluriNotes
-   &#160;<span id="projectnumber">0.01</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Projet LO21</div>
   </td>
@@ -61,6 +61,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
@@ -69,6 +70,8 @@ $(function() {
 <div class="title">Tache Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="versionnote_8h_source.html">versionnote.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Tache:</div>
 <div class="dyncontent">
@@ -79,96 +82,591 @@ Inheritance diagram for Tache:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public Slots</h2></td></tr>
+<tr class="memitem:a2c63328613129db37fbc6fa8969e396b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a2c63328613129db37fbc6fa8969e396b">setStatusEnAttente</a> (bool checked)</td></tr>
+<tr class="memdesc:a2c63328613129db37fbc6fa8969e396b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le status de la version.  <a href="#a2c63328613129db37fbc6fa8969e396b">More...</a><br /></td></tr>
+<tr class="separator:a2c63328613129db37fbc6fa8969e396b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e975aa2eca9f3dfff84928c1e9c48f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a36e975aa2eca9f3dfff84928c1e9c48f">setStatusEnCours</a> (bool checked)</td></tr>
+<tr class="memdesc:a36e975aa2eca9f3dfff84928c1e9c48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le status de la version.  <a href="#a36e975aa2eca9f3dfff84928c1e9c48f">More...</a><br /></td></tr>
+<tr class="separator:a36e975aa2eca9f3dfff84928c1e9c48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a163d303690f0aefb80cd58cef91de2ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a163d303690f0aefb80cd58cef91de2ba">setStatusTerminee</a> (bool checked)</td></tr>
+<tr class="memdesc:a163d303690f0aefb80cd58cef91de2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le status de la version.  <a href="#a163d303690f0aefb80cd58cef91de2ba">More...</a><br /></td></tr>
+<tr class="separator:a163d303690f0aefb80cd58cef91de2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5e2cbc6a8075da6f93d1dc071765e64"><td class="memItemLeft" align="right" valign="top"><a id="ad5e2cbc6a8075da6f93d1dc071765e64"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Tache</b> (QXmlStreamReader &amp;stream)</td></tr>
+<tr class="memitem:ad5e2cbc6a8075da6f93d1dc071765e64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#ad5e2cbc6a8075da6f93d1dc071765e64">Tache</a> (QXmlStreamReader &amp;stream)</td></tr>
 <tr class="separator:ad5e2cbc6a8075da6f93d1dc071765e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c61924d657b99469b29d954d82d7c42"><td class="memItemLeft" align="right" valign="top"><a id="a0c61924d657b99469b29d954d82d7c42"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Tache</b> (const QString &amp;_titre, const QString &amp;_action, const int _priorite, const QDateTime _echeance, Status _status=enAttente, QDateTime modif=QDateTime::currentDateTime())</td></tr>
+<tr class="memitem:a0c61924d657b99469b29d954d82d7c42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a0c61924d657b99469b29d954d82d7c42">Tache</a> (const QString &amp;_titre, const QString &amp;_action, const int _priorite, const QDateTime _echeance, <a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> _status=<a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba5895364908d3d8dc18b419541b18da1b">enAttente</a>, QDateTime modif=QDateTime::currentDateTime())</td></tr>
 <tr class="separator:a0c61924d657b99469b29d954d82d7c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58245eb2fd5855b0816f875fc719c5ea"><td class="memItemLeft" align="right" valign="top"><a id="a58245eb2fd5855b0816f875fc719c5ea"></a>
-TypeNote&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a58245eb2fd5855b0816f875fc719c5ea">type</a> () const</td></tr>
-<tr class="memdesc:a58245eb2fd5855b0816f875fc719c5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le type de la version. <br /></td></tr>
+<tr class="memitem:a7ff832b739f8365acbe60275c7868c63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a7ff832b739f8365acbe60275c7868c63">~Tache</a> ()</td></tr>
+<tr class="separator:a7ff832b739f8365acbe60275c7868c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58245eb2fd5855b0816f875fc719c5ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="versionnote_8h.html#ae9e654f5716c53eb2b588737271297ae">TypeNote</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a58245eb2fd5855b0816f875fc719c5ea">type</a> () const</td></tr>
+<tr class="memdesc:a58245eb2fd5855b0816f875fc719c5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le type de la version.  <a href="#a58245eb2fd5855b0816f875fc719c5ea">More...</a><br /></td></tr>
 <tr class="separator:a58245eb2fd5855b0816f875fc719c5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5340f4952ea29d3401bd550a56355e22"><td class="memItemLeft" align="right" valign="top"><a id="a5340f4952ea29d3401bd550a56355e22"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a5340f4952ea29d3401bd550a56355e22">writeInFile</a> (QXmlStreamWriter &amp;stream) const</td></tr>
-<tr class="memdesc:a5340f4952ea29d3401bd550a56355e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition, ecrit le contenu de la version dans un fichier XML. <br /></td></tr>
+<tr class="memitem:a5340f4952ea29d3401bd550a56355e22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a5340f4952ea29d3401bd550a56355e22">writeInFile</a> (QXmlStreamWriter &amp;stream) const</td></tr>
+<tr class="memdesc:a5340f4952ea29d3401bd550a56355e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redéfinition, ecrit le contenu de la version dans un fichier XML.  <a href="#a5340f4952ea29d3401bd550a56355e22">More...</a><br /></td></tr>
 <tr class="separator:a5340f4952ea29d3401bd550a56355e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf0bd2a68e58143b12dcb188817f4943"><td class="memItemLeft" align="right" valign="top"><a id="acf0bd2a68e58143b12dcb188817f4943"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#acf0bd2a68e58143b12dcb188817f4943">readFromFile</a> (QXmlStreamReader &amp;stream)</td></tr>
-<tr class="memdesc:acf0bd2a68e58143b12dcb188817f4943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rédéfinition, se charge depuis une fichier XML. <br /></td></tr>
+<tr class="memitem:acf0bd2a68e58143b12dcb188817f4943"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#acf0bd2a68e58143b12dcb188817f4943">readFromFile</a> (QXmlStreamReader &amp;stream)</td></tr>
+<tr class="memdesc:acf0bd2a68e58143b12dcb188817f4943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rédéfinition, se charge depuis une fichier XML.  <a href="#acf0bd2a68e58143b12dcb188817f4943">More...</a><br /></td></tr>
 <tr class="separator:acf0bd2a68e58143b12dcb188817f4943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a7178e8f8d7dd9ee7c8d1374edb3b74"><td class="memItemLeft" align="right" valign="top"><a id="a9a7178e8f8d7dd9ee7c8d1374edb3b74"></a>
-const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getAction</b> ()</td></tr>
+<tr class="memitem:a9a7178e8f8d7dd9ee7c8d1374edb3b74"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a9a7178e8f8d7dd9ee7c8d1374edb3b74">getAction</a> ()</td></tr>
 <tr class="separator:a9a7178e8f8d7dd9ee7c8d1374edb3b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21764eb2a50ee0f55ec83e81aa6c1f75"><td class="memItemLeft" align="right" valign="top"><a id="a21764eb2a50ee0f55ec83e81aa6c1f75"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getPriorite</b> ()</td></tr>
+<tr class="memitem:a21764eb2a50ee0f55ec83e81aa6c1f75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a21764eb2a50ee0f55ec83e81aa6c1f75">getPriorite</a> ()</td></tr>
 <tr class="separator:a21764eb2a50ee0f55ec83e81aa6c1f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18afd360f893004ea04b714a637a19e4"><td class="memItemLeft" align="right" valign="top"><a id="a18afd360f893004ea04b714a637a19e4"></a>
-const QDateTime &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getEcheance</b> ()</td></tr>
+<tr class="memitem:a18afd360f893004ea04b714a637a19e4"><td class="memItemLeft" align="right" valign="top">const QDateTime &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a18afd360f893004ea04b714a637a19e4">getEcheance</a> ()</td></tr>
 <tr class="separator:a18afd360f893004ea04b714a637a19e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9d38b8304e75b83f0924cc3272e4dcf"><td class="memItemLeft" align="right" valign="top"><a id="aa9d38b8304e75b83f0924cc3272e4dcf"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>getStatus</b> ()</td></tr>
+<tr class="memitem:aa9d38b8304e75b83f0924cc3272e4dcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#aa9d38b8304e75b83f0924cc3272e4dcf">getStatus</a> ()</td></tr>
 <tr class="separator:aa9d38b8304e75b83f0924cc3272e4dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7108a59fd8418766b5d83a05b3eb883"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#ad7108a59fd8418766b5d83a05b3eb883">setStatus</a> (const <a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> s)</td></tr>
+<tr class="separator:ad7108a59fd8418766b5d83a05b3eb883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8e3d593c8289dc963a3079a836ad93c"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#aa8e3d593c8289dc963a3079a836ad93c">getDescription</a> () const</td></tr>
+<tr class="separator:aa8e3d593c8289dc963a3079a836ad93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_version_note"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_version_note')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_version_note.html">VersionNote</a></td></tr>
-<tr class="memitem:ac6a7fa02f96da64df4a167347ed9004e inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="ac6a7fa02f96da64df4a167347ed9004e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>VersionNote</b> (const QString &amp;_titre, QDateTime modif=QDateTime::currentDateTime())</td></tr>
+<tr class="memitem:a27ca29b11151e27495446672681b4309 inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a27ca29b11151e27495446672681b4309">VersionNote</a> ()</td></tr>
+<tr class="separator:a27ca29b11151e27495446672681b4309 inherit pub_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a7fa02f96da64df4a167347ed9004e inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#ac6a7fa02f96da64df4a167347ed9004e">VersionNote</a> (const QString &amp;_titre, QDateTime modif=QDateTime::currentDateTime())</td></tr>
 <tr class="separator:ac6a7fa02f96da64df4a167347ed9004e inherit pub_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5a2329ad1be62ca7b5092dc1c25e1ec inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="ad5a2329ad1be62ca7b5092dc1c25e1ec"></a>
-const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTitre</b> () const</td></tr>
+<tr class="memitem:adfdd23d377d1d2ba594fe2bb51f740ed inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#adfdd23d377d1d2ba594fe2bb51f740ed">~VersionNote</a> ()</td></tr>
+<tr class="separator:adfdd23d377d1d2ba594fe2bb51f740ed inherit pub_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a2329ad1be62ca7b5092dc1c25e1ec inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#ad5a2329ad1be62ca7b5092dc1c25e1ec">getTitre</a> () const</td></tr>
 <tr class="separator:ad5a2329ad1be62ca7b5092dc1c25e1ec inherit pub_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae70079a863275ac5997d36bc10f7b01b inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="ae70079a863275ac5997d36bc10f7b01b"></a>
-const QDateTime &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getModif</b> () const</td></tr>
+<tr class="memitem:ae70079a863275ac5997d36bc10f7b01b inherit pub_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">const QDateTime &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#ae70079a863275ac5997d36bc10f7b01b">getModif</a> () const</td></tr>
 <tr class="separator:ae70079a863275ac5997d36bc10f7b01b inherit pub_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af5ccfd13f7e375c7e962c05bf9abce1d"><td class="memItemLeft" align="right" valign="top"><a id="af5ccfd13f7e375c7e962c05bf9abce1d"></a>
-static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#af5ccfd13f7e375c7e962c05bf9abce1d">getTextStatus</a> (Status status)</td></tr>
-<tr class="memdesc:af5ccfd13f7e375c7e962c05bf9abce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le Status en QString. <br /></td></tr>
+<tr class="memitem:af5ccfd13f7e375c7e962c05bf9abce1d"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#af5ccfd13f7e375c7e962c05bf9abce1d">getTextStatus</a> (<a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> status)</td></tr>
+<tr class="memdesc:af5ccfd13f7e375c7e962c05bf9abce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le Status en QString.  <a href="#af5ccfd13f7e375c7e962c05bf9abce1d">More...</a><br /></td></tr>
 <tr class="separator:af5ccfd13f7e375c7e962c05bf9abce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ceb4d0f02ec7221848ee3145fea6193"><td class="memItemLeft" align="right" valign="top"><a id="a3ceb4d0f02ec7221848ee3145fea6193"></a>
-static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a3ceb4d0f02ec7221848ee3145fea6193">getStatusFromText</a> (const QString &amp;s)</td></tr>
-<tr class="memdesc:a3ceb4d0f02ec7221848ee3145fea6193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le Status à partir d'un QString. <br /></td></tr>
+<tr class="memitem:a3ceb4d0f02ec7221848ee3145fea6193"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a3ceb4d0f02ec7221848ee3145fea6193">getStatusFromText</a> (const QString &amp;s)</td></tr>
+<tr class="memdesc:a3ceb4d0f02ec7221848ee3145fea6193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le Status à partir d'un QString.  <a href="#a3ceb4d0f02ec7221848ee3145fea6193">More...</a><br /></td></tr>
 <tr class="separator:a3ceb4d0f02ec7221848ee3145fea6193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_version_note"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_version_note')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_version_note.html">VersionNote</a></td></tr>
-<tr class="memitem:a1c74fb2efb9ed08665399117fa582085 inherit pub_static_methods_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="a1c74fb2efb9ed08665399117fa582085"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a1c74fb2efb9ed08665399117fa582085">textNextBaliseXml</a> (QXmlStreamReader &amp;stream)</td></tr>
-<tr class="memdesc:a1c74fb2efb9ed08665399117fa582085 inherit pub_static_methods_class_version_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le texte de la balise XML suivante. <br /></td></tr>
+<tr class="memitem:a1c74fb2efb9ed08665399117fa582085 inherit pub_static_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a1c74fb2efb9ed08665399117fa582085">textNextBaliseXml</a> (QXmlStreamReader &amp;stream)</td></tr>
+<tr class="memdesc:a1c74fb2efb9ed08665399117fa582085 inherit pub_static_methods_class_version_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le texte de la balise XML suivante.  <a href="class_version_note.html#a1c74fb2efb9ed08665399117fa582085">More...</a><br /></td></tr>
 <tr class="separator:a1c74fb2efb9ed08665399117fa582085 inherit pub_static_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d1819fa4d2b37d996b721de899a9fb inherit pub_static_methods_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="a30d1819fa4d2b37d996b721de899a9fb"></a>
-static const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a30d1819fa4d2b37d996b721de899a9fb">textFromType</a> (TypeNote <a class="el" href="class_version_note.html#a092907bcec356a0ac9af8c043f80eb37">type</a>)</td></tr>
-<tr class="memdesc:a30d1819fa4d2b37d996b721de899a9fb inherit pub_static_methods_class_version_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le type de la note en QString. <br /></td></tr>
+<tr class="memitem:a30d1819fa4d2b37d996b721de899a9fb inherit pub_static_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">static const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a30d1819fa4d2b37d996b721de899a9fb">textFromType</a> (<a class="el" href="versionnote_8h.html#ae9e654f5716c53eb2b588737271297ae">TypeNote</a> <a class="el" href="class_version_note.html#a092907bcec356a0ac9af8c043f80eb37">type</a>)</td></tr>
+<tr class="memdesc:a30d1819fa4d2b37d996b721de899a9fb inherit pub_static_methods_class_version_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le type de la note en QString.  <a href="class_version_note.html#a30d1819fa4d2b37d996b721de899a9fb">More...</a><br /></td></tr>
 <tr class="separator:a30d1819fa4d2b37d996b721de899a9fb inherit pub_static_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4ac01d37d8d98b7765c6a09d9f02909 inherit pub_static_methods_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="aa4ac01d37d8d98b7765c6a09d9f02909"></a>
-static TypeNote&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#aa4ac01d37d8d98b7765c6a09d9f02909">getTypeFromText</a> (const QString &amp;s)</td></tr>
-<tr class="memdesc:aa4ac01d37d8d98b7765c6a09d9f02909 inherit pub_static_methods_class_version_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir le type de la note à partir d'un QString. <br /></td></tr>
+<tr class="memitem:aa4ac01d37d8d98b7765c6a09d9f02909 inherit pub_static_methods_class_version_note"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="versionnote_8h.html#ae9e654f5716c53eb2b588737271297ae">TypeNote</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#aa4ac01d37d8d98b7765c6a09d9f02909">getTypeFromText</a> (const QString &amp;s)</td></tr>
+<tr class="memdesc:aa4ac01d37d8d98b7765c6a09d9f02909 inherit pub_static_methods_class_version_note"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtenir le type de la note à partir d'un QString.  <a href="class_version_note.html#aa4ac01d37d8d98b7765c6a09d9f02909">More...</a><br /></td></tr>
 <tr class="separator:aa4ac01d37d8d98b7765c6a09d9f02909 inherit pub_static_methods_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a7863df143868988c32681ccc7007d183"><td class="memItemLeft" align="right" valign="top"><a id="a7863df143868988c32681ccc7007d183"></a>
-static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>StatusQString</b> [] = {QString(&quot;En attente&quot;), QString(&quot;En cours&quot;), QString(&quot;Terminee&quot;)}</td></tr>
+<tr class="memitem:a7863df143868988c32681ccc7007d183"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tache.html#a7863df143868988c32681ccc7007d183">StatusQString</a> [] = {QString(&quot;En attente&quot;), QString(&quot;En cours&quot;), QString(&quot;Terminee&quot;)}</td></tr>
 <tr class="separator:a7863df143868988c32681ccc7007d183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_class_version_note"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_version_note')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_version_note.html">VersionNote</a></td></tr>
-<tr class="memitem:a2cb190e16c32e93da3ec6e0d77f16c21 inherit pub_static_attribs_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="a2cb190e16c32e93da3ec6e0d77f16c21"></a>
-static const QString&#160;</td><td class="memItemRight" valign="bottom"><b>typeQString</b> [] = {QString(&quot;Article&quot;), QString(&quot;Tache&quot;)}</td></tr>
+<tr class="memitem:a2cb190e16c32e93da3ec6e0d77f16c21 inherit pub_static_attribs_class_version_note"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a2cb190e16c32e93da3ec6e0d77f16c21">typeQString</a> [] = {QString(&quot;Article&quot;), QString(&quot;Image&quot;), QString(&quot;Audio&quot;), QString(&quot;Video&quot;), QString(&quot;Tache&quot;)}</td></tr>
 <tr class="separator:a2cb190e16c32e93da3ec6e0d77f16c21 inherit pub_static_attribs_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_version_note"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_version_note')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_version_note.html">VersionNote</a></td></tr>
-<tr class="memitem:a3b3216b52cb7582d662227e55dcd48c3 inherit pro_attribs_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="a3b3216b52cb7582d662227e55dcd48c3"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>titre</b></td></tr>
+<tr class="memitem:a3b3216b52cb7582d662227e55dcd48c3 inherit pro_attribs_class_version_note"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a3b3216b52cb7582d662227e55dcd48c3">titre</a></td></tr>
 <tr class="separator:a3b3216b52cb7582d662227e55dcd48c3 inherit pro_attribs_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d395b37a1c6bc7f6af6d68c9dcce045 inherit pro_attribs_class_version_note"><td class="memItemLeft" align="right" valign="top"><a id="a9d395b37a1c6bc7f6af6d68c9dcce045"></a>
-QDateTime&#160;</td><td class="memItemRight" valign="bottom"><b>dateModif</b></td></tr>
+<tr class="memitem:a9d395b37a1c6bc7f6af6d68c9dcce045 inherit pro_attribs_class_version_note"><td class="memItemLeft" align="right" valign="top">QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_version_note.html#a9d395b37a1c6bc7f6af6d68c9dcce045">dateModif</a></td></tr>
 <tr class="separator:a9d395b37a1c6bc7f6af6d68c9dcce045 inherit pro_attribs_class_version_note"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad5e2cbc6a8075da6f93d1dc071765e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e2cbc6a8075da6f93d1dc071765e64">&#9670;&nbsp;</a></span>Tache() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tache::Tache </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamReader &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c61924d657b99469b29d954d82d7c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c61924d657b99469b29d954d82d7c42">&#9670;&nbsp;</a></span>Tache() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tache::Tache </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>_titre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>_action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>_priorite</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QDateTime&#160;</td>
+          <td class="paramname"><em>_echeance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td>
+          <td class="paramname"><em>_status</em> = <code><a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba5895364908d3d8dc18b419541b18da1b">enAttente</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDateTime&#160;</td>
+          <td class="paramname"><em>modif</em> = <code>QDateTime::currentDateTime()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ff832b739f8365acbe60275c7868c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff832b739f8365acbe60275c7868c63">&#9670;&nbsp;</a></span>~Tache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tache::~Tache </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9a7178e8f8d7dd9ee7c8d1374edb3b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7178e8f8d7dd9ee7c8d1374edb3b74">&#9670;&nbsp;</a></span>getAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString&amp; Tache::getAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8e3d593c8289dc963a3079a836ad93c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8e3d593c8289dc963a3079a836ad93c">&#9670;&nbsp;</a></span>getDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString&amp; Tache::getDescription </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_version_note.html#a1c4257bf66ec657b88ff4139001997f1">VersionNote</a>.</p>
+
+</div>
+</div>
+<a id="a18afd360f893004ea04b714a637a19e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18afd360f893004ea04b714a637a19e4">&#9670;&nbsp;</a></span>getEcheance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QDateTime&amp; Tache::getEcheance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21764eb2a50ee0f55ec83e81aa6c1f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21764eb2a50ee0f55ec83e81aa6c1f75">&#9670;&nbsp;</a></span>getPriorite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Tache::getPriorite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9d38b8304e75b83f0924cc3272e4dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d38b8304e75b83f0924cc3272e4dcf">&#9670;&nbsp;</a></span>getStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> Tache::getStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ceb4d0f02ec7221848ee3145fea6193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ceb4d0f02ec7221848ee3145fea6193">&#9670;&nbsp;</a></span>getStatusFromText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a> Tache::getStatusFromText </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie le Status à partir d'un QString. </p>
+
+</div>
+</div>
+<a id="af5ccfd13f7e375c7e962c05bf9abce1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ccfd13f7e375c7e962c05bf9abce1d">&#9670;&nbsp;</a></span>getTextStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const QString Tache::getTextStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie le Status en QString. </p>
+
+</div>
+</div>
+<a id="acf0bd2a68e58143b12dcb188817f4943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0bd2a68e58143b12dcb188817f4943">&#9670;&nbsp;</a></span>readFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tache::readFromFile </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamReader &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rédéfinition, se charge depuis une fichier XML. </p>
+
+<p>Implements <a class="el" href="class_version_note.html#aaf137158212812b01f79b2d682c3974b">VersionNote</a>.</p>
+
+</div>
+</div>
+<a id="ad7108a59fd8418766b5d83a05b3eb883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7108a59fd8418766b5d83a05b3eb883">&#9670;&nbsp;</a></span>setStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tache::setStatus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="versionnote_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c63328613129db37fbc6fa8969e396b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c63328613129db37fbc6fa8969e396b">&#9670;&nbsp;</a></span>setStatusEnAttente</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tache::setStatusEnAttente </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checked</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change le status de la version. </p>
+
+</div>
+</div>
+<a id="a36e975aa2eca9f3dfff84928c1e9c48f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36e975aa2eca9f3dfff84928c1e9c48f">&#9670;&nbsp;</a></span>setStatusEnCours</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tache::setStatusEnCours </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checked</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change le status de la version. </p>
+
+</div>
+</div>
+<a id="a163d303690f0aefb80cd58cef91de2ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a163d303690f0aefb80cd58cef91de2ba">&#9670;&nbsp;</a></span>setStatusTerminee</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tache::setStatusTerminee </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>checked</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change le status de la version. </p>
+
+</div>
+</div>
+<a id="a58245eb2fd5855b0816f875fc719c5ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58245eb2fd5855b0816f875fc719c5ea">&#9670;&nbsp;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="versionnote_8h.html#ae9e654f5716c53eb2b588737271297ae">TypeNote</a> Tache::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renvoie le type de la version. </p>
+
+<p>Implements <a class="el" href="class_version_note.html#a092907bcec356a0ac9af8c043f80eb37">VersionNote</a>.</p>
+
+</div>
+</div>
+<a id="a5340f4952ea29d3401bd550a56355e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5340f4952ea29d3401bd550a56355e22">&#9670;&nbsp;</a></span>writeInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tache::writeInFile </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamWriter &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Redéfinition, ecrit le contenu de la version dans un fichier XML. </p>
+
+<p>Implements <a class="el" href="class_version_note.html#a5db6092a5a7bec4dcf89af49c3c098cd">VersionNote</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7863df143868988c32681ccc7007d183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7863df143868988c32681ccc7007d183">&#9670;&nbsp;</a></span>StatusQString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString Tache::StatusQString = {QString(&quot;En attente&quot;), QString(&quot;En cours&quot;), QString(&quot;Terminee&quot;)}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="versionnote_8h_source.html">versionnote.h</a></li>
-<li>versionnote.cpp</li>
+<li>PluriNotes/<a class="el" href="versionnote_8h_source.html">versionnote.h</a></li>
+<li>PluriNotes/<a class="el" href="versionnote_8cpp.html">versionnote.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Note::iterator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_note_1_1iterator.html",tooltip="Permet d&#39;itérer sur toutes les versions d&#39;une note. "];
+}
