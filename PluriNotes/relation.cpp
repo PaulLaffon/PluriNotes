@@ -86,3 +86,16 @@ Couple* Relation:: findCouple(const QString& label, Note* pere, Note* fils)
     }
     return nullptr;
 }
+
+void Relation::supprimerCouple(Note *n1,Note* n2)
+{
+    for(QVector<Couple*>::iterator it = couples.begin(); it != couples.end(); it++)
+    {
+        if((*it)->getPere() == n1 && (*it)->getFils() == n2)
+        {
+            delete *it;
+            couples.erase(it);
+            it--;
+        }
+    }
+}

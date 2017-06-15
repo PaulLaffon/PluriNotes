@@ -105,7 +105,10 @@ void GestionRelation::sauvegarderModif()
 
 void GestionRelation::supprimerCouple()
 {
-
+    Relation* relation = selectionnerRelation();
+    Couple* couple = selectionnerCouple();
+    relation->supprimerCouple(couple->getPere(),couple->getFils());
+    chargerListeCouples(listeRelations->currentText());
 }
 
 Couple* GestionRelation::selectionnerCouple()

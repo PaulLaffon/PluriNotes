@@ -39,6 +39,7 @@ public:
     bool isReferenced(Note *n) const; /*!< \brief Indique si la note est référencée */
 
     void retireAllCouple(); /*!< \brief Retire tous les couples de la relation */
+    void supprimerCouple(Note *n1,Note* n2);
 
     virtual bool isReference() const {return false;} /*!< \brief Indique si la relation est une Reference */
 
